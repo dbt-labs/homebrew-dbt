@@ -4,6 +4,7 @@ class DbtDevelopment < Formula
   desc "Data build tool"
   homepage "https://github.com/fishtown-analytics/dbt"
   url "https://github.com/fishtown-analytics/dbt.git", :branch => "development"
+  version "1"
 
   depends_on "python3"
   depends_on "openssl"
