@@ -1,0 +1,4 @@
+
+test:
+  override:
+    - brew test-bot --ci-pr
