@@ -10,9 +10,10 @@ dependencies:
 test:
   override:
     - brew test-bot --ci-testing
-    - brew install --verbose --build-bottle dbt@0.8.3
-    - brew bottle --verbose --json dbt@0.8.3
+    - brew install --build-bottle dbt@0.8.3
+    - brew bottle --json dbt@0.8.3
     - brew bottle --merge --write --no-commit ./dbt-0.8.3.el_capitan.bottle.json
+    - ls -al
     - brew uninstall --force dbt@0.8.3
     - brew install ./dbt-0.8.3.el_capitan.bottle.tar.gz
     - brew test dbt@0.8.3 --verbose
