@@ -9,4 +9,4 @@ dependencies:
 
 test:
   override:
-    - brew test-bot --ci-auto
+    - brew test-bot --ci-master
