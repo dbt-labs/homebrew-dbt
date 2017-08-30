@@ -1,4 +1,8 @@
 
+dependencies:
+  pre:
+    - brew update
+
 test:
   override:
-    - brew test-bot --ci-pr
+    - brew test-bot --build-bottle
