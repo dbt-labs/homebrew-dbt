@@ -19,3 +19,4 @@ test:
   post:
     - mv ./dbt@0.8.3-0.8.3.sierra.bottle.json $CIRCLE_ARTIFACTS/
     - mv ./dbt@0.8.3-0.8.3.sierra.bottle.tar.gz $CIRCLE_ARTIFACTS/
+    - ls -al $CIRCLE_ARTIFACTS/
