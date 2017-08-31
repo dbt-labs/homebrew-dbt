@@ -16,4 +16,6 @@ test:
     - brew uninstall --force dbt@0.8.3
     - brew install ./dbt@0.8.3-0.8.3.sierra.bottle.tar.gz
     - brew test dbt@0.8.3 --verbose
-    - mv ./dbt@0.8.3-0.8.3.sierra.bottle.tar.gz "$CIRCLE_ARTIFACTS"
+  post:
+    - mv ./dbt@0.8.3-0.8.3.sierra.bottle.json $CIRCLE_ARTIFACTS/
+    - mv ./dbt@0.8.3-0.8.3.sierra.bottle.tar.gz $CIRCLE_ARTIFACTS/
