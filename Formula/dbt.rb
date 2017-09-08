@@ -6,6 +6,13 @@ class Dbt < Formula
   url "https://files.pythonhosted.org/packages/15/57/0a088bf55340158c7eb06e33a89018a0d9096a7539f54728d1e8277b3cdc/dbt-0.8.3.tar.gz"
   sha256 "5c974eb2a3504c736371fbf7c97621fc0ed5b077a4c44862799bb6789438ae31"
 
+  bottle do
+    root_url "http://bottles.getdbt.com"
+    sha256 "" => :sierra
+    sha256 "" => :el_capitan
+    sha256 "" => :yosemite
+  end
+
   depends_on "python3"
   depends_on "openssl"
   depends_on "postgresql"
