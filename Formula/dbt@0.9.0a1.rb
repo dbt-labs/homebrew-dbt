@@ -322,8 +322,6 @@ class DbtAT090a1 < Formula
       venv.pip_install resource(r)
     end
 
-    system "pip install ."
-
     venv.pip_install_and_link buildpath
 
     bin.install_symlink "#{libexec}/bin/dbt" => "dbt"
