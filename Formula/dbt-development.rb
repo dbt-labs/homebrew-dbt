@@ -7,7 +7,7 @@ class DbtDevelopment < Formula
   version "1"
 
   bottle do
-    root_url "http://bottles.getdbt.com"
+    root_url "http://bottles.getdbt.com.s3.dualstack.us-east-1.amazonaws.com"
     sha256 "" => :sierra
     sha256 "" => :el_capitan
     sha256 "" => :yosemite

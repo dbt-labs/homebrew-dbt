@@ -7,7 +7,7 @@ class Dbt < Formula
   sha256 "5c974eb2a3504c736371fbf7c97621fc0ed5b077a4c44862799bb6789438ae31"
 
   bottle do
-    root_url "http://bottles.getdbt.com"
+    root_url "http://bottles.getdbt.com.s3.dualstack.us-east-1.amazonaws.com"
     sha256 "e595970dcbf9dbf9303df7b07b162769bee76a8a1db33f5ea3f4a9ae8b861352" => :sierra
     sha256 "890f04cbf876a3a6df535d49f69e052031a32856de4dc01109a6aaea49228111" => :el_capitan
   end
