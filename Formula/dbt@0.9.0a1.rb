@@ -8,7 +8,7 @@ class DbtAT090a1 < Formula
   version "0.9.0a1"
 
   bottle do
-    root_url "http://bottles.getdbt.com.s3.dualstack.us-east-1.amazonaws.com"
+    root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
     rebuild 1
     sha256 "2efe2b29a6dc1f1679321aa590b8a2d7f69c2f5dd9121d1e4b59ce33ded92f79" => :sierra
     sha256 "01e3cee166e6128dc6cd2ec1c906b8db0b17e101626ff25afce5b8b048320117" => :el_capitan
