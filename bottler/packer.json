@@ -42,7 +42,7 @@
                 "brew bottle --json fishtown-analytics/dbt/{{user `formula_name`}}",
                 "brew bottle --merge --write --no-commit {{user `formula_name`}}-{{user `dbt_version_string`}}.{{user `macos_version`}}.bottle.json",
                 "brew uninstall --force fishtown-analytics/dbt/{{user `formula_name`}}",
-                "brew install {{user `formula_name`}}-{{user `dbt_version_string`}}.{{user `macos_version`}}.bottle.tar.gz",
+                "brew install {{user `formula_name`}}-{{user `dbt_version_string`}}.{{user `macos_version`}}.bottle{{user `rebuild_string`}}.tar.gz",
                 "brew test fishtown-analytics/dbt/{{user `formula_name`}}",
                 "echo 'Success!'"
             ]
@@ -50,9 +50,9 @@
 
         {
             "type": "file",
-            "source": "/Users/vagrant/{{user `formula_name`}}-{{user `dbt_version_string`}}.{{user `macos_version`}}.bottle.tar.gz",
+            "source": "/Users/vagrant/{{user `formula_name`}}-{{user `dbt_version_string`}}.{{user `macos_version`}}.bottle{{user `rebuild_string`}}.tar.gz",
             "direction": "download",
-            "destination": "build/{{user `formula_name`}}-{{user `dbt_version_string`}}.{{user `macos_version`}}.bottle.tar.gz"
+            "destination": "build/{{user `formula_name`}}-{{user `dbt_version_string`}}.{{user `macos_version`}}.bottle{{user `rebuild_string`}}.tar.gz"
         },
 
         {
@@ -70,6 +70,7 @@
         "provisioning_delay": "0",
         "formula_name": "dbt@0.8.3",
         "dbt_version_string": "0.8.3",
+        "rebuild_string": "",
         "macos_version": "el_capitan"
     }
 }
