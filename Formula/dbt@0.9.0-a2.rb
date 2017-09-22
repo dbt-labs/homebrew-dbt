@@ -9,9 +9,8 @@ class DbtAT090A2 < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
-    rebuild 1
-    sha256 "" => :sierra
-    sha256 "" => :el_capitan
+    sha256 "fa6d954ddc9753b5af6716355e8898a9fa987da81f51888d21cc22944f7f3069" => :sierra
+    sha256 "76d7ce407e160952c7169836a67cd2e8bf9f86210a49d3faece3e5cab0d2af3c" => :el_capitan
   end
 
   depends_on "python3"
