@@ -1,17 +1,14 @@
-class DbtAT090a1 < Formula
+class DbtAT090A3 < Formula
   include Language::Python::Virtualenv
 
   desc "Data build tool"
   homepage "https://github.com/fishtown-analytics/dbt"
-  url "https://files.pythonhosted.org/packages/e3/e9/0a4f1aaf7df98a800c08ce90deb37deb9484e87b507bd2e8a21a886c8e44/dbt-0.9.0a1.tar.gz"
-  sha256 "a4c381ab0e6e620b668db98e35b9a88907633e8f95b109b306daffc552ff6130"
-  version "0.9.0a1"
+  url "https://files.pythonhosted.org/packages/27/50/ce128d99efb93330a16fccc714c8fac8d94143e66f2f3ab574fb26d3796c/dbt-0.9.0a3.tar.gz"
+  sha256 "05aadd159763c9fe67f232e302f19ea356f0cd2121428094278df89b1dc359f7"
+  version "0.9.0-a3"
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
-    rebuild 1
-    sha256 "2efe2b29a6dc1f1679321aa590b8a2d7f69c2f5dd9121d1e4b59ce33ded92f79" => :sierra
-    sha256 "01e3cee166e6128dc6cd2ec1c906b8db0b17e101626ff25afce5b8b048320117" => :el_capitan
   end
 
   depends_on "python3"
@@ -29,8 +26,8 @@ class DbtAT090a1 < Formula
   end
 
   resource "asn1crypto" do
-    url "https://files.pythonhosted.org/packages/67/14/5d66588868c4304f804ebaff9397255f6ec5559e46724c2496e0f26e68d6/asn1crypto-0.22.0.tar.gz"
-    sha256 "cbbadd640d3165ab24b06ef25d1dca09a3441611ac15f6a6b452474fdf0aed1a"
+    url "https://files.pythonhosted.org/packages/31/53/8bca924b30cb79d6d70dbab6a99e8731d1e4dd3b090b7f3d8412a8d8ffbc/asn1crypto-0.23.0.tar.gz"
+    sha256 "0874981329cfebb366d6584c3d16e913f2a0eb026c9463efcc4aaf42a9d94d70"
   end
 
   resource "billiard" do
@@ -64,8 +61,8 @@ class DbtAT090a1 < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/5b/b9/790f8eafcdab455bcd3bd908161f802c9ce5adbf702a83aa7712fcc345b7/cffi-1.10.0.tar.gz"
-    sha256 "b3b02911eb1f6ada203b0763ba924234629b51586f72a21faacc638269f4ced5"
+    url "https://files.pythonhosted.org/packages/4e/32/4070bdf32812c89eb635c80880a5caa2e0189aa7999994c265577e5154f3/cffi-1.11.0.tar.gz"
+    sha256 "5f4ff33371c6969b39b293d9771ee91e81d26f9129be093ca1b7be357fcefd15"
   end
 
   resource "chardet" do
@@ -109,8 +106,8 @@ class DbtAT090a1 < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/82/eb/594fcabb52ed68bd7f0bcf3f2cd3e998971f6ade9d4422672f96e4f9d764/google-auth-1.0.2.tar.gz"
-    sha256 "bd9f242370496f71fd307d50f66974e36b28f10bfd3437421689ba54d8c6c980"
+    url "https://files.pythonhosted.org/packages/7a/f5/0d649408d960930ebc7472f8cdcefe80a66b84bde29ec15f5b8e12f92f81/google-auth-1.1.1.tar.gz"
+    sha256 "e00236a914906409367e96fdcf5c08aaca3ab5bd3aab0c5c5ea9255162640215"
   end
 
   resource "google-cloud-bigquery" do
@@ -129,8 +126,8 @@ class DbtAT090a1 < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/96/6a/34759a4a2119a8aae0b19d045917ee4a39ffaaeda2df3a892730fdcda408/googleapis-common-protos-1.5.2.tar.gz"
-    sha256 "f94cc66efba677a086b8b17b1240239433495b77631cd410f70151a8ff14435d"
+    url "https://files.pythonhosted.org/packages/00/03/d25bed04ec8d930bcfa488ba81a2ecbf7eb36ae3ffd7e8f5be0d036a89c9/googleapis-common-protos-1.5.3.tar.gz"
+    sha256 "c075eddaa2628ab519e01b7d75b76e66c40eaa50fc52758d8225f84708950ef2"
   end
 
   resource "greenlet" do
@@ -209,8 +206,8 @@ class DbtAT090a1 < Formula
   end
 
   resource "PyContracts" do
-    url "https://files.pythonhosted.org/packages/05/cf/93c6bba08bf268063c13cd9ad7656c9ab12d15cd7d88a9abe38e7eb0c74e/PyContracts-1.7.15.tar.gz"
-    sha256 "24bf3ab5cfd61d0e296af82fb8b73ba875ea09733a8ca562f53016cf980dc469"
+    url "https://files.pythonhosted.org/packages/26/f9/0d64380aefde55c842999197a5c45dbb11bfbdc9d7e8b1b890c0682b235e/PyContracts-1.8.0.tar.gz"
+    sha256 "da842d5f7ed1eaa227569cdec926cb10ca9615163d3f922a08455683358a886c"
   end
 
   resource "pycparser" do
@@ -224,8 +221,8 @@ class DbtAT090a1 < Formula
   end
 
   resource "pyOpenSSL" do
-    url "https://files.pythonhosted.org/packages/b0/9e/7088f6165c40c46416aff434eb806c1d64ad6ec6dbc201f5ad4d0484704e/pyOpenSSL-17.2.0.tar.gz"
-    sha256 "5d617ce36b07c51f330aa63b83bf7f25c40a0e95958876d54d1982f8c91b4834"
+    url "https://files.pythonhosted.org/packages/ee/6a/cd78737dd990297205943cc4dcad3d3c502807fd2c5b18c5f33dc90ca214/pyOpenSSL-17.3.0.tar.gz"
+    sha256 "29630b9064a82e04d8242ea01d7c93d70ec320f5e3ed48e95fcabc6b1d0f6c76"
   end
 
   resource "pyparsing" do
@@ -269,13 +266,13 @@ class DbtAT090a1 < Formula
   end
 
   resource "six" do
-    url "https://files.pythonhosted.org/packages/b3/b2/238e2590826bfdd113244a40d9d3eb26918bd798fc187e2360a8367068db/six-1.10.0.tar.gz"
-    sha256 "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"
+    url "https://files.pythonhosted.org/packages/16/d8/bc6316cf98419719bd59c91742194c111b6f2e85abac88e496adefaf7afe/six-1.11.0.tar.gz"
+    sha256 "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"
   end
 
   resource "snowflake-connector-python" do
-    url "https://files.pythonhosted.org/packages/ab/30/a7931e58a2dbf9f5cd83a5628cd7f78260a6ffc7bbc79be40120f8ce16ef/snowflake-connector-python-1.4.5.tar.gz"
-    sha256 "f372913590f5141e73a46c6715eb1a2946d02cbaa07b30123d2f7cabfad30865"
+    url "https://files.pythonhosted.org/packages/dd/8a/02186514b0bd7362e1cabc0eb8b3ceca422088bbb7d73abafa7a22c76380/snowflake-connector-python-1.4.7.tar.gz"
+    sha256 "1ac8eae7ec7a3a2f35b433836b3f267c9ad2e186f193549fd1c6cebd5a2f11c2"
   end
 
   resource "snowplow-tracker" do
