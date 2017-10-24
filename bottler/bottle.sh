@@ -6,7 +6,7 @@ VERSION="$(brew info --json=v1 $1 | jq -r .[].versions.stable)"
 FORMULA_NAME="$(brew info --json=v1 $1 | jq -r .[].name)"
 REBUILD="$(brew info --json=v1 $1 | jq -r .[].bottle.stable.rebuild)"
 
-if [ "$REBUILD" -ne "0" ]; then
+if [[ "$REBUILD" -ne "null" && "$REBUILD" -gt "0" ]]; then
     REBUILD_STRING=".$REBUILD"
 fi
 
