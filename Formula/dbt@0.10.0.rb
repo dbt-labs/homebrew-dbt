@@ -1,15 +1,13 @@
-class DbtDevelopment < Formula
+class DbtAT0100 < Formula
   include Language::Python::Virtualenv
 
   desc "Data build tool"
   homepage "https://github.com/fishtown-analytics/dbt"
-  url "https://github.com/fishtown-analytics/dbt.git", :branch => "development"
-  version "2"
+  url "https://files.pythonhosted.org/packages/e3/3e/dbccc280ec71144cba3b82ce6889db09b0b5ed4830cafaadead6cb8170b3/dbt-0.10.0.tar.gz"
+  sha256 "4070d12744569583d0508d80646d66bb3e4fe104d0184ed47c645e10939a8e27"
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
-    sha256 "32d78f5c86b162ff8ef6e9968c69707b8add11a61c0954785f499dafe68b2fdd" => :high_sierra
-    sha256 "6771c7ea2da4e021cafea2302afc870b1dadc5bd84855fe36c27a3b440ddc2e4" => :sierra
   end
 
   depends_on "python3"
