@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PREFIX='dbt-development-1'
+PREFIX='dbt@0.10.0-0.10.0'
 
 HIGH_SIERRA="$(cat "build/$PREFIX.high_sierra.bottle.json" | jq '. | to_entries[] | .value.bottle.tags | to_entries[] | .value.sha256')"' => :high_sierra'
 SIERRA="$(cat "build/$PREFIX.sierra.bottle.json" | jq '. | to_entries[] | .value.bottle.tags | to_entries[] | .value.sha256')"' => :sierra'
