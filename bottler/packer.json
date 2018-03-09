@@ -36,6 +36,7 @@
         {
             "type": "shell",
             "inline": [
+                "xcode-select --install",
                 "/usr/bin/ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"",
                 "export PATH=\"$PATH:/usr/local/bin\"",
                 "brew install --build-bottle fishtown-analytics/dbt/{{user `formula_name`}}",
