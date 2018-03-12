@@ -3,8 +3,8 @@ class DbtAT091 < Formula
 
   desc "Data build tool"
   homepage "https://github.com/fishtown-analytics/dbt"
-  url "https://files.pythonhosted.org/packages/e3/3e/dbccc280ec71144cba3b82ce6889db09b0b5ed4830cafaadead6cb8170b3/dbt-0.10.0.tar.gz"
-  sha256 "4070d12744569583d0508d80646d66bb3e4fe104d0184ed47c645e10939a8e27"
+  url "https://files.pythonhosted.org/packages/77/10/9f711a34f28aa7fd88fb9dbc07ae993e89a2de0abb8fe8a29a79644ba1d4/dbt-0.9.1.tar.gz"
+  sha256 "319ab9f985e99ba5e6a32550b7bdc86211b4662489a8c5f9b3f37d498769a28e"
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
