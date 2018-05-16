@@ -8,8 +8,6 @@ class DbtDevelopment < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
-    sha256 "32d78f5c86b162ff8ef6e9968c69707b8add11a61c0954785f499dafe68b2fdd" => :high_sierra
-    sha256 "6771c7ea2da4e021cafea2302afc870b1dadc5bd84855fe36c27a3b440ddc2e4" => :sierra
   end
 
   depends_on "python3"
@@ -114,11 +112,6 @@ class DbtDevelopment < Formula
   resource "docutils" do
     url "https://files.pythonhosted.org/packages/84/f4/5771e41fdf52aabebbadecc9381d11dea0fa34e4759b4071244fa094804c/docutils-0.14.tar.gz"
     sha256 "51e64ef2ebfb29cae1faa133b3710143496eca21c530f3f71424d77687764274"
-  end
-
-  resource "freezegun" do
-    url "https://files.pythonhosted.org/packages/89/f3/90fe43ea1261b763bdedb5e2e9ddc4f21c64cc439467113319430580978b/freezegun-0.3.9.tar.gz"
-    sha256 "783ccccd7f60968bfe49ad9e114c18ea2b63831faaaf61c1f1f71ddfde1c0eee"
   end
 
   resource "future" do
