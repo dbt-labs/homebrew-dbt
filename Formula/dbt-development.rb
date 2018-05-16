@@ -4,7 +4,7 @@ class DbtDevelopment < Formula
   desc "Data build tool"
   homepage "https://github.com/fishtown-analytics/dbt"
   url "https://github.com/fishtown-analytics/dbt.git", :branch => "development"
-  version "2"
+  version "3"
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
@@ -182,6 +182,11 @@ class DbtDevelopment < Formula
   resource "jmespath" do
     url "https://files.pythonhosted.org/packages/e5/21/795b7549397735e911b032f255cff5fb0de58f96da794274660bca4f58ef/jmespath-0.9.3.tar.gz"
     sha256 "6a81d4c9aa62caf061cb517b4d9ad1dd300374cd4706997aff9cd6aedd61fc64"
+  end
+
+  resource "jsonschema" do
+    url "https://files.pythonhosted.org/packages/58/b9/171dbb07e18c6346090a37f03c7e74410a1a56123f847efed59af260a298/jsonschema-2.6.0.tar.gz"
+    sha256 "6ff5f3180870836cae40f06fa10419f557208175f13ad7bc26caa77beb1f6e02"
   end
 
   resource "kombu" do
