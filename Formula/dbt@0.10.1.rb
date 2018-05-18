@@ -355,7 +355,7 @@ class DbtDevelopment < Formula
 
     venv.pip_install_and_link buildpath
 
-    bin.install_symlink "#{libexec}/bin/dbt" ="dbt"
+    bin.install_symlink "#{libexec}/bin/dbt" => "dbt"
   end
 
   test do
