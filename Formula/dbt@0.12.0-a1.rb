@@ -307,7 +307,7 @@ class DbtAT0120A1 < Formula
     (testpath/"dbt_project.yml").write("{name: 'test', version: '0.0.1', profile: 'default'}")
     (testpath/".dbt/profiles.yml").write(
       "{default: {outputs: {default: {type: 'postgres', threads: 1, host: 'localhost', port: 5432,
-      user: 'root', pass: 'password', dbname: 'test', schema: 'test'}}}, target: 'default'}",
+      user: 'root', pass: 'password', dbname: 'test', schema: 'test'}}, target: 'default'}}",
     )
     (testpath/"models/test.sql").write("select * from test")
     system "#{bin}/dbt", "test"
