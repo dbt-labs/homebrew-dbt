@@ -8,6 +8,8 @@ class Dbt < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
+    sha256 "13190dce18e1fa78017773bb41877c3df23b7e304ebb6b3e29cf14af1457cbdf" => :high_sierra
+    sha256 "99ccab77a31bf43fdcb4d1fd61a1158dbe0d820fdd8668d22b743b2476caeb0b" => :sierra
   end
 
   depends_on "python3"
