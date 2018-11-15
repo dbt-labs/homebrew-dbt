@@ -3,13 +3,11 @@ class Dbt < Formula
 
   desc "Data build tool"
   homepage "https://github.com/fishtown-analytics/dbt"
-  url "https://files.pythonhosted.org/packages/96/9f/339ae926b98a859aadd38c95da994816bd958f97cd4b5b29ce074574e2c7/dbt-0.12.0.tar.gz"
-  sha256 "1db0da7968f400e999548cc7888d479f05dd06028bf1367cd262f00dee35ad7a"
+  url "https://files.pythonhosted.org/packages/04/17/a5eb9d731204251c19e12d4c97bfc134b90761450d71cafa255e6a23fadf/dbt-0.12.1.tar.gz"
+  sha256 "e58078cd98d2434098ce522ddda316ddfb0e4c2241525c3cceee0842fd34401e"
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
-    sha256 "13190dce18e1fa78017773bb41877c3df23b7e304ebb6b3e29cf14af1457cbdf" => :high_sierra
-    sha256 "99ccab77a31bf43fdcb4d1fd61a1158dbe0d820fdd8668d22b743b2476caeb0b" => :sierra
   end
 
   depends_on "python3"
