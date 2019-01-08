@@ -5,10 +5,11 @@ class Dbt < Formula
   homepage "https://github.com/fishtown-analytics/dbt"
   url "https://files.pythonhosted.org/packages/aa/54/5a3fdfb5aea3b757d355f69cfd70418ad34f4d5935487090f085bd163638/dbt-0.12.2.tar.gz"
   sha256 "86b78e30c815fc7688dc096862e9fd6f8c796d36b28989b947c2b2618cf26e42"
-  version "1"
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
+    sha256 "71644dff8533122b7d14b3e98aa04f12f5a533137fd47c34aea10e100f8d9acd" => :high_sierra
+    sha256 "7a82c49ad2f4d72e400996b0d119a373756d4e0fc1321f02169aa48585d75c45" => :sierra
   end
 
   depends_on "python3"
