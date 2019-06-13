@@ -7,6 +7,12 @@ class DbtAT0140A1 < Formula
   sha256 "2ddf442336e91f92fd1ebe513b24a5794cdebc426f351104f34b0ff1fe90b3d1"
   version "0.14.0a1"
 
+  bottle do
+    root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
+    sha256 "acff32ba9ee03525d1b192bae047253c3c4a2397ee4966d3b2e7fa208ce50b7b" => :high_sierra
+    sha256 "8dc0ead361d86d3a0c2163c4e4538997953da03ae00b5895e1c0764154dc07f6" => :sierra
+  end
+
   depends_on "python3"
   depends_on "openssl"
   depends_on "postgresql"
