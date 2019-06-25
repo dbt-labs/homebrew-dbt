@@ -42,9 +42,6 @@
                 "brew install --build-bottle fishtown-analytics/dbt/{{user `formula_name`}}",
                 "brew bottle --json fishtown-analytics/dbt/{{user `formula_name`}}",
                 "brew bottle --merge --write --no-commit \"$(find . -name *.bottle.json)\"",
-                "brew uninstall --force fishtown-analytics/dbt/{{user `formula_name`}}",
-                "brew install $(find . -name *.tar.gz)",
-                "brew test fishtown-analytics/dbt/{{user `formula_name`}}",
                 "echo 'Success!'"
             ]
         },
