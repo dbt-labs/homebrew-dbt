@@ -1,4 +1,4 @@
-class DbtAT0140Rc2 < Formula
+class DbtAT0140Rc1 < Formula
   include Language::Python::Virtualenv
 
   desc "Data build tool"
@@ -10,7 +10,7 @@ class DbtAT0140Rc2 < Formula
   depends_on "python3"
   depends_on "openssl"
   depends_on "postgresql"
-  
+
   resource "agate" do
     url "https://files.pythonhosted.org/packages/d4/1c/99fb34c81c68012c71e8d35a1f16a6b25952322e23c911c81327c8464be8/agate-1.6.1.tar.gz"
     sha256 "c93aaa500b439d71e4a5cf088d0006d2ce2c76f1950960c8843114e5f361dfd3"
