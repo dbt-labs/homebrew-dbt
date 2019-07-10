@@ -10,7 +10,13 @@ class DbtAT0140 < Formula
   depends_on "python3"
   depends_on "openssl"
   depends_on "postgresql"
-  
+
+  bottle do
+    root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
+    sha256 "c0ca19bd382b2e68a89aae8ad5eec42f5b9c12cf1ece9eb4d317bbd9fdfbed92" => :high_sierra
+    sha256 "1491b5133d8c9165f01a58ebc65d7be2f191027f474933c864a115cbd618f8e6" => :sierra
+  end
+
   resource "agate" do
     url "https://files.pythonhosted.org/packages/d4/1c/99fb34c81c68012c71e8d35a1f16a6b25952322e23c911c81327c8464be8/agate-1.6.1.tar.gz"
     sha256 "c93aaa500b439d71e4a5cf088d0006d2ce2c76f1950960c8843114e5f361dfd3"
