@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  bottle-mojave:
+    macos:
+      xcode: "10.3.0"
+
+    steps:
+      - checkout
+
+      - run:
+          name: Build and run tests
+          command: >
+            bash -c .circleci/bottle-new-files.sh
+            ls build/
+
+  # bottle-high-sierra: 10.1.0
+  # bottle-sierra: 9.2.0
+
+workflows:
+  version: 2
+  test-everything:
+    jobs:
+      - bottle-mojave:
+          filters:
+            branches:
+              only: master
