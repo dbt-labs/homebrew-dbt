@@ -6,6 +6,7 @@ jobs:
 
     steps:
       - checkout
+      - add_ssh_keys
 
       - run:
           name: Install awscli
