@@ -18,12 +18,10 @@ while read -r line; do
     brew bottle --merge --write "$(find . -name *.bottle.json)"
 
     echo "--------- SYNCING BOTTLES ---------"
-    aws s3 sync build/*.json s3://bottles.getdbt.com
-    aws s3 sync build/*.tar.gz s3://bottles.getdbt.com
+    aws s3 sync *.json s3://bottles.getdbt.com
+    aws s3 sync *.tar.gz s3://bottles.getdbt.com
 
     echo "--------- COMMIT CHANGES ---------"
-    git add . -A
-    git commit -m "bottled $FORMULA_NAME"
     git push
 
 done <<< "$FILES_TO_BUILD"
