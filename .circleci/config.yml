@@ -4,9 +4,9 @@ jobs:
     macos:
       xcode: "10.3.0"
 
-    steps:
-      - checkout
+    steps: &build-steps
       - add_ssh_keys
+      - checkout
 
       - run:
           name: Install awscli
@@ -19,14 +19,35 @@ jobs:
             bash -c .circleci/bottle-new-files.sh
             ls build/
 
-  # bottle-high-sierra: 10.1.0
-  # bottle-sierra: 9.2.0
+  bottle-high-sierra:
+    macos:
+      xcode: "10.1.0"
+
+    steps: *build-steps
+
+  bottle-sierra:
+    macos:
+      xcode: "9.2.0"
+
+    steps: *build-steps
 
 workflows:
   version: 2
   test-everything:
     jobs:
       - bottle-mojave:
+          filters:
+            branches:
+              only: master
+      - bottle-high-sierra:
+          requires:
+            - bottle-mojave
+          filters:
+            branches:
+              only: master
+      - bottle-sierra:
+          requires:
+            - bottle-high-sierra
           filters:
             branches:
               only: master
