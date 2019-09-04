@@ -14,6 +14,8 @@ class DbtAT0141 < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
+    sha256 "bafe6aea8e81f415f5e915fa34a509742311dd2242dcdaa721d8b6542d68aa93" => :high_sierra
+    sha256 "ef313d0046aa16ac6932d9282099e6e0bb9f7844d150e1fc8eaa99c78b2cd860" => :sierra
   end
 
   resource "agate" do
