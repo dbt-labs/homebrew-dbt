@@ -5,6 +5,9 @@ FILES_TO_BUILD=Formula/dbt@0.14.1-rc2.rb
 
 [ -z "$FILES_TO_BUILD" ] && echo "No formulae to bottle right now." && exit 0
 
+git config user.email "circleci@fishtownanalytics.com"
+git config user.name "CircleCI Bottling Bot"
+
 while read -r line; do
     FORMULA_NAME_WITH_RB_EXTENSION="${line/Formula\//}"
     FORMULA_NAME="${FORMULA_NAME_WITH_RB_EXTENSION/.rb/}"
@@ -12,7 +15,7 @@ while read -r line; do
     echo "--------- BUILDING BOTTLES ---------"
     brew install --build-bottle "fishtown-analytics/dbt/$FORMULA_NAME"
     brew bottle --json "fishtown-analytics/dbt/$FORMULA_NAME"
-    brew bottle --merge --write --no-commit "$(find . -name *.bottle.json)"
+    brew bottle --merge --write "$(find . -name *.bottle.json)"
 
     echo "--------- SYNCING BOTTLES ---------"
     aws s3 sync build/*.json s3://bottles.getdbt.com
