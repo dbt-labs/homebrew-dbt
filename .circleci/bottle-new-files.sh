@@ -22,6 +22,7 @@ while read -r line; do
     aws s3 cp *.tar.gz s3://bottles.getdbt.com
 
     echo "--------- COMMIT CHANGES ---------"
+    cd /usr/local/Homebrew/Library/Taps/fishtown-analytics/homebrew-dbt
     git push
 
 done <<< "$FILES_TO_BUILD"
