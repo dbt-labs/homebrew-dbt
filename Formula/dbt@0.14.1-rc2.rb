@@ -14,8 +14,7 @@ class DbtAT0141Rc2 < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "68608c1c86055084cb22201ca70c0a29d801eed8ea167f92a6bc55747b7395e5" => :mojave
+    sha256 "8e5993a67a5820effdd33e80a68565a435ab4661e5d40c69726a1dc8f6297a83" => :high_sierra
   end
 
   resource "agate" do
