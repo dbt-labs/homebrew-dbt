@@ -1,53 +1,53 @@
-version: 2
-jobs:
-  bottle-mojave:
-    macos:
-      xcode: "10.3.0"
+# version: 2
+# jobs:
+#   bottle-mojave:
+#     macos:
+#       xcode: "10.3.0"
 
-    steps: &build-steps
-      - add_ssh_keys
-      - checkout
+#     steps: &build-steps
+#       - add_ssh_keys
+#       - checkout
 
-      - run:
-          name: Install awscli
-          command: >
-            brew install awscli
+#       - run:
+#           name: Install awscli
+#           command: >
+#             brew install awscli
 
-      - run:
-          name: Build and run tests
-          command: >
-            bash -c .circleci/bottle-new-files.sh
-            ls build/
+#       - run:
+#           name: Build and run tests
+#           command: >
+#             bash -c .circleci/bottle-new-files.sh
+#             ls build/
 
-  bottle-high-sierra:
-    macos:
-      xcode: "10.1.0"
+#   bottle-high-sierra:
+#     macos:
+#       xcode: "10.1.0"
 
-    steps: *build-steps
+#     steps: *build-steps
 
-  bottle-sierra:
-    macos:
-      xcode: "9.2.0"
+#   bottle-sierra:
+#     macos:
+#       xcode: "9.2.0"
 
-    steps: *build-steps
+#     steps: *build-steps
 
-workflows:
-  version: 2
-  test-everything:
-    jobs:
-      - bottle-mojave:
-          filters:
-            branches:
-              only: master
-      - bottle-high-sierra:
-          requires:
-            - bottle-mojave
-          filters:
-            branches:
-              only: master
-      - bottle-sierra:
-          requires:
-            - bottle-high-sierra
-          filters:
-            branches:
-              only: master
+# workflows:
+#   version: 2
+#   test-everything:
+#     jobs:
+#       - bottle-mojave:
+#           filters:
+#             branches:
+#               only: master
+#       - bottle-high-sierra:
+#           requires:
+#             - bottle-mojave
+#           filters:
+#             branches:
+#               only: master
+#       - bottle-sierra:
+#           requires:
+#             - bottle-high-sierra
+#           filters:
+#             branches:
+#               only: master
