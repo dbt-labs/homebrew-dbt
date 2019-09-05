@@ -13,9 +13,9 @@ class DbtAT0141Rc2 < Formula
   depends_on "postgresql"
 
   bottle do
-    root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
-    sha256 "ae6d6bdcd0a6f1e118881385b83a60c08e0a9209eeb51e9f09fe6946e7845576" => :high_sierra
-    sha256 "5251fbd25300bad4f81c8ce3c9bfd851dfb3efd270293623fd86afd1291a2835" => :sierra
+    cellar :any
+    rebuild 1
+    sha256 "68608c1c86055084cb22201ca70c0a29d801eed8ea167f92a6bc55747b7395e5" => :mojave
   end
 
   resource "agate" do
