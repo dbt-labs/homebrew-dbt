@@ -11,13 +11,13 @@ jobs:
       - run:
           name: Install awscli
           command: >
-            brew update
+            brew update; \
             brew install awscli
 
       - run:
           name: Build and run tests
           command: >
-            bash -c .circleci/bottle-new-files.sh
+            bash -c .circleci/bottle-new-files.sh; \
             ls build/
 
   bottle-high-sierra:
