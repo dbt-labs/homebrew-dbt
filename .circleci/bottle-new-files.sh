@@ -7,6 +7,9 @@ FILES_TO_BUILD=$(git diff --name-status HEAD~1 HEAD | grep '^[AM]' | grep 'Formu
 git config user.email "circleci@fishtownanalytics.com"
 git config user.name "CircleCI Bottling Bot"
 
+brew update
+brew install awscli
+
 while read -r line; do
     FORMULA_NAME_WITH_RB_EXTENSION="${line/Formula\//}"
     FORMULA_NAME="${FORMULA_NAME_WITH_RB_EXTENSION/.rb/}"
