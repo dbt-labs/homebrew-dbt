@@ -33,21 +33,17 @@ jobs:
 
 workflows:
   version: 2
-  test-everything:
+  build-bottles:
     jobs:
       - bottle-mojave:
           filters:
             branches:
               only: master
       - bottle-high-sierra:
-          requires:
-            - bottle-mojave
           filters:
             branches:
               only: master
       - bottle-sierra:
-          requires:
-            - bottle-high-sierra
           filters:
             branches:
               only: master
