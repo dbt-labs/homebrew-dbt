@@ -1,7 +1,7 @@
 #!/bin/bash -eo pipefail
 
 # FILES_TO_BUILD=$(git diff --name-status HEAD~1 HEAD | grep '^A' | grep 'Formula' | cut -f2)
-FILES_TO_BUILD=Formula/dbt@0.14.1-rc2.rb
+FILES_TO_BUILD=Formula/dbt@0.14.2.rb
 
 [ -z "$FILES_TO_BUILD" ] && echo "No formulae to bottle right now." && exit 0
 
