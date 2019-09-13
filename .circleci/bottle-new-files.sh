@@ -13,7 +13,7 @@ while read -r line; do
     FORMULA_NAME="${FORMULA_NAME_WITH_RB_EXTENSION/.rb/}"
 
     echo "--------- BUILDING BOTTLES ---------"
-    brew install --build-bottle "fishtown-analytics/dbt/$FORMULA_NAME"
+    brew install --build-bottle "Formula/$FORMULA_NAME_WITH_RB_EXTENSION" #"fishtown-analytics/dbt/$FORMULA_NAME"
     brew bottle --json "fishtown-analytics/dbt/$FORMULA_NAME"
     brew bottle --merge --write "$(find . -name *.bottle.json)"
 
@@ -23,6 +23,7 @@ while read -r line; do
 
     echo "--------- COMMIT CHANGES ---------"
     cd /usr/local/Homebrew/Library/Taps/fishtown-analytics/homebrew-dbt
-    git push
+    git diff HEAD~1 # just show diff for now
+    # git push
 
 done <<< "$FILES_TO_BUILD"
