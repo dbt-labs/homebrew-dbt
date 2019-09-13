@@ -4,9 +4,12 @@ FILES_TO_BUILD=$(git diff --name-status HEAD~1 HEAD | grep '^[AM]' | grep 'Formu
 
 [ -z "$FILES_TO_BUILD" ] && echo "No formulae to bottle right now." && exit 0
 
+echo "Bottling $FILES_TO_BUILD"
+
 git config user.email "circleci@fishtownanalytics.com"
 git config user.name "CircleCI Bottling Bot"
 
+brew tap fishtown-analytics/dbt
 brew update
 brew install awscli
 
