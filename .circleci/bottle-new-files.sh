@@ -19,8 +19,8 @@ while read -r line; do
 
     echo "--------- BUILDING BOTTLES ---------"
     brew install --build-bottle "Formula/$FORMULA_NAME_WITH_RB_EXTENSION" #"fishtown-analytics/dbt/$FORMULA_NAME"
-    brew bottle --json "fishtown-analytics/dbt/$FORMULA_NAME"
-    brew bottle --merge --write "$(find . -name *.bottle.json)"
+    brew bottle --skip-relocation --root-url="http://bottles.getdbt.com" --json "fishtown-analytics/dbt/$FORMULA_NAME"
+    brew bottle --skip-relocation --root-url="http://bottles.getdbt.com" --merge --write "$(find . -name *.bottle.json)"
 
     echo "--------- SYNCING BOTTLES ---------"
     aws s3 cp *.json s3://bottles.getdbt.com
