@@ -246,11 +246,6 @@ class Dbt < Formula
     sha256 "f4526d078aedd5187d0508aa5f9a01eae6a48a470ed678406da94b4cd6524b7e"
   end
 
-  resource "pyarrow" do
-    url ""
-    sha256 ""
-  end
-
   resource "pyasn1" do
     url "https://files.pythonhosted.org/packages/ca/f8/2a60a2c88a97558bdd289b6dc9eb75b00bd90ff34155d681ba6dbbcb46b2/pyasn1-0.4.7.tar.gz"
     sha256 "a9495356ca1d66ed197a0f72b41eb1823cf7ea8b5bd07191673e8147aecf8604"
