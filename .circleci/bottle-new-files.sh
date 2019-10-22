@@ -26,9 +26,9 @@ while read -r line; do
     aws s3 cp *.json s3://bottles.getdbt.com
     aws s3 cp *.tar.gz s3://bottles.getdbt.com
 
-    echo "--------- COMMIT CHANGES ---------"
-    cd /usr/local/Homebrew/Library/Taps/fishtown-analytics/homebrew-dbt
-    git diff HEAD~1 # just show diff for now
+    # echo "--------- COMMIT CHANGES ---------"
+    # cd /usr/local/Homebrew/Library/Taps/fishtown-analytics/homebrew-dbt
+    # git diff HEAD~1 # just show diff for now
     # git push
 
 done <<< "$FILES_TO_BUILD"

@@ -1,4 +1,4 @@
-class DbtAT0150B1 < Formula
+class DbtAT0150B2 < Formula
   include Language::Python::Virtualenv
 
   desc "Data build tool"
