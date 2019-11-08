@@ -14,7 +14,6 @@ class DbtAT0150Rc1 < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com"
-    cellar :any_skip_relocation
     sha256 "991f250cca7904cc500eca4d438cfaf3ed21881dbaac556c3364c9da2e3d4222" => :mojave
     sha256 "0e9c9e41c576a9b0cce2d87794e44298894724be04e1ea0527536a52d686ad91" => :high_sierra
   end
