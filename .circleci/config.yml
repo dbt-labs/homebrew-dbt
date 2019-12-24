@@ -18,9 +18,9 @@ jobs:
 
     steps: *build-steps
 
-  bottle-sierra:
+  bottle-catalina:
     macos:
-      xcode: "9.2.0"
+      xcode: "11.3.0"
 
     steps: *build-steps
 
@@ -36,7 +36,7 @@ workflows:
           filters:
             branches:
               only: master
-      # - bottle-sierra:
-      #     filters:
-      #       branches:
-      #         only: master
+      - bottle-catalina:
+          filters:
+            branches:
+              only: master
