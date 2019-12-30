@@ -12,8 +12,8 @@ jobs:
             set -x
             echo "Checking git status..."
 
-            last_commit="$(git log -1 --pretty='%B')"
-            files_to_build="$(git diff --name-status 'HEAD~1' 'HEAD' | cat | grep '^[AM]' | cat | grep 'Formula' | cat | cut -f2 )"
+            last_commit=$(git log -1 --pretty='%B' | cat)
+            files_to_build=$(git diff --name-status 'HEAD~1' 'HEAD' | cat | grep '^[AM]' | cat | grep 'Formula' | cat | cut -f2 )
 
             echo "Done checking git status."
 
