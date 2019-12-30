@@ -56,10 +56,10 @@ workflows:
               only: master
       - bottle-mojave:
           requires:
-            - check-for-bottleable-commits
+            - has-bottleable-commits
       - bottle-high-sierra:
           requires:
-            - check-for-bottleable-commits
+            - has-bottleable-commits
       - bottle-catalina:
           requires:
-            - check-for-bottleable-commits
+            - has-bottleable-commits
