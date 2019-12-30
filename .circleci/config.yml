@@ -9,8 +9,12 @@ jobs:
       - run:
           name: Check for new commits that should be built
           command: |
+            echo "Checking git status..."
+
             last_commit="$(git log -1 --pretty=%B | cat)"
             files_to_build=$(git diff --name-status HEAD~1 HEAD | grep '^[AM]' | grep 'Formula' | cut -f2)
+
+            echo "Done checking git status."
 
             if [[ ${last_commit} == *[BOT]* ]]
             then
