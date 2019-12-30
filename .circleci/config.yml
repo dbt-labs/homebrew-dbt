@@ -1,6 +1,8 @@
 version: 2
 jobs:
   has-bottleable-commits:
+    docker:
+      - image: circleci/python
     steps:
       - run:
         name: Check for new commits that should be built
