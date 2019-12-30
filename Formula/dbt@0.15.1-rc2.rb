@@ -6,7 +6,7 @@ class DbtAT0151Rc2 < Formula
   url "https://files.pythonhosted.org/packages/df/45/61cd2509e90015c60fcbd92dc6aae0a094f8184dfebc79ccc4836790a50e/dbt-0.15.1rc2.tar.gz"
   sha256 "c95a30b08498f929edacc239e65a8f92cbc42ee0c619f8cc8ca5eda59dfd8161"
   version "0.15.1rc2"
-  revision 4
+  revision 5
 
   depends_on "python3"
   depends_on "openssl"
