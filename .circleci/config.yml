@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  has-bottleable-commits:
+  includes-bottleable-commits:
     docker:
       - image: circleci/python
     steps:
@@ -50,16 +50,16 @@ workflows:
   version: 2
   build-bottles:
     jobs:
-      - has-bottleable-commits:
+      - includes-bottleable-commits:
           filters:
             branches:
               only: master
       - bottle-mojave:
           requires:
-            - has-bottleable-commits
+            - includes-bottleable-commits
       - bottle-high-sierra:
           requires:
-            - has-bottleable-commits
+            - includes-bottleable-commits
       - bottle-catalina:
           requires:
-            - has-bottleable-commits
+            - includes-bottleable-commits
