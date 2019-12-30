@@ -24,6 +24,8 @@ while read -r line; do
     brew bottle --skip-relocation --root-url="http://bottles.getdbt.com" --merge --write "$(find . -name *.bottle.json)"
 
     echo "--------- SYNCING BOTTLES ---------"
+    rename 's/--/-/g' *.json
+    rename 's/--/-/g' *.tar.gz
     aws s3 cp *.json s3://bottles.getdbt.com
     aws s3 cp *.tar.gz s3://bottles.getdbt.com
 
