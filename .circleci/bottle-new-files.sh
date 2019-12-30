@@ -11,6 +11,7 @@ git config user.name "CircleCI Bottling Bot"
 
 brew tap fishtown-analytics/dbt
 brew update
+brew unlink python@2
 brew install awscli
 
 while read -r line; do
