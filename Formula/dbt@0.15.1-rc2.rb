@@ -16,9 +16,9 @@ class DbtAT0151Rc2 < Formula
     root_url "http://bottles.getdbt.com"
     cellar :any_skip_relocation
     rebuild 1
-    sha256 "bf3d072aaaf0f2588766e65c6b27f7854e009863214d9330317859eab1c7ed57" => :high_sierra
-    sha256 "1a206c035e44540b09eeaea89d27a9a4197f2bd85acb45eea4d2e2d53f1d7639" => :mojave
-    sha256 "294425491baa2f2c7c9500d94287d097538d80e21a0e1adae561257cc7cfa15c" => :catalina
+    sha256 "9d94204f5c8aba32c8b93afaf0db7795f39422abb950b204ba8e3b13f3dc6b5c" => :high_sierra
+    sha256 "fb58b74a00ee23c338098706c57a864a5b5afe524afa76bdaa3b1032c5b9354a" => :mojave
+    sha256 "3a3ef62d67b03b8433cf2ea72ec364ee991909af43b417458d6ab761c9c63685" => :catalina
   end
 
   resource "agate" do
