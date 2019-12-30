@@ -4,6 +4,8 @@ jobs:
     docker:
       - image: circleci/python
     steps:
+      - add_ssh_keys
+      - checkout
       - run:
         name: Check for new commits that should be built
         command: |
