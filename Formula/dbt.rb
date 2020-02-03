@@ -14,6 +14,9 @@ class Dbt < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com"
+    sha256 "24b3a89e8e3f44c5c4cbcb6aad618a2af92b8317843f1aba494ed0e28bf310cf" => :catalina
+    sha256 "b6429c9be82425fdd1acb3b7fe0ba0a7790740eae145da5a13a90f8f11225a1f" => :mojave
+    sha256 "914fe7fb289f9bf6ca5f2e15246b23610303dc85404566028c6ae2aac818c143" => :high_sierra
   end
 
   resource "agate" do
