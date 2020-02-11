@@ -46,6 +46,16 @@ jobs:
 
     steps: *build-steps
 
+  update-with-bot-commit:
+    docker:
+      - image: circleci/python
+    steps:
+      - add_ssh_keys
+      - checkout
+      - run:
+          name: Publish bottle information
+          command: bash -c .circleci/publish-bottle-info.sh
+
 workflows:
   version: 2.1
   build-bottles:
@@ -63,3 +73,9 @@ workflows:
       - bottle-catalina:
           requires:
             - includes-bottleable-commits
+      - update-with-bot-commit:
+          requires:
+            - includes-bottleable-commits
+            - bottle-mojave
+            - bottle-high-sierra
+            - bottle-catalina
