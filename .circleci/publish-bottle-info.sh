@@ -17,6 +17,9 @@ while read -r line; do
     FORMULA_NAME_WITH_RB_EXTENSION="${line/Formula\//}"
     FORMULA_NAME="${FORMULA_NAME_WITH_RB_EXTENSION/.rb/}"
 
+    # For now, skip the default formula
+    [[ "$FORMULA_NAME" == "dbt" ]] && continue
+
     [[ -z $FORMULA_NAME ]] && echo "No formula name found???" && exit 1
 
     echo "------ COLLECTING JSON FILES -------"
