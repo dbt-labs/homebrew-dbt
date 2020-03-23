@@ -9,21 +9,9 @@ class DbtAT0160 < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com"
-    sha256 "a5164de5a2d50b91dc4fb883e5141961aa8ecc01e564edc8ac379918b834df9d" => :catalina
-    sha256 "5eb89369ab4ba89a7186c13e1ff6fb7c8a7f1ca1fd3e43958f883f48b402f6a9" => :catalina
-    sha256 "58982e22496c19d8e8f797e598bc962ddbbe255a11ded3562c99f3ac9ca920a8" => :catalina
-    sha256 "863177ccca167eb255c17ca635a109de3bc5d08d3cc6567740881ccb23cff986" => :mojave
-    sha256 "d105c1c9a8c32a262451eb817dc28c1b6c6e860be4e43da96f31ed69fc5d6b6d" => :high_sierra
-    sha256 "7a42763af5cbe428b33b5d25c8d03fb157d743a7d1f9fae456bd157368a31a8e" => :mojave
-    sha256 "ddfd960fad9add48d232c2f6be5cb4b186ef4b40c6d11c20cac886f63edcdf63" => :high_sierra
-    sha256 "623ac490b746c1c1d302531027004e3edc5f679ab2759199b2df095a7f61fd28" => :catalina
-    sha256 "e43d35daf34f1666509ad69aefcccec6a2d2814fd3c07cc06d0391cef4105a10" => :mojave
-    sha256 "3db917b174416422b90b396449656a1a2152c10fa48cf45de98aed689e43584f" => :high_sierra
-    sha256 "ba22c685825645ff3c2790233dc237e0f1886d32a7bb202be5fdc6bf7422e509" => :mojave
-    sha256 "dea9197614c031e20411417a8e9827947828016d612f725d6513e1a3cab8c056" => :high_sierra
     sha256 "685364e7b6862d42cef36ef2541a3c989469e849aec8fa53a5e923c05a9ad0a9" => :catalina
-    sha256 "12e89b9ddf0b59776ce606cd6c65349e2649cb201f546d4547fc7c078ac6b53b" => :mojave
     sha256 "74c781cedfb64b9b1f2f94cad249a370afd72c81df5bbfbdd37103b99b1f6118" => :high_sierra
+    sha256 "7a42763af5cbe428b33b5d25c8d03fb157d743a7d1f9fae456bd157368a31a8e" => :mojave
   end
 
   depends_on "openssl@1.1"

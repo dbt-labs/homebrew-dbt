@@ -16,6 +16,9 @@ git config user.name "CircleCI Bottling Bot"
 while read -r line; do
     FORMULA_NAME_WITH_RB_EXTENSION="${line/Formula\//}"
     FORMULA_NAME="${FORMULA_NAME_WITH_RB_EXTENSION/.rb/}"
+    FORMULA_VERSION="${FORMULA_NAME/#dbt@/}"
+    FORMULA_VERSION_NOHYPHEN="${FORMULA_VERSION/-/}"
+    JSON_NAME="${FORMULA_NAME//./\.}-${FORMULA_VERSION_NOHYPHEN//./\.}.*\.json"
 
     # For now, skip the default formula
     [[ "$FORMULA_NAME" == "dbt" ]] && continue
@@ -25,7 +28,7 @@ while read -r line; do
     echo "------ COLLECTING JSON FILES -------"
     [[ -e json ]] && rm -r json
     mkdir -p json
-    JSON_FILES=$(python -m awscli s3 ls 's3://bottles.getdbt.com/' | awk '{print $4}' | grep "^${FORMULA_NAME}.*.json")
+    JSON_FILES=$(python -m awscli s3 ls 's3://bottles.getdbt.com/' | awk '{print $4}' | grep "${JSON_NAME}")
     while read -r json_path; do
         echo "copying s3://bottles.getdbt.com/${json_path}"
         python -m awscli s3 cp "s3://bottles.getdbt.com/${json_path}" ./json/
