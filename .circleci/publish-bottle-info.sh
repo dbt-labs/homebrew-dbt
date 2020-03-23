@@ -16,13 +16,17 @@ git config user.name "CircleCI Bottling Bot"
 while read -r line; do
     FORMULA_NAME_WITH_RB_EXTENSION="${line/Formula\//}"
     FORMULA_NAME="${FORMULA_NAME_WITH_RB_EXTENSION/.rb/}"
-    FORMULA_VERSION="${FORMULA_NAME/#dbt@/}"
-    FORMULA_VERSION_NOHYPHEN="${FORMULA_VERSION/-/}"
-    JSON_NAME="${FORMULA_NAME//./\.}-${FORMULA_VERSION_NOHYPHEN//./\.}.*\.json"
+    if [[ "$FORMULA_NAME" == "dbt" ]]; then
+        FORMULA_VERSION=$(grep '^  url' Formula/dbt.rb | head -1 | sed 's#.*/dbt-\([0-9].*\)\.tar\.gz"#\1#')
+        JSON_NAME="^dbt-${FORMULA_VERSION//./\.}_.*\.json"
+        COMMIT_MSG="[BOT] dbt ${FORMULA_VERSION} bottled"
+    else
+        FORMULA_VERSION="${FORMULA_NAME/#dbt@/}"
+        FORMULA_VERSION_NOHYPHEN="${FORMULA_VERSION/-/}"
+        JSON_NAME="${FORMULA_NAME//./\.}-${FORMULA_VERSION_NOHYPHEN//./\.}.*\.json"
+        COMMIT_MSG="[BOT] dbt ${FORMULA_NAME} bottled"
 
-    # For now, skip the default formula
-    [[ "$FORMULA_NAME" == "dbt" ]] && continue
-
+    fi
     [[ -z $FORMULA_NAME ]] && echo "No formula name found???" && exit 1
 
     echo "------ COLLECTING JSON FILES -------"
@@ -39,7 +43,7 @@ while read -r line; do
 
     echo "--------- COMMIT CHANGES -----------"
     git add $line
-    git commit -m "[BOT] dbt ${FORMULA_NAME} bottled"
+    git commit -m "${COMMIT_MSG}"
     git push
 
 done <<< "$FILES_BUILT"
