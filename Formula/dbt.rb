@@ -3,15 +3,13 @@ class Dbt < Formula
 
   desc "Data build tool"
   homepage "https://github.com/fishtown-analytics/dbt"
-  url "https://files.pythonhosted.org/packages/a8/ea/1921d47ef8fce3168550b865a6b21dca8bc817751bd1ab84fb370cf4b440/dbt-0.16.0.tar.gz"
-  sha256 "e817c17007f4ace0be730bfe0b2afd907360de2248616fe54ea0171d799dd73a"
+  url "https://files.pythonhosted.org/packages/44/76/526e4d70f90350580e6482ed9db428e51377743247fb1dddedcabc944327/dbt-0.16.1.tar.gz"
+  sha256 "bff0aec4dd8582317c248bc845212c2ea1783396e9572f65b60068cbcfdbcd6c"
   revision 1
 
   bottle do
     root_url "http://bottles.getdbt.com"
-    sha256 "afe8554701110e0d54aa4af8aeeb1e8f1b99a3aa92f48910214ce0d352e81fbf" => :high_sierra
-    sha256 "32162173e5fa998dcd3b8f824a55252cc1aee7f26f9932c78888e4a1ecd372f5" => :mojave
-    sha256 "14307768894da814af7eacd832c22956132c44f48e592418d1655eeb1f1a9962" => :catalina
+    # bottle hashes + versions go here
   end
 
   depends_on "openssl@1.1"
@@ -64,13 +62,13 @@ class Dbt < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/ff/e9/879bc23137b5c19f93c2133a6063874b83c8e1912ff1467a3d4331598921/cachetools-4.0.0.tar.gz"
-    sha256 "9a52dd97a85f257f4e4127f15818e71a0c7899f121b34591fcc1173ea79a0198"
+    url "https://files.pythonhosted.org/packages/30/62/88fda08df9053141647b6941141b71b4c2a23d0fabab485feb917428ab46/cachetools-4.1.0.tar.gz"
+    sha256 "1d057645db16ca7fe1f3bd953558897603d6f0b9c51ed9d11eb4d071ec4e2aab"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/41/bf/9d214a5af07debc6acf7f3f257265618f1db242a3f8e49a9b516f24523a6/certifi-2019.11.28.tar.gz"
-    sha256 "25b64c7da4cd7479594d035c08c2d809eb4aab3a26e5a990ea98cc450c320f1f"
+    url "https://files.pythonhosted.org/packages/b8/e2/a3a86a67c3fc8249ed305fc7b7d290ebe5e4d46ad45573884761ef4dea7b/certifi-2020.4.5.1.tar.gz"
+    sha256 "51fcb31174be6e6664c5f69e3e1691a2d72a1a12e90f872cbdb1567eb47b6519"
   end
 
   resource "cffi" do
@@ -89,33 +87,33 @@ class Dbt < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/be/60/da377e1bed002716fb2d5d1d1cab720f298cb33ecff7bf7adea72788e4e4/cryptography-2.8.tar.gz"
-    sha256 "3cda1f0ed8747339bbdf71b9f38ca74c7b592f24f65cdb3ab3765e4b02871651"
+    url "https://files.pythonhosted.org/packages/9d/0a/d7060601834b1a0a84845d6ae2cd59be077aafa2133455062e47c9733024/cryptography-2.9.tar.gz"
+    sha256 "0cacd3ef5c604b8e5f59bf2582c076c98a37fe206b31430d0cd08138aff0986e"
   end
 
   resource "dbt-bigquery" do
-    url "https://files.pythonhosted.org/packages/3b/d4/3a95fb3b6f1f6fc3640b87e6ba8a0489c62985d4de1ef0585c6c483da2b0/dbt-bigquery-0.16.0.tar.gz"
-    sha256 "93907b8400492d1c7515c49213ef841b2b4bbfb6319da7eae53fb675d5e01c70"
+    url "https://files.pythonhosted.org/packages/21/51/d16a3b0c7738b6e818d4be599a0f8e35bf0d677cfa091ce7e8a65dac5a6a/dbt-bigquery-0.16.1.tar.gz"
+    sha256 "3634b64e5968409dd0e5c81d7f5d881d921a43ea07213d436bb8a022de4b1287"
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/ef/f2/8791ed02e2271f7c650e0cc0c567301fa7efcf9cb4cd4cf6216a93155922/dbt-core-0.16.0.tar.gz"
-    sha256 "4121f9bec60183c11faa8777255fbb42d662516803fc0bfa3909bc43817019fc"
+    url "https://files.pythonhosted.org/packages/a6/d9/82a91e133ff144ded184fc9d99760d9d520270c9be1920ce729720172a76/dbt-core-0.16.1.tar.gz"
+    sha256 "249e838a6d78be13c3bc8eb1295e1139e0359b9a7ab0b464ab0c9107346ed133"
   end
 
   resource "dbt-postgres" do
-    url "https://files.pythonhosted.org/packages/f6/f0/fbef77bc8ff220121bea9cd1530df4ec685bbaada35ebc9d8720acd27b23/dbt-postgres-0.16.0.tar.gz"
-    sha256 "cb8b01fcdfab8ad6bbe51c32b39d48294be4ed3e61f21307321379ad5a23548f"
+    url "https://files.pythonhosted.org/packages/69/70/92d2d8a56bd875173b20a3947f6502d7472674069e842d03a8f205a3318a/dbt-postgres-0.16.1.tar.gz"
+    sha256 "b219b8d86d6d11db550d1901ac2f5e0235dfe3999d1cf359152aaa996b37808c"
   end
 
   resource "dbt-redshift" do
-    url "https://files.pythonhosted.org/packages/68/4e/7ae9d415f44157b903193dd8b85291144d133823ecdf3fd73ed2096684b0/dbt-redshift-0.16.0.tar.gz"
-    sha256 "83d475266ce9f5d0bae64394c0d5d55808e4165ea8b0a649800e7bf5ffddcafe"
+    url "https://files.pythonhosted.org/packages/ea/9d/ec0ae6761b4663a3eda52bcc7809ccff8cff4db22f5804250943b26942d1/dbt-redshift-0.16.1.tar.gz"
+    sha256 "bc1ce34ba82093d4d07c39ee1afcc6d3363e44fa318b36e25d3aea039114b344"
   end
 
   resource "dbt-snowflake" do
-    url "https://files.pythonhosted.org/packages/cf/14/d12ca854fe471e4b0bd7d12b8f0cc4b0b89fe8392451727c8a173300edb5/dbt-snowflake-0.16.0.tar.gz"
-    sha256 "40448cd308dead1171176d4d7fc1a460d56479fdf5e0e885bccdc63a1a042e89"
+    url "https://files.pythonhosted.org/packages/03/2a/7d9822efe80b03c8b7572e9e113802559528234429c2d335b499b669d56d/dbt-snowflake-0.16.1.tar.gz"
+    sha256 "9aa36a89404e4d111002ad8f246b962f2a858f6e2c1fde99e3a5c2f9da9a51c1"
   end
 
   resource "decorator" do
@@ -134,8 +132,8 @@ class Dbt < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/e9/ae/dec8a2de5682b56ad51f541f2487db09843ae93b4dbd68b33eed0bf6f9e2/google-auth-1.11.3.tar.gz"
-    sha256 "ec172006e626bb90f6069e9358c373bc991a15da6cc55276986d9ecd29235b15"
+    url "https://files.pythonhosted.org/packages/b5/e6/953b6afdb2e43c245067bb51940df21d1192451ba725c9093e1fafcefbae/google-auth-1.13.1.tar.gz"
+    sha256 "a5ee4c40fef77ea756cf2f1c0adcf475ecb53af6700cf9c133354cdc9b267148"
   end
 
   resource "google-cloud-bigquery" do
@@ -154,13 +152,13 @@ class Dbt < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/05/46/168fd780f594a4d61122f7f3dc0561686084319ad73b4febbf02ae8b32cf/googleapis-common-protos-1.51.0.tar.gz"
-    sha256 "013c91704279119150e44ef770086fdbba158c1f978a6402167d47d5409e226e"
+    url "https://files.pythonhosted.org/packages/eb/ee/e59e74ecac678a14d6abefb9054f0bbcb318a6452a30df3776f133886d7d/googleapis-common-protos-1.6.0.tar.gz"
+    sha256 "e61b8ed5e36b976b487c6e7b15f31bb10c7a0ca7bd5c0e837f4afab64b53a0c6"
   end
 
   resource "hologram" do
-    url "https://files.pythonhosted.org/packages/0a/fd/8c206485b9c94dc0e4de0a16dd25d854eb90415043f3921660a252ac449e/hologram-0.0.5.tar.gz"
-    sha256 "6e9eb7ee14c17ae90e0fc1522e59ae97477494ec6772602807d94339df0bcee6"
+    url "https://files.pythonhosted.org/packages/98/5a/1afb199840b189963a69192bb58e0c6aa0ce49d2bc7291d9cd2de556280e/hologram-0.0.6.tar.gz"
+    sha256 "3f5ee16a574a0c5dd9af894924cb841cf2100503f929783a8fc6707a2e2f3746"
   end
 
   resource "idna" do
@@ -174,8 +172,8 @@ class Dbt < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/0d/e4/638f3bde506b86f62235c595073066e7b8472fc9ee2b8c6491347f31d726/importlib_metadata-1.5.0.tar.gz"
-    sha256 "06f5b3a99029c7134207dd882428a66992a9de2bef7c2b699b5641f9886c3302"
+    url "https://files.pythonhosted.org/packages/b4/1b/baab42e3cd64c9d5caac25a9d6c054f8324cdc38975a44d600569f1f7158/importlib_metadata-1.6.0.tar.gz"
+    sha256 "34513a8a0c4962bc66d35b359558fd8a5e10cd472d37aec5f66858addef32c1e"
   end
 
   resource "isodate" do
@@ -184,8 +182,8 @@ class Dbt < Formula
   end
 
   resource "Jinja2" do
-    url "https://files.pythonhosted.org/packages/d8/03/e491f423379ea14bb3a02a5238507f7d446de639b623187bccc111fbecdf/Jinja2-2.11.1.tar.gz"
-    sha256 "93187ffbc7808079673ef52771baa950426fd664d3aad1d0fa3e95644360e250"
+    url "https://files.pythonhosted.org/packages/64/a7/45e11eebf2f15bf987c3bc11d37dcc838d9dc81250e67e4c5968f6008b6c/Jinja2-2.11.2.tar.gz"
+    sha256 "89aab215427ef59c34ad58735269eb58b1a5808103067f7bb9d5836c651b3bb0"
   end
 
   resource "jmespath" do
@@ -259,8 +257,8 @@ class Dbt < Formula
   end
 
   resource "psycopg2-binary" do
-    url "https://files.pythonhosted.org/packages/00/7b/a623f49b3248957e7eaaac52eba1117209775d54e7a8501c460473a7ba4f/psycopg2-binary-2.8.4.tar.gz"
-    sha256 "3a2522b1d9178575acee4adf8fd9f979f9c0449b00b4164bb63c3475ea6528ed"
+    url "https://files.pythonhosted.org/packages/97/00/ed4c82364741031d745867f83820d4f373aa891098a5785841850491c9ba/psycopg2-binary-2.8.5.tar.gz"
+    sha256 "ccdc6a87f32b491129ada4b87a43b1895cf2c20fdb7f98ad979647506ffc41b6"
   end
 
   resource "py" do
@@ -299,13 +297,13 @@ class Dbt < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/a2/56/0404c03c83cfcca229071d3c921d7d79ed385060bbe969fde3fd8f774ebd/pyparsing-2.4.6.tar.gz"
-    sha256 "4c830582a84fb022400b85429791bc551f1f4871c33f23e44f353119e92f969f"
+    url "https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz"
+    sha256 "c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1"
   end
 
   resource "pyrsistent" do
-    url "https://files.pythonhosted.org/packages/90/aa/cdcf7ef88cc0f831b6f14c8c57318824c9de9913fe8de38e46a98c069a35/pyrsistent-0.15.7.tar.gz"
-    sha256 "cdc7b5e3ed77bed61270a47d35434a30617b9becdf2478af76ad2c6ade307280"
+    url "https://files.pythonhosted.org/packages/9f/0d/cbca4d0bbc5671822a59f270e4ce3f2195f8a899c97d0d5abb81b191efb5/pyrsistent-0.16.0.tar.gz"
+    sha256 "28669905fe725965daa16184933676547c5bb40a5153055a8dee2a4bd7933ad3"
   end
 
   resource "pytest" do
@@ -379,8 +377,8 @@ class Dbt < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/e7/dd/f1713bc6638cc3a6a23735eff6ee09393b44b96176d3296693ada272a80b/typing_extensions-3.7.4.1.tar.gz"
-    sha256 "091ecc894d5e908ac75209f10d5b4f118fbdb2eb1ede6a63544054bb1edb41f2"
+    url "https://files.pythonhosted.org/packages/6a/28/d32852f2af6b5ead85d396249d5bdf450833f3a69896d76eb480d9c5e406/typing_extensions-3.7.4.2.tar.gz"
+    sha256 "79ee589a3caca649a9bfd2a8de4709837400dfa00b6cc81962a1e6a1815969ae"
   end
 
   resource "urllib3" do
