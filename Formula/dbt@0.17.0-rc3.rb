@@ -252,8 +252,8 @@ class DbtAT0170Rc3 < Formula
   end
 
   resource "protobuf" do
-    url ""
-    sha256 ""
+    url "https://files.pythonhosted.org/packages/c9/d5/e6e789e50e478463a84bd1cd
+    sha256 "c77c974d1dadf246d789f6dad1c24426137c9091e930dbf50e0a29c1fcf00b1f"
   end
 
   resource "psycopg2-binary" do
