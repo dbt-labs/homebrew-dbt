@@ -252,7 +252,7 @@ class DbtAT0170Rc3 < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/c9/d5/e6e789e50e478463a84bd1cd
+    url "https://files.pythonhosted.org/packages/c9/d5/e6e789e50e478463a84bd1cdb45aa408d49a2e1aaffc45da43d10722c007/protobuf-3.11.3.tar.gz"
     sha256 "c77c974d1dadf246d789f6dad1c24426137c9091e930dbf50e0a29c1fcf00b1f"
   end
 
