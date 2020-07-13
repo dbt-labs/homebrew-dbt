@@ -31,6 +31,7 @@ jobs:
       - checkout
       - run:
           name: Build and run tests
+          no_output_timeout: 30m
           command: |
             bash -c .circleci/bottle-new-files.sh
 
