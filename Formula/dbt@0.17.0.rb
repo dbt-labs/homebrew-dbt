@@ -9,15 +9,13 @@ class DbtAT0170 < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com"
-    sha256 "b2406ee8d400246a9154efd6e1e0191043deff8e0c1436d97d2c56972fc23851" => :catalina
-    sha256 "139d4dd90a60780f02f09b183f14d39ce77ab53f687f936b70b9f92205f5111a" => :high_sierra
-    sha256 "cfc3bdb0282c7eaa0837c70172f5d8feb38a13d9c935d2395b079d4f2d2b5c63" => :mojave
+    # bottle hashes + versions go here
   end
 
   depends_on "libffi"
   depends_on "openssl@1.1"
   depends_on "postgresql"
-  depends_on "python"
+  depends_on "python@3.8"
 
   resource "dbt-bigquery" do # dbt-bigquery==0.17.0
     url "https://files.pythonhosted.org/packages/56/77/bc52dc6c9ccf874337416edfc12fbc164601ab25db7897bccde098f52acd/dbt-bigquery-0.17.0.tar.gz"
