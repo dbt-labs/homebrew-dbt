@@ -9,7 +9,9 @@ class DbtAT0170 < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com"
-    # bottle hashes + versions go here
+    sha256 "473d1b19cfdd8bd0c4cc1c98256af5f7d9537c4eac2876c451ad7a0aa6cb900d" => :mojave
+    sha256 "1af4a0717b33d17c41a8430870ab91f01556e16d9578f4dd263aad61dbb494ad" => :catalina
+    sha256 "2e32d438d64f2f5885d5a5648593b5bf4f5a9d1cf1416cfb9f5467c89b2ee7b7" => :high_sierra
   end
 
   depends_on "libffi"
