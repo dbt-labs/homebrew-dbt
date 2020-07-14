@@ -9,6 +9,7 @@ class Dbt < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com"
+    # bottle hashes + versions go here
   end
 
   depends_on "libffi"
