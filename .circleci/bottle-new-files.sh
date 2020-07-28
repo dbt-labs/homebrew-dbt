@@ -10,6 +10,8 @@ git config user.email "circleci@fishtownanalytics.com"
 git config user.name "CircleCI Bottling Bot"
 
 brew install rename
+brew uninstall yarn
+brew uninstall node
 
 brew tap fishtown-analytics/dbt
 brew update
