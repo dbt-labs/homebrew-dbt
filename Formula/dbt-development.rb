@@ -3,7 +3,7 @@ class DbtDevelopment < Formula
 
   desc "Data build tool"
   homepage "https://github.com/fishtown-analytics/dbt"
-  url "https://github.com/fishtown-analytics/dbt.git", :branch => "development"
+  url "https://github.com/fishtown-analytics/dbt.git", :branch => "dev/kiyoshi-kuromiya"
   version "3"
 
   bottle do
