@@ -157,9 +157,9 @@ class DbtAT0190Rc2 < Formula
     sha256 "560716c807117394da12cecb0a54da5a451b5cf9866f1d37e9a5e2329a665351"
   end
 
-  resource "grpcio" do # grpcio==1.34.1
-    url "https://files.pythonhosted.org/packages/81/5e/168a7fa23a025beed6b7daa0981ace55e394a136db3082faed7d6cba4556/grpcio-1.34.1.tar.gz"
-    sha256 "1c746a3cd8a830d8d916a9d0476a786aaa98c5cc2a096344af2be955e439f8ac"
+  resource "grpcio" do # grpcio==1.35.0
+    url "https://files.pythonhosted.org/packages/20/4b/0b810309628e354f53b3c90af063f268d74e49902a41196db27f1fb52f06/grpcio-1.35.0.tar.gz"
+    sha256 "7bd0ebbb14dde78bf66a1162efd29d3393e4e943952e2f339757aa48a184645c"
   end
 
   resource "hologram" do # hologram==0.0.12
@@ -391,14 +391,25 @@ class DbtAT0190Rc2 < Formula
     venv = virtualenv_create(libexec, "python3")
 
     resources.each do |r|
-      # workaround for install snowflake-connector-python 
-      # package w/o build-system deps (e.g. pyarrow)
       if r.name == "snowflake-connector-python"
-        r.stage {
+        # workaround for installing `snowflake-connector-python`
+        # package w/o build-system deps (e.g. pyarrow)
+        # adds the `--no-use-pep517` parameter
+        r.stage do
+          venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
+            "-v", "--no-deps", "--no-binary", ":all:", "--ignore-installed", "--no-use-pep517", Pathname.pwd
+        end
+      elsif r.name == "grpcio" && MacOS.version >= :big_sur
+        # workaround for installing `grpcio`, a dependency of `google-cloud-bigquery`, on Big Sur
+        # https://github.com/grpc/grpc/pull/24998
+        r.stage do
+          inreplace Pathname.pwd/"setup.py",
+            "if mac_target and (pkg_resources.parse_version(mac_target) <",
+            "if mac_target and (pkg_resources.parse_version(str(mac_target)) <"
           venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
             "-v", "--no-deps", "--no-binary", ":all:",
-            "--ignore-installed", "--no-use-pep517", Pathname.pwd
-        }
+            "--ignore-installed", Pathname.pwd
+        end
       else
         venv.pip_install r
       end
