@@ -8,14 +8,14 @@ class DbtAT090 < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
-    sha256 "553dbb8cf751c2fbbfc795c9205b5f512684ad9f78f562516ad4f2d37a0ea10d" => :high_sierra
-    sha256 "cd49187105d9d585427ddc1cbddf0fae08be040beaa87571b3b0b4b85512d6a5" => :sierra
-    sha256 "2899b7553d7ad12dc698bf7c6df1308deaf8158d1a5557de3554e3c8f86113fa" => :el_capitan
+    sha256 high_sierra: "553dbb8cf751c2fbbfc795c9205b5f512684ad9f78f562516ad4f2d37a0ea10d"
+    sha256 sierra:      "cd49187105d9d585427ddc1cbddf0fae08be040beaa87571b3b0b4b85512d6a5"
+    sha256 el_capitan:  "2899b7553d7ad12dc698bf7c6df1308deaf8158d1a5557de3554e3c8f86113fa"
   end
 
-  depends_on "python3"
   depends_on "openssl"
   depends_on "postgresql"
+  depends_on "python3"
 
   resource "amqp" do
     url "https://files.pythonhosted.org/packages/cc/a4/f265c6f9a7eb1dd45d36d9ab775520e07ff575b11ad21156f9866da047b2/amqp-1.4.9.tar.gz"

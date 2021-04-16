@@ -9,9 +9,9 @@ class DbtAT0161 < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com"
-    sha256 "aafa68f95b65233cb444ad47fe00d5c8a3ac8c2377763c42e6489da2c75d08d7" => :catalina
-    sha256 "881c2a1a6fe4427a2132a90628995e983b28f367762a6f18138e7756e18c651d" => :high_sierra
-    sha256 "8a454583736f3c39a5847a8f19f9511edfc5dd931b536de2c9d869361c4062c3" => :mojave
+    sha256 catalina:    "aafa68f95b65233cb444ad47fe00d5c8a3ac8c2377763c42e6489da2c75d08d7"
+    sha256 high_sierra: "881c2a1a6fe4427a2132a90628995e983b28f367762a6f18138e7756e18c651d"
+    sha256 mojave:      "8a454583736f3c39a5847a8f19f9511edfc5dd931b536de2c9d869361c4062c3"
   end
 
   depends_on "openssl@1.1"

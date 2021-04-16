@@ -9,9 +9,9 @@ class DbtAT0181B3 < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com"
-    sha256 "d77f89256e4cb7f17828cd65058555846f4bcad772dd8f3867022f45ab169737" => :catalina
-    sha256 "453f51c912cc8ce65f367a0da5c523f773325e6657c9bfb544b94f828cc5a9c3" => :high_sierra
-    sha256 "06049f4cbf5fdb991ae8f1cfddd1b25254b63250ee8a9f174f805e5fa2f6b928" => :mojave
+    sha256 catalina:    "d77f89256e4cb7f17828cd65058555846f4bcad772dd8f3867022f45ab169737"
+    sha256 high_sierra: "453f51c912cc8ce65f367a0da5c523f773325e6657c9bfb544b94f828cc5a9c3"
+    sha256 mojave:      "06049f4cbf5fdb991ae8f1cfddd1b25254b63250ee8a9f174f805e5fa2f6b928"
   end
 
   depends_on "libffi"

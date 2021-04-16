@@ -9,9 +9,9 @@ class DbtAT0172Rc1 < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com"
-    sha256 "babb165c1ea72304c19bc9b2e8aea02a847f8837a0b9e81feb18239323b653e0" => :high_sierra
-    sha256 "736b2c6f233eb6637f1d5462f726c6aa1ae15aaa4cbf921778261fb05b599e32" => :catalina
-    sha256 "93f49dda08509c59ad64bc7e21db2ecde2b707905fefedd417bfc9eeb1c83958" => :mojave
+    sha256 high_sierra: "babb165c1ea72304c19bc9b2e8aea02a847f8837a0b9e81feb18239323b653e0"
+    sha256 catalina:    "736b2c6f233eb6637f1d5462f726c6aa1ae15aaa4cbf921778261fb05b599e32"
+    sha256 mojave:      "93f49dda08509c59ad64bc7e21db2ecde2b707905fefedd417bfc9eeb1c83958"
   end
 
   depends_on "libffi"
@@ -365,7 +365,7 @@ class DbtAT0172Rc1 < Formula
   end
 
   def install
-    virtualenv_install_with_resources :using => "python3"
+    virtualenv_install_with_resources using: "python3"
     bin.install_symlink "#{libexec}/bin/dbt" => "dbt"
   end
 

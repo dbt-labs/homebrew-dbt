@@ -4,18 +4,18 @@ class DbtAT0141Rc2 < Formula
   desc "Data build tool"
   homepage "https://github.com/fishtown-analytics/dbt"
   url "https://files.pythonhosted.org/packages/00/bc/f5e14f635bfccde82a7e0c0a19a5f6b4aa863c391919970b97be8c770175/dbt-0.14.1rc2.tar.gz"
-  sha256 "bdb6fd1c0578a83556ece68f4636db1d2e5ad1c1d0be59535dfd7decac742f87"
   version "0.14.1rc2"
+  sha256 "bdb6fd1c0578a83556ece68f4636db1d2e5ad1c1d0be59535dfd7decac742f87"
   revision 0
 
-  depends_on "python3"
-  depends_on "openssl"
-  depends_on "postgresql"
-
   bottle do
-    cellar :any
-    sha256 "8e5993a67a5820effdd33e80a68565a435ab4661e5d40c69726a1dc8f6297a83" => :high_sierra
+    sha256 cellar: :any, high_sierra: "8e5993a67a5820effdd33e80a68565a435ab4661e5d40c69726a1dc8f6297a83"
   end
+
+  depends_on "openssl"
+
+  depends_on "postgresql"
+  depends_on "python3"
 
   resource "agate" do
     url "https://files.pythonhosted.org/packages/d4/1c/99fb34c81c68012c71e8d35a1f16a6b25952322e23c911c81327c8464be8/agate-1.6.1.tar.gz"
@@ -361,4 +361,3 @@ class DbtAT0141Rc2 < Formula
     system "#{bin}/dbt", "test"
   end
 end
-  

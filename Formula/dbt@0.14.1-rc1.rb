@@ -4,18 +4,19 @@ class DbtAT0141Rc1 < Formula
   desc "Data build tool"
   homepage "https://github.com/fishtown-analytics/dbt"
   url "https://files.pythonhosted.org/packages/2b/d0/501942e6a09b04d3dafc206d828254c0148d8a7b0188e6009992d981c5ce/dbt-0.14.1rc1.tar.gz"
-  sha256 "b221cd754b36b205bc61e1c45825cbcb26ed8475a8da6e5a87fb7607f7fbdeea"
   version "0.14.1rc1"
-
-  depends_on "python3"
-  depends_on "openssl"
-  depends_on "postgresql"
+  sha256 "b221cd754b36b205bc61e1c45825cbcb26ed8475a8da6e5a87fb7607f7fbdeea"
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
-    sha256 "44bfdbed494135d9b7112a2f0a8c5d338f0381c1b0f0c95621b362167d077893" => :high_sierra
-    sha256 "e1e1aa2ca56e4015a2cf97ef6a81b6fd07dec7fae3bdd3eb1e3659da21737581" => :sierra
+    sha256 high_sierra: "44bfdbed494135d9b7112a2f0a8c5d338f0381c1b0f0c95621b362167d077893"
+    sha256 sierra:      "e1e1aa2ca56e4015a2cf97ef6a81b6fd07dec7fae3bdd3eb1e3659da21737581"
   end
+
+  depends_on "openssl"
+
+  depends_on "postgresql"
+  depends_on "python3"
 
   resource "agate" do
     url "https://files.pythonhosted.org/packages/d4/1c/99fb34c81c68012c71e8d35a1f16a6b25952322e23c911c81327c8464be8/agate-1.6.1.tar.gz"

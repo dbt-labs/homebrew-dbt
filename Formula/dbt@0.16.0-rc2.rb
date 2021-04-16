@@ -9,9 +9,9 @@ class DbtAT0160Rc2 < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com"
-    sha256 "ddfd960fad9add48d232c2f6be5cb4b186ef4b40c6d11c20cac886f63edcdf63" => :high_sierra
-    sha256 "12e89b9ddf0b59776ce606cd6c65349e2649cb201f546d4547fc7c078ac6b53b" => :mojave
-    sha256 "58982e22496c19d8e8f797e598bc962ddbbe255a11ded3562c99f3ac9ca920a8" => :catalina
+    sha256 high_sierra: "ddfd960fad9add48d232c2f6be5cb4b186ef4b40c6d11c20cac886f63edcdf63"
+    sha256 mojave:      "12e89b9ddf0b59776ce606cd6c65349e2649cb201f546d4547fc7c078ac6b53b"
+    sha256 catalina:    "58982e22496c19d8e8f797e598bc962ddbbe255a11ded3562c99f3ac9ca920a8"
   end
 
   depends_on "openssl@1.1"

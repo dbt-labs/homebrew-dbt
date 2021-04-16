@@ -8,13 +8,13 @@ class DbtAT0120 < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
-    sha256 "d8f328cc469c46e47cf8447aa139ec32620e431ec9ea6ed97e4c7e2742524a58" => :high_sierra
-    sha256 "c918501c43d86d447e523013b6cae2fbf205899decf8b7a9e23083a99ede5d63" => :sierra
+    sha256 high_sierra: "d8f328cc469c46e47cf8447aa139ec32620e431ec9ea6ed97e4c7e2742524a58"
+    sha256 sierra:      "c918501c43d86d447e523013b6cae2fbf205899decf8b7a9e23083a99ede5d63"
   end
 
-  depends_on "python3"
   depends_on "openssl"
   depends_on "postgresql"
+  depends_on "python3"
 
   resource "agate" do
     url "https://files.pythonhosted.org/packages/d4/1c/99fb34c81c68012c71e8d35a1f16a6b25952322e23c911c81327c8464be8/agate-1.6.1.tar.gz"
@@ -103,7 +103,7 @@ class DbtAT0120 < Formula
 
   resource "google-api-core" do
     url "https://files.pythonhosted.org/packages/5e/1b/34d4dd4a7c0d944e50966025716e21e53f654bf4421cdc23c12cdc56a1ea/google-api-core-1.5.2.tar.gz"
-   sha256 "383993eba1036c942f0d87497bac646b55ad8b4337d41527ce50e640768d769a"
+    sha256 "383993eba1036c942f0d87497bac646b55ad8b4337d41527ce50e640768d769a"
   end
 
   resource "google-auth" do
