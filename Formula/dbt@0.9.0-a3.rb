@@ -4,19 +4,19 @@ class DbtAT090A3 < Formula
   desc "Data build tool"
   homepage "https://github.com/fishtown-analytics/dbt"
   url "https://files.pythonhosted.org/packages/27/50/ce128d99efb93330a16fccc714c8fac8d94143e66f2f3ab574fb26d3796c/dbt-0.9.0a3.tar.gz"
-  sha256 "05aadd159763c9fe67f232e302f19ea356f0cd2121428094278df89b1dc359f7"
   version "0.9.0-a3"
+  sha256 "05aadd159763c9fe67f232e302f19ea356f0cd2121428094278df89b1dc359f7"
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
-    sha256 "d59a2c2de46bceba9904271c0588c31606be6f0eec5ba37f422c71dbeac5e580" => :high_sierra
-    sha256 "db6e436d896a05cedf10142e2fcb300addcb90a3cff13f3916bff7daa432fdc7" => :sierra
-    sha256 "0b1e750dad449e72614296840bdaa8b1d30655a82943c67c373316537e5e62ce" => :el_capitan
+    sha256 high_sierra: "d59a2c2de46bceba9904271c0588c31606be6f0eec5ba37f422c71dbeac5e580"
+    sha256 sierra:      "db6e436d896a05cedf10142e2fcb300addcb90a3cff13f3916bff7daa432fdc7"
+    sha256 el_capitan:  "0b1e750dad449e72614296840bdaa8b1d30655a82943c67c373316537e5e62ce"
   end
 
-  depends_on "python3"
   depends_on "openssl"
   depends_on "postgresql"
+  depends_on "python3"
 
   resource "amqp" do
     url "https://files.pythonhosted.org/packages/cc/a4/f265c6f9a7eb1dd45d36d9ab775520e07ff575b11ad21156f9866da047b2/amqp-1.4.9.tar.gz"

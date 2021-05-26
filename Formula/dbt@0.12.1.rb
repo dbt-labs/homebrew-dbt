@@ -10,9 +10,9 @@ class DbtAT0121 < Formula
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
   end
 
-  depends_on "python3"
   depends_on "openssl"
   depends_on "postgresql"
+  depends_on "python3"
 
   resource "agate" do
     url "https://files.pythonhosted.org/packages/d4/1c/99fb34c81c68012c71e8d35a1f16a6b25952322e23c911c81327c8464be8/agate-1.6.1.tar.gz"
@@ -101,7 +101,7 @@ class DbtAT0121 < Formula
 
   resource "google-api-core" do
     url "https://files.pythonhosted.org/packages/5e/1b/34d4dd4a7c0d944e50966025716e21e53f654bf4421cdc23c12cdc56a1ea/google-api-core-1.5.2.tar.gz"
-   sha256 "383993eba1036c942f0d87497bac646b55ad8b4337d41527ce50e640768d769a"
+    sha256 "383993eba1036c942f0d87497bac646b55ad8b4337d41527ce50e640768d769a"
   end
 
   resource "google-auth" do

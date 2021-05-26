@@ -10,9 +10,9 @@ class DbtAT091 < Formula
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
   end
 
-  depends_on "python3"
   depends_on "openssl"
   depends_on "postgresql"
+  depends_on "python3"
 
   resource "amqp" do
     url "https://files.pythonhosted.org/packages/cc/a4/f265c6f9a7eb1dd45d36d9ab775520e07ff575b11ad21156f9866da047b2/amqp-1.4.9.tar.gz"

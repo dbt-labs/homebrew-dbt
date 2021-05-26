@@ -8,14 +8,14 @@ class DbtAT0100 < Formula
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
-    sha256 "16955279a152957e267aee8aa3f1f6bb72f9cea8fddd0e493c4360af3ca09366" => :high_sierra
-    sha256 "8fb357396565dbc53dd901d68e5e0de9f58e8e2fc867a7102990834eff8fd905" => :sierra
-    sha256 "35e399ef168fef0fc41a7365b1860b8914e1c0d69fa5822f0e3249d76aca37a2" => :el_capitan
+    sha256 high_sierra: "16955279a152957e267aee8aa3f1f6bb72f9cea8fddd0e493c4360af3ca09366"
+    sha256 sierra:      "8fb357396565dbc53dd901d68e5e0de9f58e8e2fc867a7102990834eff8fd905"
+    sha256 el_capitan:  "35e399ef168fef0fc41a7365b1860b8914e1c0d69fa5822f0e3249d76aca37a2"
   end
 
-  depends_on "python3"
   depends_on "openssl"
   depends_on "postgresql"
+  depends_on "python3"
 
   resource "agate" do
     url "https://files.pythonhosted.org/packages/72/37/48192f2cb18c7ebe413f7410783b64a6236d20a4461f5c36f5efcb793f89/agate-1.6.0.tar.gz"

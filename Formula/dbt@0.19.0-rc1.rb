@@ -391,14 +391,14 @@ class DbtAT0190Rc1 < Formula
     venv = virtualenv_create(libexec, "python3")
 
     resources.each do |r|
-      # workaround for install snowflake-connector-python 
+      # workaround for install snowflake-connector-python
       # package w/o build-system deps (e.g. pyarrow)
       if r.name == "snowflake-connector-python"
-        r.stage {
+        r.stage do
           venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
             "-v", "--no-deps", "--no-binary", ":all:",
             "--ignore-installed", "--no-use-pep517", Pathname.pwd
-        }
+        end
       else
         venv.pip_install r
       end

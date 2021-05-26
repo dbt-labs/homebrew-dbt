@@ -3,16 +3,16 @@ class DbtDevelopment < Formula
 
   desc "Data build tool"
   homepage "https://github.com/fishtown-analytics/dbt"
-  url "https://github.com/fishtown-analytics/dbt.git", :branch => "dev/kiyoshi-kuromiya"
+  url "https://github.com/fishtown-analytics/dbt.git", branch: "dev/kiyoshi-kuromiya"
   version "3"
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"
   end
 
-  depends_on "python3"
   depends_on "openssl"
   depends_on "postgresql"
+  depends_on "python3"
 
   resource "agate" do
     url "https://files.pythonhosted.org/packages/72/37/48192f2cb18c7ebe413f7410783b64a6236d20a4461f5c36f5efcb793f89/agate-1.6.0.tar.gz"

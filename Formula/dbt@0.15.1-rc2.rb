@@ -4,20 +4,21 @@ class DbtAT0151Rc2 < Formula
   desc "Data build tool"
   homepage "https://github.com/fishtown-analytics/dbt"
   url "https://files.pythonhosted.org/packages/df/45/61cd2509e90015c60fcbd92dc6aae0a094f8184dfebc79ccc4836790a50e/dbt-0.15.1rc2.tar.gz"
-  sha256 "c95a30b08498f929edacc239e65a8f92cbc42ee0c619f8cc8ca5eda59dfd8161"
   version "0.15.1rc2"
+  sha256 "c95a30b08498f929edacc239e65a8f92cbc42ee0c619f8cc8ca5eda59dfd8161"
   revision 5
-
-  depends_on "python3"
-  depends_on "openssl"
-  depends_on "postgresql"
 
   bottle do
     root_url "http://bottles.getdbt.com"
-    sha256 "9d94204f5c8aba32c8b93afaf0db7795f39422abb950b204ba8e3b13f3dc6b5c" => :high_sierra
-    sha256 "fb58b74a00ee23c338098706c57a864a5b5afe524afa76bdaa3b1032c5b9354a" => :mojave
-    sha256 "3a3ef62d67b03b8433cf2ea72ec364ee991909af43b417458d6ab761c9c63685" => :catalina
+    sha256 high_sierra: "9d94204f5c8aba32c8b93afaf0db7795f39422abb950b204ba8e3b13f3dc6b5c"
+    sha256 mojave:      "fb58b74a00ee23c338098706c57a864a5b5afe524afa76bdaa3b1032c5b9354a"
+    sha256 catalina:    "3a3ef62d67b03b8433cf2ea72ec364ee991909af43b417458d6ab761c9c63685"
   end
+
+  depends_on "openssl"
+
+  depends_on "postgresql"
+  depends_on "python3"
 
   resource "agate" do
     url "https://files.pythonhosted.org/packages/d4/1c/99fb34c81c68012c71e8d35a1f16a6b25952322e23c911c81327c8464be8/agate-1.6.1.tar.gz"
@@ -433,4 +434,3 @@ class DbtAT0151Rc2 < Formula
     system "#{bin}/dbt", "test"
   end
 end
-
