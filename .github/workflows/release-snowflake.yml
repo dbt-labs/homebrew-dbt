@@ -24,6 +24,13 @@ jobs:
         with:
           python-version: "3.8"
           
+      - name: Set formula file name suffix
+        id: file_name
+        env:
+          FILE_NAME_SUFFIX: "${{ github.event.inputs.release_type == 'final' && github.event.inputs.version_number || github.event.client_payload.version_number-github.event.inputs.release_type }}"
+        run: |
+          echo ::set-output name=FILE_NAME_SUFFIX::$FILE_NAME_SUFFIX
+          
       - name: Create PR branch
         run: |
           git checkout -b bumping-version/${{ env.VERSION_NUMBER_COMPLETE }}_$GITHUB_RUN_ID
@@ -37,9 +44,14 @@ jobs:
           pip install --upgrade pip
           pip install dbt-snowflake==${{ env.VERSION_NUMBER_COMPLETE }}
           pip install homebrew-pypi-poet
-          poet -f dbt-snowflake > Formula/dbt-snowflake.rb
-          sed -i 's/Shiny new formula/dbt-snowflake contains all of the code enabling dbt to work with Snowflake/g' Formula/dbt-snowflake.rb
+          poet -f dbt-snowflake > Formula/dbt-snowflake@${{steps.variables.file_name.FILE_NAME_SUFFIX}}.rb
+          sed -i 's/Shiny new formula/dbt-snowflake contains all of the code enabling dbt to work with Snowflake/g' Formula/dbt-snowflake@${{steps.variables.file_name.FILE_NAME_SUFFIX}}.rb
 
+      - name: Create formula file for final version
+        if: ${{ github.event.inputs.release_type == 'final' }}
+        run: |
+          cp Formula/dbt-snowflake@${{steps.variables.file_name.FILE_NAME_SUFFIX}}.rb Formula/dbt-snowflake.rb
+          
       - name: Commit formula to branch
         uses: EndBug/add-and-commit@v7
         with:
