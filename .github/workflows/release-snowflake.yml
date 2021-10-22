@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VERSION_NUMBER_COMPLETE: ${{ github.event.inputs.version_number }}${{ github.event.inputs.release_type }}
+ 
     steps:
       - uses: actions/checkout@v2
 
@@ -27,9 +28,9 @@ jobs:
         run: |
           git checkout -b bumping-version/${{ env.VERSION_NUMBER_COMPLETE }}_$GITHUB_RUN_ID
           git push origin bumping-version/${{ env.VERSION_NUMBER_COMPLETE}}_$GITHUB_RUN_ID
-          git branch --set-upstream-to=origin/bumping-version/${{ env.VERSION_NUMBER_COMPLETE }}_$GITHUB_RUN_ID bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID
+          git branch --set-upstream-to=origin/bumping-version/${{ env.VERSION_NUMBER_COMPLETE }}_$GITHUB_RUN_ID bumping-version/${{ env.VERSION_NUMBER_COMPLETE }}_$GITHUB_RUN_ID
 
-      - name: Create formula file
+      - name: Create formula file for version
         run: |
           python3 -m venv env
           source env/bin/activate
