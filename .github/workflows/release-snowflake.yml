@@ -20,8 +20,15 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: "3.8"
+          
+      - name: Create PR branch
+        if: ${{ github.event.inputs.is_dry_run == 'true' }}
+        run: |
+          git checkout -b bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID
+          git push origin bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID
+          git branch --set-upstream-to=origin/bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID
 
-      - name: Install python dependencies
+      - name: Create formula file
         run: |
           python3 -m venv env
           source env/bin/activate
@@ -29,5 +36,31 @@ jobs:
           pip install dbt-snowflake==${{ github.event.inputs.version_number }}
           pip install homebrew-pypi-poet
           poet -f dbt-snowflake > Formula/dbt-snowflake.rb
-          git status
-          git diff
+
+      - name: Commit formula directly
+        uses: EndBug/add-and-commit@v7
+        if: ${{ github.event.inputs.is_dry_run == 'false' }}
+        with:
+          author_name: 'Github Build Bot'
+          author_email: 'buildbot@fishtownanalytics.com'
+          message: 'Creating snowflake formula file for version ${{github.event.inputs.version_number}}'
+
+      - name: Commit formula to branch
+        uses: EndBug/add-and-commit@v7
+        if: ${{ github.event.inputs.is_dry_run == 'true' }}
+        with:
+          author_name: 'Github Build Bot'
+          author_email: 'buildbot@fishtownanalytics.com'
+          message: 'Creating snowflake formula file for version ${{github.event.inputs.version_number}}'
+          branch: 'bumping-version/${{github.event.inputs.version_number}}_${{GITHUB.RUN_ID}}'
+          push: 'origin origin/bumping-version/${{github.event.inputs.version_number}}_${{GITHUB.RUN_ID}}'
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        if: ${{ github.event.inputs.is_dry_run == 'true' }}
+        with:
+          author: 'Github Build Bot <buildbot@fishtownanalytics.com>'
+          draft: true
+          base: ${{github.ref}}
+          title: 'Creating snowflake formula file for version ${{github.event.inputs.version_number}}'
+          branch: 'bumping-version/${{github.event.inputs.version_number}}_${{GITHUB.RUN_ID}}'
