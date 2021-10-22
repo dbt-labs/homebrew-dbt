@@ -6,14 +6,16 @@ on:
       version_number:
        description: 'The version number to bump to'
        required: true
-      is_dry_run:
-       description: 'Creates a draft PR to allow testing instead of committing to a branch'
+      release_type:
+       description: 'Type of release (i.e. final, rc1, b2)'
        required: true
-       default: 'true'  
-       
+       default: 'final'  
+             
 jobs:
   create-formula:
     runs-on: ubuntu-latest
+    env:
+      VERSION_NUMBER_COMPLETE: ${{ github.event.inputs.version_number }}${{ github.event.inputs.release_type }}
     steps:
       - uses: actions/checkout@v2
 
@@ -22,46 +24,35 @@ jobs:
           python-version: "3.8"
           
       - name: Create PR branch
-        if: ${{ github.event.inputs.is_dry_run == 'true' }}
         run: |
-          git checkout -b bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID
-          git push origin bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID
-          git branch --set-upstream-to=origin/bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID
+          git checkout -b bumping-version/${{ env.VERSION_NUMBER_COMPLETE }}_$GITHUB_RUN_ID
+          git push origin bumping-version/${{ env.VERSION_NUMBER_COMPLETE}}_$GITHUB_RUN_ID
+          git branch --set-upstream-to=origin/bumping-version/${{ env.VERSION_NUMBER_COMPLETE }}_$GITHUB_RUN_ID bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID
 
       - name: Create formula file
         run: |
           python3 -m venv env
           source env/bin/activate
           pip install --upgrade pip
-          pip install dbt-snowflake==${{ github.event.inputs.version_number }}
+          pip install dbt-snowflake==${{ env.VERSION_NUMBER_COMPLETE }}
           pip install homebrew-pypi-poet
           poet -f dbt-snowflake > Formula/dbt-snowflake.rb
           sed -i 's/Shiny new formula/dbt-snowflake contains all of the code enabling dbt to work with Snowflake/g' Formula/dbt-snowflake.rb
 
-      - name: Commit formula directly
-        uses: EndBug/add-and-commit@v7
-        if: ${{ github.event.inputs.is_dry_run == 'false' }}
-        with:
-          author_name: 'Github Build Bot'
-          author_email: 'buildbot@fishtownanalytics.com'
-          message: 'Creating snowflake formula file for version ${{github.event.inputs.version_number}}'
-
       - name: Commit formula to branch
         uses: EndBug/add-and-commit@v7
-        if: ${{ github.event.inputs.is_dry_run == 'true' }}
         with:
           author_name: 'Github Build Bot'
           author_email: 'buildbot@fishtownanalytics.com'
-          message: 'Creating snowflake formula file for version ${{github.event.inputs.version_number}}'
-          branch: 'bumping-version/${{github.event.inputs.version_number}}_${{GITHUB.RUN_ID}}'
-          push: 'origin origin/bumping-version/${{github.event.inputs.version_number}}_${{GITHUB.RUN_ID}}'
+          message: 'Creating snowflake formula file for version ${{env.VERSION_NUMBER_COMPLETE}}'
+          branch: 'bumping-version/${{env.VERSION_NUMBER_COMPLETE}}_${{GITHUB.RUN_ID}}'
+          push: 'origin origin/bumping-version/${{env.VERSION_NUMBER_COMPLETE}}_${{GITHUB.RUN_ID}}'
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
-        if: ${{ github.event.inputs.is_dry_run == 'true' }}
         with:
           author: 'Github Build Bot <buildbot@fishtownanalytics.com>'
           draft: true
           base: ${{github.ref}}
-          title: 'Creating snowflake formula file for version ${{github.event.inputs.version_number}}'
-          branch: 'bumping-version/${{github.event.inputs.version_number}}_${{GITHUB.RUN_ID}}'
+          title: 'Creating snowflake formula file for version ${{env.VERSION_NUMBER_COMPLETE}}'
+          branch: 'bumping-version/${{env.VERSION_NUMBER_COMPLETE}}_${{GITHUB.RUN_ID}}'
