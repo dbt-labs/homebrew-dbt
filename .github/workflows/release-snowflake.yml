@@ -1,0 +1,33 @@
+name: Release Snowflake
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_number:
+       description: 'The version number to bump to'
+       required: true
+      is_dry_run:
+       description: 'Creates a draft PR to allow testing instead of committing to a branch'
+       required: true
+       default: 'true'  
+       
+jobs:
+  create-formula:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+
+      - name: Install python dependencies
+        run: |
+          python3 -m venv env
+          source env/bin/activate
+          pip install --upgrade pip
+          pip install dbt-snowflake==${{ github.event.inputs.version_number }}
+          pip install homebrew-pypi-poet
+          poet -f dbt-snowflake > Formula/dbt-snowflake.rb
+          git status
+          git diff
