@@ -36,6 +36,7 @@ jobs:
           pip install dbt-snowflake==${{ github.event.inputs.version_number }}
           pip install homebrew-pypi-poet
           poet -f dbt-snowflake > Formula/dbt-snowflake.rb
+          sed -i '' 's/Shiny new formula/dbt-snowflake contains all of the code enabling dbt to work with Snowflake/g' Formula/dbt-snowflake.rb
 
       - name: Commit formula directly
         uses: EndBug/add-and-commit@v7
