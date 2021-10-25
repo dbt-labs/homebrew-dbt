@@ -31,12 +31,13 @@ jobs:
           if [ "${{ steps.release_type.outputs.isPrerelease }}" == "true" ]
           then
             echo "This is a prelease"
-            echo ::set-output name=fileName::echo 'dbt-snowflake@${{ github.event.inputs.version_number }}' | sed 's/\([[:digit:]]\)\.\([[:digit:]]\)\.\([[:digit:]]\)/\1.\2.\3-/g'
+            name=$(echo 'dbt@1.0.0b1' | sed 's/\([[:digit:]]\)\.\([[:digit:]]\)\.\([[:digit:]]\)/\1.\2.\3-/g')
+            echo "$name"
+            echo ::set-output name=fileName::$name
           else
             echo "This is a final release"
             echo ::set-output name=fileName::dbt-snowflake@${{ github.event.inputs.version_number }}
           fi
-          echo $fileName
           
       - name: Create PR branch
         run: |
