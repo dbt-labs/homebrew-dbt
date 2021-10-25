@@ -1,4 +1,4 @@
-class DbtSnowflake < Formula
+class DbtSnowflakeAT100B1 < Formula
   include Language::Python::Virtualenv
 
   desc "dbt-snowflake contains all of the code enabling dbt to work with Snowflake"
