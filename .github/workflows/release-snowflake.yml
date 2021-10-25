@@ -28,10 +28,12 @@ jobs:
       - name: Create file name
         id: naming_convention
         run: |
-          if [ "$isPrerelease" == "true" ]
+          if [ "${{ steps.release_type.outputs.isPrerelease }}" == "true" ]
           then
+            echo "This is a prelease"
             echo ::set-output name=fileName::echo 'dbt-snowflake@${{ github.event.inputs.version_number }}' | sed 's/\([[:digit:]]\)\.\([[:digit:]]\)\.\([[:digit:]]\)/\1.\2.\3-/g'
           else
+            echo "This is a final release"
             echo ::set-output name=fileName::dbt-snowflake@${{ github.event.inputs.version_number }}
           fi
           echo $fileName
