@@ -7,6 +7,7 @@ class DbtSnowflakeAT100B1 < Formula
   sha256 "2a61c7821d5c739aa2e577ada53331bdebc02c13198e64779bf51e285d366319"
 
   depends_on "python3"
+  depends_on "rust" => :build
 
   resource "agate" do
     url "https://files.pythonhosted.org/packages/d4/1c/99fb34c81c68012c71e8d35a1f16a6b25952322e23c911c81327c8464be8/agate-1.6.1.tar.gz"
@@ -319,8 +320,27 @@ class DbtSnowflakeAT100B1 < Formula
   end
 
   def install
-    virtualenv_create(libexec, "python3")
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3")
+    venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
+      "--upgrade", "pip"
+
+    resources.each do |r|
+      if r.name == "snowflake-connector-python"
+        # workaround for installing `snowflake-connector-python`
+        # package w/o build-system deps (e.g. pyarrow)
+        # adds the `--no-use-pep517` parameter
+        r.stage do
+          venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
+            "-v", "--no-deps", "--no-binary", ":all:", "--ignore-installed", "--no-use-pep517", Pathname.pwd
+        end
+      else
+        venv.pip_install r
+      end
+    end
+
+    venv.pip_install_and_link buildpath
+
+    bin.install_symlink "#{libexec}/bin/dbt" => "dbt"
   end
 
   test do
