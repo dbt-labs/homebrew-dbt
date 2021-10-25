@@ -54,11 +54,14 @@ jobs:
           pip install homebrew-pypi-poet
           poet -f dbt-snowflake > Formula/${{ steps.naming_convention.outputs.fileName }}
           sed -i 's/Shiny new formula/dbt-snowflake contains all of the code enabling dbt to work with Snowflake/g' Formula/${{ steps.naming_convention.outputs.fileName }}
+          className=$(echo "class dbt-snowflake@1.0.0-b1 < Formula" | sed -e 's/dbt-snowflake@/DbtSnowflakeAT/g' -e 's/\.//g' -e 's/-b/B/' -e 's/-r/R/')
+          sed -i "1s/.*/$className/" Formula/${{ steps.naming_convention.outputs.fileName }}
 
       - name: Update latest release formula file
         if: ${{ steps.release_type.outputs.isPrerelease == 'false' }}
         run: |
           cp Formula/${{ steps.naming_convention.outputs.fileName }}.rb Formula/dbt-snowflake.rb
+          sed -i "1s/.*/class DbtSnowflake < Formula/" Formula/dbt-snowflake.rb
           
       - name: Commit formula to branch
         uses: EndBug/add-and-commit@v7
