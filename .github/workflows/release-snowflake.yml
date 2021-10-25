@@ -25,6 +25,17 @@ jobs:
         run: |
           echo ::set-output name=isPrerelease::$IS_PRERELEASE
           
+      - name: Create file name
+        id: naming_convention
+        run: |
+          if [ "$isPrerelease" == "true" ]
+          then
+            echo ::set-output name=fileName::echo 'dbt-snowflake@${{ github.event.inputs.version_number }}' | sed 's/\([[:digit:]]\)\.\([[:digit:]]\)\.\([[:digit:]]\)/\1.\2.\3-/g'
+          else
+            echo ::set-output name=fileName::dbt-snowflake@${{ github.event.inputs.version_number }}
+          fi
+          echo $fileName
+          
       - name: Create PR branch
         run: |
           git checkout -b bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID
@@ -38,13 +49,13 @@ jobs:
           pip install --upgrade pip
           pip install dbt-snowflake==${{ github.event.inputs.version_number }}
           pip install homebrew-pypi-poet
-          poet -f dbt-snowflake > Formula/dbt-snowflake@${{ github.event.inputs.version_number }}.rb
-          sed -i 's/Shiny new formula/dbt-snowflake contains all of the code enabling dbt to work with Snowflake/g' Formula/dbt-snowflake@${{github.event.inputs.version_number}}.rb
+          poet -f dbt-snowflake > Formula/dbt-snowflake@${{ steps.naming_convention.outputs.fileName }}.rb
+          sed -i 's/Shiny new formula/dbt-snowflake contains all of the code enabling dbt to work with Snowflake/g' Formula/dbt-snowflake@${{ steps.naming_convention.outputs.fileName }}.rb
 
       - name: Update latest release formula file
         if: ${{ steps.release_type.outputs.isPrerelease == 'false' }}
         run: |
-          cp Formula/dbt-snowflake@${{github.event.inputs.version_number}}.rb Formula/dbt-snowflake.rb
+          cp Formula/dbt-snowflake@${{ steps.naming_convention.outputs.fileName }}.rb Formula/dbt-snowflake.rb
           
       - name: Commit formula to branch
         uses: EndBug/add-and-commit@v7
