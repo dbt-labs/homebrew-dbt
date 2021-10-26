@@ -1,0 +1,85 @@
+name: Release Redshift
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_number:
+       description: 'The version number to release'
+       required: true
+         
+jobs:
+  create-formula:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+          
+      - name: Find release type
+        id: release_type
+        env:
+          IS_PRERELEASE: ${{ contains(github.event.inputs.version_number, 'rc') ||  contains(github.event.inputs.version_number, 'b') }}
+        run: |
+          echo ::set-output name=isPrerelease::$IS_PRERELEASE
+          
+      - name: Create file name
+        id: naming_convention
+        run: |
+          if [ "${{ steps.release_type.outputs.isPrerelease }}" == "true" ]
+          then
+            echo "This is a prelease"
+            name=$(echo 'dbt-redshift@${{ github.event.inputs.version_number }}.rb' | sed 's/\([[:digit:]]\)\.\([[:digit:]]\)\.\([[:digit:]]\)/\1.\2.\3-/g')
+            echo "$name"
+            echo ::set-output name=fileName::$name
+          else
+            echo "This is a final release"
+            echo ::set-output name=fileName::dbt-redshift@${{ github.event.inputs.version_number }}.rb
+          fi
+          
+      - name: Create PR branch
+        run: |
+          git checkout -b bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID
+          git push origin bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID
+          git branch --set-upstream-to=origin/bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID bumping-version/${{ github.event.inputs.version_number }}_$GITHUB_RUN_ID
+      - name: Create versioned formula file
+        run: |
+          python3 -m venv env
+          source env/bin/activate
+          pip install --upgrade pip
+          pip install dbt-redshift==${{ github.event.inputs.version_number }}
+          pip install homebrew-pypi-poet
+          poet -f dbt-redshift > Formula/${{ steps.naming_convention.outputs.fileName }}
+          
+      - name: Customize file specifics
+        run: |
+          sed -i 's/Shiny new formula/dbt-redshift contains all of the code enabling dbt to work with Redshift/g' Formula/${{ steps.naming_convention.outputs.fileName }}
+          className=$(echo "class dbt-redshift@${{ github.event.inputs.version_number }}" | sed -e 's/dbt-redshift@/DbtRedshiftAT/g' -e 's/\.//g' -e 's/\(AT.*\)b/\1B/' -e 's/\(AT.*\)r/\1R/' | awk '{print $0" < Formula"}')
+          sed -i "1s/.*/$className/" Formula/${{ steps.naming_convention.outputs.fileName }}
+          sed -i 's/depends_on "python3"/depends_on "python3"\n  depends_on "rust" => :build/' Formula/${{ steps.naming_convention.outputs.fileName }}
+        
+      - name: Update latest release formula file
+        if: ${{ steps.release_type.outputs.isPrerelease == 'false' }}
+        run: |
+          cp Formula/${{ steps.naming_convention.outputs.fileName }}.rb Formula/dbt-redshift.rb
+          sed -i "1s/.*/class DbtRedshift < Formula/" Formula/dbt-redshift.rb
+          
+      - name: Commit formula to branch
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: 'Github Build Bot'
+          author_email: 'buildbot@fishtownanalytics.com'
+          message: 'Creating redshift formula file for version ${{ github.event.inputs.version_number }}'
+          branch: 'bumping-version/${{ github.event.inputs.version_number }}_${{GITHUB.RUN_ID}}'
+          push: 'origin origin/bumping-version/${{ github.event.inputs.version_number }}_${{GITHUB.RUN_ID}}'
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          author: 'Github Build Bot <buildbot@fishtownanalytics.com>'
+          draft: true
+          base: ${{github.ref}}
+          title: 'Creating redshift formula file for version ${{ github.event.inputs.version_number }}'
+          branch: 'bumping-version/${{ github.event.inputs.version_number }}_${{GITHUB.RUN_ID}}'
