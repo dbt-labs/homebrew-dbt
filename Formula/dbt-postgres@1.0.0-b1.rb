@@ -215,8 +215,17 @@ class DbtPostgresAT100B1 < Formula
   end
 
   def install
-    virtualenv_create(libexec, "python3")
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3")
+    venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
+      "--upgrade", "pip"
+
+    resources.each do |r|
+      venv.pip_install r
+    end
+
+    venv.pip_install_and_link buildpath
+
+    bin.install_symlink "#{libexec}/bin/dbt" => "dbt"
   end
 
   test do
