@@ -1,4 +1,4 @@
-class DbtSnowflakeAT100B1 < Formula
+class DbtSnowflakeAT100B1 < FoRmula
   include Language::Python::Virtualenv
 
   desc "dbt-snowflake contains all of the code enabling dbt to work with Snowflake"
@@ -45,13 +45,13 @@ class DbtSnowflakeAT100B1 < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/ec/45/d12f9c09b5c4dad8bcb098dfae5e9e1253ed6408efbbd9a3e60bff55b824/boto3-1.19.2.tar.gz"
-    sha256 "11a6035060230e92327d4f10fef6bc44188b2cd68504012bc25ed62ac31d670b"
+    url "https://files.pythonhosted.org/packages/d9/91/1dc0a7d0ac74366d86d1860f7f9ffd9f6f80a01e0c2b798412fafcc548bb/boto3-1.19.3.tar.gz"
+    sha256 "e36ffaf9969648e2f435aa1f0029956fea3aac52466eef3bcb43bde498a182dd"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/0d/95/f2e74e4a91994d9ebe45746f75a8c5cafd723a88270a9772d8d66e1a8ba1/botocore-1.22.2.tar.gz"
-    sha256 "011360e79a4b843aa6591573cfa61e8eddc99b91adab1dfdb9a2b7f2c8511193"
+    url "https://files.pythonhosted.org/packages/c4/80/887bf75741359a3b067b7cf6cf1c426e503e9d1130c6fd0cb5b2c4b08123/botocore-1.22.3.tar.gz"
+    sha256 "53ca22aeac9b53fe5ec1f40b8ca9620ffe8b054458abfeb9ab74bbe9e0b0ecfa"
   end
 
   resource "certifi" do
@@ -320,27 +320,8 @@ class DbtSnowflakeAT100B1 < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3")
-    venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
-      "--upgrade", "pip"
-
-    resources.each do |r|
-      if r.name == "snowflake-connector-python"
-        # workaround for installing `snowflake-connector-python`
-        # package w/o build-system deps (e.g. pyarrow)
-        # adds the `--no-use-pep517` parameter
-        r.stage do
-          venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
-            "-v", "--no-deps", "--no-binary", ":all:", "--ignore-installed", "--no-use-pep517", Pathname.pwd
-        end
-      else
-        venv.pip_install r
-      end
-    end
-
-    venv.pip_install_and_link buildpath
-
-    bin.install_symlink "#{libexec}/bin/dbt" => "dbt"
+    virtualenv_create(libexec, "python3")
+    virtualenv_install_with_resources
   end
 
   test do
