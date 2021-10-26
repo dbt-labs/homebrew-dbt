@@ -31,7 +31,7 @@ jobs:
           if [ "${{ steps.release_type.outputs.isPrerelease }}" == "true" ]
           then
             echo "This is a prelease"
-            name=$(echo 'dbt-postgres@${{ github.event.inputs.version_number }}' | sed 's/\([[:digit:]]\)\.\([[:digit:]]\)\.\([[:digit:]]\)/\1.\2.\3-/g')
+            name=$(echo 'dbt-postgres@${{ github.event.inputs.version_number }}.rb' | sed 's/\([[:digit:]]\)\.\([[:digit:]]\)\.\([[:digit:]]\)/\1.\2.\3-/g')
             echo "$name"
             echo ::set-output name=fileName::$name
           else
