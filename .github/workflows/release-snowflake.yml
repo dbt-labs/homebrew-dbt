@@ -31,7 +31,7 @@ jobs:
           if [ "${{ steps.release_type.outputs.isPrerelease }}" == "true" ]
           then
             echo "This is a prelease"
-            name=$(echo 'dbt-snowflake@1.0.0b1.rb' | sed 's/\([[:digit:]]\)\.\([[:digit:]]\)\.\([[:digit:]]\)/\1.\2.\3-/g')
+            name=$(echo 'dbt-snowflake@${{ github.event.inputs.version_number }}.rb' | sed 's/\([[:digit:]]\)\.\([[:digit:]]\)\.\([[:digit:]]\)/\1.\2.\3-/g')
             echo "$name"
             echo ::set-output name=fileName::$name
           else
@@ -57,7 +57,7 @@ jobs:
       - name: Customize file specifics
         run: |
           sed -i 's/Shiny new formula/dbt-snowflake contains all of the code enabling dbt to work with Snowflake/g' Formula/${{ steps.naming_convention.outputs.fileName }}
-          className=$(echo "class dbt-snowflake@1.0.0-b1 < Formula" | sed -e 's/dbt-snowflake@/DbtSnowflakeAT/g' -e 's/\.//g' -e 's/-b/B/' -e 's/-r/R/')
+          className=$(echo "class dbt-snowflake@${{ github.event.inputs.version_number }} < Formula" | sed -e 's/dbt-snowflake@/DbtSnowflakeAT/g' -e 's/\.//g' -e 's/-b/B/' -e 's/-r/R/')
           sed -i "1s/.*/$className/" Formula/${{ steps.naming_convention.outputs.fileName }}
           sed -i 's/depends_on "python3"/depends_on "python3"\n  depends_on "rust" => :build/' Formula/${{ steps.naming_convention.outputs.fileName }}
         
