@@ -6,7 +6,7 @@ class DbtSnowflakeAT100Rc2 < Formula
   url "https://files.pythonhosted.org/packages/ef/26/999f04a03ed179ecde5b65c15c9afb46dc5d6d2c1c93693faa28bff4d472/dbt-snowflake-1.0.0rc2.tar.gz"
   sha256 "6da503bd74cfeafbb5cd385854bf8d8f9bdc76024818a8f0ea2382b3898c7677"
 
-  depends_on "python3"
+  depends_on "python@3.8"
   depends_on "rust" => :build
 
   resource "agate" do
