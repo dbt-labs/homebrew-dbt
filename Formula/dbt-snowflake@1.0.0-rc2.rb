@@ -275,7 +275,17 @@ class DbtSnowflakeAT100Rc2 < Formula
       "--upgrade", "pip"
 
     resources.each do |r|
-      venv.pip_install r
+      if r.name == "snowflake-connector-python"
+        # workaround for installing `snowflake-connector-python`
+        # package w/o build-system deps (e.g. pyarrow)
+        # adds the `--no-use-pep517` parameter
+        r.stage do
+          venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
+            "-v", "--no-deps", "--no-binary", ":all:", "--ignore-installed", "--no-use-pep517", Pathname.pwd
+        end
+      else
+        venv.pip_install r
+      end
     end
 
     venv.pip_install_and_link buildpath
