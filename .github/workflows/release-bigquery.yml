@@ -63,7 +63,7 @@ jobs:
       - name: Update latest release formula file
         if: ${{ steps.release_type.outputs.isPrerelease == 'false' }}
         run: |
-          cp Formula/${{ steps.naming_convention.outputs.fileName }}.rb Formula/dbt-bigquery.rb
+          cp Formula/${{ steps.naming_convention.outputs.fileName }} Formula/dbt-bigquery.rb
           sed -i "1s/.*/class DbtBigquery < Formula/" Formula/dbt-bigquery.rb
           
       - name: Commit formula to branch
