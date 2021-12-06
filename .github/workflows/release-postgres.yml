@@ -64,7 +64,7 @@ jobs:
       - name: Update latest release formula file
         if: ${{ steps.release_type.outputs.isPrerelease == 'false' }}
         run: |
-          cp Formula/${{ steps.naming_convention.outputs.fileName }}.rb Formula/dbt-postgres.rb
+          cp Formula/${{ steps.naming_convention.outputs.fileName }} Formula/dbt-postgres.rb
           sed -i "1s/.*/class DbtPostgres < Formula/" Formula/dbt-postgres.rb
           
       - name: Commit formula to branch
