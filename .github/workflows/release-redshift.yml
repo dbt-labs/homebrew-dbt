@@ -63,7 +63,7 @@ jobs:
       - name: Update latest release formula file
         if: ${{ steps.release_type.outputs.isPrerelease == 'false' }}
         run: |
-          cp Formula/${{ steps.naming_convention.outputs.fileName }}.rb Formula/dbt-redshift.rb
+          cp Formula/${{ steps.naming_convention.outputs.fileName }} Formula/dbt-redshift.rb
           sed -i "1s/.*/class DbtRedshift < Formula/" Formula/dbt-redshift.rb
           
       - name: Commit formula to branch
