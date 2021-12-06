@@ -8,6 +8,7 @@ class DbtPostgresAT100 < Formula
 
   depends_on "python3"
   depends_on "rust" => :build
+  depends_on "postgresql"
 
   resource "agate" do
     url "https://files.pythonhosted.org/packages/ae/0e/34231b11f1b80463f64c5be7d7279de5a5609a47c59c0e34ba7016e4e333/agate-1.6.3.tar.gz"
@@ -225,8 +226,17 @@ class DbtPostgresAT100 < Formula
   end
 
   def install
-    virtualenv_create(libexec, "python3")
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3")
+    venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
+      "--upgrade", "pip"
+
+    resources.each do |r|
+      venv.pip_install r
+    end
+
+    venv.pip_install_and_link buildpath
+
+    bin.install_symlink "#{libexec}/bin/dbt" => "dbt"
   end
 
   test do
