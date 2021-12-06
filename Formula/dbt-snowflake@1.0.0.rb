@@ -54,9 +54,9 @@ class DbtSnowflakeAT100 < Formula
     sha256 "5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"
   end
 
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/cc/98/8a258ab4787e6f835d350639792527d2eb7946ff9fc0caca9c3f4cf5dcfe/cryptography-3.4.8.tar.gz"
-    sha256 "94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c"
+  resource "cryptography" do # cryptography==3.3.2
+    url "https://files.pythonhosted.org/packages/d4/85/38715448253404186029c575d559879912eb8a1c5d16ad9f25d35f7c4f4c/cryptography-3.3.2.tar.gz"
+    sha256 "5a60d3780149e13b7a6ff7ad6526b38846354d11a15e21068e57073e29e19bed"
   end
 
   resource "dbt-core" do
@@ -270,8 +270,27 @@ class DbtSnowflakeAT100 < Formula
   end
 
   def install
-    virtualenv_create(libexec, "python3")
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3")
+    venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
+      "--upgrade", "pip"
+
+    resources.each do |r|
+      if r.name == "snowflake-connector-python"
+        # workaround for installing `snowflake-connector-python`
+        # package w/o build-system deps (e.g. pyarrow)
+        # adds the `--no-use-pep517` parameter
+        r.stage do
+          venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
+            "-v", "--no-deps", "--no-binary", ":all:", "--ignore-installed", "--no-use-pep517", Pathname.pwd
+        end
+      else
+        venv.pip_install r
+      end
+    end
+
+    venv.pip_install_and_link buildpath
+
+    bin.install_symlink "#{libexec}/bin/dbt" => "dbt"
   end
 
   test do
