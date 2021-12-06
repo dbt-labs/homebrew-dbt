@@ -64,7 +64,7 @@ jobs:
       - name: Update latest release formula file
         if: ${{ steps.release_type.outputs.isPrerelease == 'false' }}
         run: |
-          cp Formula/${{ steps.naming_convention.outputs.fileName }}.rb Formula/dbt-snowflake.rb
+          cp Formula/${{ steps.naming_convention.outputs.fileName }} Formula/dbt-snowflake.rb
           sed -i "1s/.*/class DbtSnowflake < Formula/" Formula/dbt-snowflake.rb
           
       - name: Commit formula to branch
