@@ -5,6 +5,7 @@ class DbtBigqueryAT100 < Formula
   homepage "https://github.com/dbt-labs/dbt-bigquery"
   url "https://files.pythonhosted.org/packages/7c/07/0b948e6e89df1caf3cc58bc4bed4429e5f866542afabdb049824c2a2d29b/dbt-bigquery-1.0.0.tar.gz"
   sha256 "e22442f00fcec155dcbfe8be351a11c35913fb6edd11bd5e52fafc3218abd12e"
+  revision 1
 
   depends_on "python3"
   depends_on "rust" => :build
@@ -55,8 +56,8 @@ class DbtBigqueryAT100 < Formula
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/9b/c9/a54e72b7defd4fe7b6e75f3b8791642ef0b7f64759bb2c18a59a8fbe2e5a/dbt-core-1.0.0.tar.gz"
-    sha256 "90bde01d078b1d673dc490b9defff07e7f3b702b920c65feae6fb27e07ce73d2"
+    url "https://files.pythonhosted.org/packages/30/f8/5d1efef6ba713d5f3cd0166754596ab4fb73ae43a46bcfa8916a95c80b5e/dbt-core-1.0.1.tar.gz"
+    sha256 "0547c45f6c854399a8bcb61eca3ccdab1e1e9c99cd0ecaca22de293cb7ee2285"
   end
 
   resource "dbt-extractor" do
