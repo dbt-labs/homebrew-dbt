@@ -1,0 +1,15 @@
+name: Build bottles for dbt formula
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - if: ${{ !env.ACT }}
+        uses: Homebrew/actions/setup-homebrew@master
+      - run: brew test-bot --only-formulae-detect
