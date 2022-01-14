@@ -414,6 +414,7 @@ class DbtAT0210B1 < Formula
   end
 
   def install
+    ENV["CARGO_NET_GIT_FETCH_WITH_CLI"] = "true"
     venv = virtualenv_create(libexec, "python3")
     venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
       "--upgrade", "pip"

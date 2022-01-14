@@ -345,6 +345,7 @@ class DbtDevelopment < Formula
   end
 
   def install
+    ENV["CARGO_NET_GIT_FETCH_WITH_CLI"] = "true"
     venv = virtualenv_create(libexec, "python3")
 
     res = resources.map(&:name).to_set
