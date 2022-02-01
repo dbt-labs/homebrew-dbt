@@ -1,0 +1,24 @@
+class {{ classname }} < Formula
+  include Language::Python::Virtualenv
+
+  desc "{{ summary }}"
+  homepage "{{ homepage }}"
+  url "{{ source_url }}"
+  sha256 "{{ source_checksum }}"
+  # license ""
+  revision 1
+  
+  depends_on "python@3.9"
+  depends_on "rust" => :build
+
+  {{ resources }}
+
+  def install
+    ENV["CARGO_NET_GIT_FETCH_WITH_CLI"] = "true"
+    virtualenv_install_with_resources
+  end
+
+  test do
+    false
+  end
+end

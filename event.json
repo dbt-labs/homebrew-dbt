@@ -1,0 +1,7 @@
+{
+  "action": "workflow_dispatch",
+  "inputs": {
+    "version": "1.0.0",
+    "dbt-package": "dbt-snowflake"
+  }
+}
