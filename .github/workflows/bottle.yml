@@ -1,3 +1,5 @@
+# TODO:
+#   - test with `act -W .github/workflows/bottle.yml`
 name: Build bottles for dbt formula
 
 on:
@@ -12,81 +14,45 @@ on:
   #     dbt-package:
   #       description: "Name of the dbt database adapter"
   #       required: true
-  #     is-latest:
+  #     is-default-version:
   #       description: "Is this version the latest stable release?"
   #       required: false
   #       default: "false"
+  # workflow_call:
+  #   inputs:
+  #     version:
+  #       type: string
+  #       description: "The version number to release"
+  #       required: true
+  #     dbt-package:
+  #       type: string
+  #       description: "Name of the dbt database adapter"
+  #       required: true
+  #     is-default-version:
+  #       description: "Is this version the latest stable release?"
+  #       type: boolean
+  #       required: false
+  #       default: false
+
+env:
+  # BUILD_DIR: ${{ github.workspace }}/build
+  HOMEBREW_DEVELOPER: 1
+  HOMEBREW_GITHUB_ACTIONS: 1
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_CHANGE_ARCH_TO_ARM: 1
 
 jobs:
-  # create-matrix:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-
-  create-bottles:
+  setup:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/homebrew/ubuntu16.04:master
+    outputs:
+      runners: ${{steps.determine-runners.outputs.runners}}
     steps:
-      - uses: actions/checkout@v2
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Get package info
-        id: package-info
-        uses: dbt-labs/actions/py-package-info@main
-        with:
-          package: ${{ github.event.inputs.dbt-package }}
-
-      - name: Parse semver string
-        id: semver
-        uses: dbt-labs/actions/parse-semver@main
-        with:
-          version: ${{ github.event.inputs.version }}
-
-      - name: Generate formula resources
-        id: gen-resources
-        run: |
-          pip install ${{ github.event.inputs.dbt-package }}==${{ steps.semver.outputs.version }}
-          pip install homebrew-pypi-poet
-          echo ::set-output name=resources::"$(poet -r ${{ github.event.inputs.dbt-package }})"
-
-      - name: Generate formula file name
-        id: gen-filename
-        run: |
-          if [ ${{ steps.semver.is-pre-release }} == 1 ]
-          then
-            echo "This is a prelease"
-            echo ::set-output name=filename-with-version::${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.base-version }}-${{ steps.semver.outputs.pre-release }}.rb
-          else
-            echo "This is a final release"
-            echo ::set-output name=filename-with-version::${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.version }}.rb
-          fi
-          echo ::set-output name=filename::${{ github.event.inputs.dbt-package }}.rb
-
-      - name: Generate formula class name
-        id: gen-classname
-        run: |
-          PACKAGE_NAME=$(python -c "print(''.join(word.title() for word in '${{ github.event.inputs.dbt-package }}'.split('-')))")
-          PACKAGE_VERSION=$(python -c "print(''.join(word.title() for word in '${{ steps.semver.outputs.version }}'.split('.')))")
-          if [ ${{ steps.semver.outputs.is-pre-release }} == 1 ]
-          then
-            echo "This is a prelease"
-            echo ::set-output name=classname::${PACKAGE_NAME}AT${PACKAGE_VERSION}
-          else
-            echo "This is a final release"
-            echo ::set-output name=classname::${PACKAGE_NAME}
-          fi
-
-      - name: Generate formula file
-        env:
-          classname: ${{ steps.gen-classname.outputs.classname }}
-          resources: ${{ steps.gen-resources.outputs.resources }}
-          summary: ${{ steps.package-info.outputs.summary }}
-          homepage: ${{ steps.package-info.outputs.homepage }}
-          source_url: ${{ steps.package-info.outputs.source-url }}
-          source_checksum: ${{ steps.package-info.outputs.source-checksum }}
-        run: |
-          j2 formula-template.j2 > Formula/${{ steps.gen-filename.outputs.filename }}
-          cat Formula/${{ steps.gen-filename.outputs.filename }}
-
-# TODO:
-#   - write to file without a version if is latest is true
-#   - test the formula (this might take a while to run w/o bottles)
-#   - create a PR w/ new formula(s)
+      - name: Determine runners
+        id: determine-runners
+        run: brew determine-rebottle-runners "${{github.event.inputs.formula}}" "${{github.event.inputs.timeout}}"
