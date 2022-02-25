@@ -5,7 +5,7 @@ class DbtRedshift < Formula
   homepage "https://github.com/dbt-labs/dbt-redshift"
   url "https://files.pythonhosted.org/packages/34/43/8630300360766d991738aa2ae9afc5a06c619bf451dcc1fa7c54ce85f4df/dbt-redshift-1.0.0.tar.gz"
   sha256 "6419212b1c540358f2b9b32408fce6beac9387c40f810d98df7804395e9273bf"
-  revision 1
+  revision 2
 
   depends_on "python3"
   depends_on "rust" => :build
@@ -62,8 +62,8 @@ class DbtRedshift < Formula
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/30/f8/5d1efef6ba713d5f3cd0166754596ab4fb73ae43a46bcfa8916a95c80b5e/dbt-core-1.0.1.tar.gz"
-    sha256 "0547c45f6c854399a8bcb61eca3ccdab1e1e9c99cd0ecaca22de293cb7ee2285"
+    url "https://files.pythonhosted.org/packages/77/22/d0bac0a9ceaf0f5786a0ab95f9914390bad5d659dc9a8c14a6d2ff32ab5b/dbt-core-1.0.3.tar.gz"
+    sha256 "cff4c5e83b5abb5aafbe098d52eeacff3c2288003b5f467c4170227cf887e545"
   end
 
   resource "dbt-extractor" do
