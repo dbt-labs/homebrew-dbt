@@ -1,4 +1,4 @@
-class DbtPostgres < Formula
+class DbtPostgresAT103 < Formula
   include Language::Python::Virtualenv
 
   desc "dbt-postgres contains all of the code enabling dbt to work with Postgres"
