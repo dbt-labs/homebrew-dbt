@@ -5,7 +5,7 @@ class DbtBigqueryAT100 < Formula
   homepage "https://github.com/dbt-labs/dbt-bigquery"
   url "https://files.pythonhosted.org/packages/7c/07/0b948e6e89df1caf3cc58bc4bed4429e5f866542afabdb049824c2a2d29b/dbt-bigquery-1.0.0.tar.gz"
   sha256 "e22442f00fcec155dcbfe8be351a11c35913fb6edd11bd5e52fafc3218abd12e"
-  revision 2
+  revision 3
 
   depends_on "python3"
   depends_on "rust" => :build
@@ -56,13 +56,13 @@ class DbtBigqueryAT100 < Formula
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/77/22/d0bac0a9ceaf0f5786a0ab95f9914390bad5d659dc9a8c14a6d2ff32ab5b/dbt-core-1.0.3.tar.gz"
-    sha256 "cff4c5e83b5abb5aafbe098d52eeacff3c2288003b5f467c4170227cf887e545"
+    url "https://files.pythonhosted.org/packages/f4/2b/8d4069c3b0badb75a90c825d1e51685b38521cea862bdfb5fc93b7434790/dbt-core-1.0.4.tar.gz"
+    sha256 "e25cddcd210538133fd369816085179875d951b7b0af94be8c0966b85bf2b3be"
   end
 
   resource "dbt-extractor" do
-    url "https://files.pythonhosted.org/packages/a7/5c/609f02383178208612d6ac21228ca256337d3c18afb13b29f122720a26ad/dbt_extractor-0.4.0.tar.gz"
-    sha256 "58672e36fab988c849a693405920ee18421f27245c48e5f9ecf496369ed31a85"
+    url "https://files.pythonhosted.org/packages/af/2e/a110b40212480fd02bff567ff84effea8b9937ccd6ebfad0f10a382183d2/dbt_extractor-0.4.1.tar.gz"
+    sha256 "75b1c665699ec0f1ffce1ba3d776f7dfce802156f22e70a7b9c8f0b4d7e80f42"
   end
 
   resource "future" do
