@@ -62,18 +62,18 @@ class DbtRedshiftAT100 < Formula
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/77/22/d0bac0a9ceaf0f5786a0ab95f9914390bad5d659dc9a8c14a6d2ff32ab5b/dbt-core-1.0.3.tar.gz"
-    sha256 "cff4c5e83b5abb5aafbe098d52eeacff3c2288003b5f467c4170227cf887e545"
+    url "https://files.pythonhosted.org/packages/f4/2b/8d4069c3b0badb75a90c825d1e51685b38521cea862bdfb5fc93b7434790/dbt-core-1.0.4.tar.gz"
+    sha256 "e25cddcd210538133fd369816085179875d951b7b0af94be8c0966b85bf2b3be"
   end
 
   resource "dbt-extractor" do
-    url "https://files.pythonhosted.org/packages/a7/5c/609f02383178208612d6ac21228ca256337d3c18afb13b29f122720a26ad/dbt_extractor-0.4.0.tar.gz"
-    sha256 "58672e36fab988c849a693405920ee18421f27245c48e5f9ecf496369ed31a85"
+    url "https://files.pythonhosted.org/packages/af/2e/a110b40212480fd02bff567ff84effea8b9937ccd6ebfad0f10a382183d2/dbt_extractor-0.4.1.tar.gz"
+    sha256 "75b1c665699ec0f1ffce1ba3d776f7dfce802156f22e70a7b9c8f0b4d7e80f42"
   end
 
   resource "dbt-postgres" do
-    url "https://files.pythonhosted.org/packages/0a/8b/c35159911a37afc0e89d4cdf826209600237f65e1e4b80a63a411f49beef/dbt-postgres-1.0.0.tar.gz"
-    sha256 "78eac4ba58b1204071de84db69ac44dc68372b680da39879428261338f122992"
+    url "https://files.pythonhosted.org/packages/07/a9/85f63f1bbcbae31b2c692d3ef098b7c55369e5b454c8c899a8430c87aa90/dbt-postgres-1.0.4.tar.gz"
+    sha256 "e12088d211b05fa639dda73afe25fdf7ad415fec4ba6421d7297d3a08516c21e"
   end
 
   resource "future" do
