@@ -54,13 +54,13 @@ jobs:
 
       - name: Get python package info
         id: package-info
-        uses: dbt-labs/actions/py-package-info@v0.1
+        uses: dbt-labs/actions/py-package-info@v0.0.1
         with:
           package: ${{ github.event.inputs.dbt-package }}
 
       - name: Parse semver string
         id: semver
-        uses: dbt-labs/actions/parse-semver@v0.1
+        uses: dbt-labs/actions/parse-semver@v0.0.1
         with:
           version: ${{ github.event.inputs.version }}
 

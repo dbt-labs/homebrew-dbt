@@ -9,7 +9,7 @@ class {{ classname }} < Formula
   revision 1
 
   depends_on "rust" => :build
-{%- if package == 'dbt-postgres' %}
+{%- if package in ('dbt-postgres', 'dbt-redshift') %}
   depends_on "postgresql"
 {%- endif %}
   depends_on "python@3.9"
