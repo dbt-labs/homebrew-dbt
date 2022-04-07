@@ -7,9 +7,11 @@ on:
   workflow_dispatch:
     inputs:
       version:
+        type: string
         description: "The version number to release"
         required: true
       dbt-package:
+        type: string
         description: "Name of the dbt database adapter"
         required: true
       is-default-version:
@@ -51,13 +53,13 @@ jobs:
 
       - name: Get python package info
         id: package-info
-        uses: dbt-labs/actions/py-package-info@main
+        uses: dbt-labs/actions/py-package-info@v0.1
         with:
           package: ${{ github.event.inputs.dbt-package }}
 
       - name: Parse semver string
         id: semver
-        uses: dbt-labs/actions/parse-semver@main
+        uses: dbt-labs/actions/parse-semver@v0.1
         with:
           version: ${{ github.event.inputs.version }}
 
