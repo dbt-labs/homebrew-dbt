@@ -3,6 +3,6 @@
   "inputs": {
     "version": "1.0.0",
     "dbt-package": "dbt-bigquery",
-    "is-default-version": false
+    "is-default-version": "false"
   }
 }

@@ -1,6 +1,7 @@
 # TODO:
 #   - test the formula (this might take a while to run w/o bottles)
-#   - test with `act workflow_dispatch --eventpath .github/example.event.json -W .github/workflows/release.yml`
+#     - test that it installs correctly
+#     - test that it works properly
 name: Build formula for dbt package
 
 on:
