@@ -3,8 +3,8 @@ class DbtBigqueryAT110Rc1 < Formula
 
   desc "Bigquery adapter plugin for dbt"
   homepage "https://github.com/dbt-labs/dbt-bigquery"
-  url "https://files.pythonhosted.org/packages/7c/07/0b948e6e89df1caf3cc58bc4bed4429e5f866542afabdb049824c2a2d29b/dbt-bigquery-1.0.0.tar.gz"
-  sha256 "e22442f00fcec155dcbfe8be351a11c35913fb6edd11bd5e52fafc3218abd12e"
+  url "https://files.pythonhosted.org/packages/52/3b/80f2055434dab803743a11714a78e1269c315c283f443cbb6341b54ab0a2/dbt-bigquery-1.1.0rc1.tar.gz"
+  sha256 "6778564007fd00becb84baca33876f50deddcf99f05d1fedfe6b24fcb7c45999"
   # license ""
   revision 1
 
