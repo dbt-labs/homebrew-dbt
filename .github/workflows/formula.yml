@@ -52,17 +52,18 @@ jobs:
           pip install --no-cache-dir --upgrade pip
           pip install --no-cache-dir j2cli wheel homebrew-pypi-poet
 
-      - name: Get python package info
-        id: package-info
-        uses: dbt-labs/actions/py-package-info@v0.0.1
-        with:
-          package: ${{ github.event.inputs.dbt-package }}
-
       - name: Parse semver string
         id: semver
         uses: dbt-labs/actions/parse-semver@v0.0.1
         with:
           version: ${{ github.event.inputs.version }}
+
+      - name: Get python package info
+        id: package-info
+        uses: dbt-labs/actions/py-package-info@v0.0.1
+        with:
+          package: ${{ github.event.inputs.dbt-package }}
+          version: ${{ steps.semver.outputs.version }}
 
       - name: Generate formula resources
         id: gen-resources
