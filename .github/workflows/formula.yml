@@ -1,0 +1,143 @@
+# TODO:
+#   - test the formula (this might take a while to run w/o bottles)
+#     - test that it installs correctly
+#     - test that it works properly
+name: Build formula for dbt package
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        description: "The version number to release"
+        required: true
+      dbt-package:
+        type: string
+        description: "Name of the dbt database adapter"
+        required: true
+      is-default-version:
+        description: "Is this version the latest stable release?"
+        type: boolean
+        required: true
+  workflow_call:
+    inputs:
+      version:
+        type: string
+        description: "The version number to release"
+        required: true
+      dbt-package:
+        type: string
+        description: "Name of the dbt database adapter"
+        required: true
+      is-default-version:
+        description: "Is this version the latest stable release?"
+        type: boolean
+        required: true
+
+env:
+  BUILD_DIR: ${{ github.workspace }}/build
+
+jobs:
+  create-formula:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - if: ${{ !env.ACT }}
+        uses: Homebrew/actions/setup-homebrew@master
+      - uses: actions/setup-python@v2
+      - run: mkdir -p $BUILD_DIR
+
+      - name: Install dependencies
+        run: |
+          pip install --no-cache-dir --upgrade pip
+          pip install --no-cache-dir j2cli wheel homebrew-pypi-poet
+
+      - name: Get python package info
+        id: package-info
+        uses: dbt-labs/actions/py-package-info@v0.0.1
+        with:
+          package: ${{ github.event.inputs.dbt-package }}
+
+      - name: Parse semver string
+        id: semver
+        uses: dbt-labs/actions/parse-semver@v0.0.1
+        with:
+          version: ${{ github.event.inputs.version }}
+
+      - name: Generate formula resources
+        id: gen-resources
+        run: |
+          pip install ${{ github.event.inputs.dbt-package }}==${{ steps.semver.outputs.version }} --no-cache-dir
+          RESOURCES_FILE_PATH=$BUILD_DIR/resources.txt
+          poet -r ${{ github.event.inputs.dbt-package }} | .github/process-python-resources.py ${{ github.event.inputs.dbt-package }} > "$RESOURCES_FILE_PATH"
+          cat "$RESOURCES_FILE_PATH"
+          echo ::set-output name=formula-resources-file::"$RESOURCES_FILE_PATH"
+
+      - name: Generate formula file name
+        id: gen-filename
+        run: |
+          if [ ${{ steps.semver.outputs.is-pre-release }} == 1 ]
+          then
+            echo "This is a prelease"
+            echo ::set-output name=filename-with-version::"Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.base-version }}-${{ steps.semver.outputs.pre-release }}.rb"
+          else
+            echo "This is a final release"
+            echo ::set-output name=filename-with-version::"Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.version }}.rb"
+          fi
+          echo ::set-output name=filename::"Formula/${{ github.event.inputs.dbt-package }}.rb"
+
+      - name: Generate formula class name
+        id: gen-classname
+        run: |
+          PACKAGE_NAME=$(python -c "print(''.join(word.title() for word in '${{ github.event.inputs.dbt-package }}'.split('-')))")
+          PACKAGE_VERSION=$(python -c "print(''.join(word.title() for word in '${{ steps.semver.outputs.version }}'.split('.')))")
+          echo ::set-output name=classname-with-version::${PACKAGE_NAME}AT${PACKAGE_VERSION}
+          echo ::set-output name=classname::${PACKAGE_NAME}
+
+      - name: Generate versioned formula file
+        env:
+          package: ${{ github.event.inputs.dbt-package }}
+          classname: ${{ steps.gen-classname.outputs.classname-with-version }}
+          summary: ${{ steps.package-info.outputs.summary }}
+          homepage: ${{ steps.package-info.outputs.homepage }}
+          source_url: ${{ steps.package-info.outputs.source-url }}
+          source_checksum: ${{ steps.package-info.outputs.source-checksum }}
+        run: |
+          export resources=$(cat "${{ steps.gen-resources.outputs.formula-resources-file }}")
+          j2 .github/formula-template.j2 > "${{ steps.gen-filename.outputs.filename-with-version }}"
+          cat "${{ steps.gen-filename.outputs.filename-with-version }}"
+
+      - name: Test versioned formula file
+        if: ${{ !env.ACT }}
+        run: |
+          brew style --fix "${{ steps.gen-filename.outputs.filename-with-version }}"
+          brew audit --new "${{ steps.gen-filename.outputs.filename-with-version }}"
+
+      - name: Generate default formula file
+        if: ${{ fromJson(github.event.inputs.is-default-version) }}
+        env:
+          package: ${{ github.event.inputs.dbt-package }}
+          classname: ${{ steps.gen-classname.outputs.classname }}
+          summary: ${{ steps.package-info.outputs.summary }}
+          homepage: ${{ steps.package-info.outputs.homepage }}
+          source_url: ${{ steps.package-info.outputs.source-url }}
+          source_checksum: ${{ steps.package-info.outputs.source-checksum }}
+        run: |
+          export resources=$(cat "${{ steps.gen-resources.outputs.formula-resources-file }}")
+          j2 .github/formula-template.j2 > "${{ steps.gen-filename.outputs.filename }}"
+          cat "${{ steps.gen-filename.outputs.filename }}"
+
+      - name: Test default formula file
+        if: ${{ !env.ACT && fromJson(github.event.inputs.is-default-version) }}
+        run: |
+          brew style --fix "${{ steps.gen-filename.outputs.filename }}"
+          brew audit --new "${{ steps.gen-filename.outputs.filename }}"
+
+      - name: Create pull request
+        if: ${{ !env.ACT }}
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: "${{ github.event.inputs.dbt-package }} formula for version ${{ github.event.inputs.version }}"
+          branch: "${{ github.event.inputs.dbt-package }}-formula/${{ github.event.inputs.version }}"
+          body: |
+            Generated formula to install ${{ github.event.inputs.dbt-package }} for version ${{ github.event.inputs.version }}

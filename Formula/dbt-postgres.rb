@@ -1,7 +1,7 @@
 class DbtPostgres < Formula
   include Language::Python::Virtualenv
 
-  desc "dbt-postgres contains all of the code enabling dbt to work with Postgres"
+  desc "dbt Postgres contains all of the code enabling dbt to work with Postgres"
   homepage "https://github.com/dbt-labs/dbt-core"
   url "https://files.pythonhosted.org/packages/07/a9/85f63f1bbcbae31b2c692d3ef098b7c55369e5b454c8c899a8430c87aa90/dbt-postgres-1.0.4.tar.gz"
   sha256 "e12088d211b05fa639dda73afe25fdf7ad415fec4ba6421d7297d3a08516c21e"

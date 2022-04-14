@@ -1,0 +1,27 @@
+class {{ classname }} < Formula
+  include Language::Python::Virtualenv
+
+  desc "{{ summary|capitalize }}"
+  homepage "{{ homepage }}"
+  url "{{ source_url }}"
+  sha256 "{{ source_checksum }}"
+  # license ""
+  revision 1
+
+  depends_on "rust" => :build
+{%- if package in ('dbt-postgres', 'dbt-redshift') %}
+  depends_on "postgresql"
+{%- endif %}
+  depends_on "python@3.9"
+
+{{ resources }}
+
+  def install
+    ENV["CARGO_NET_GIT_FETCH_WITH_CLI"] = "true"
+    virtualenv_install_with_resources
+  end
+
+  test do
+    false
+  end
+end
