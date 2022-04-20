@@ -42,9 +42,9 @@ jobs:
   create-formula:
     runs-on: ubuntu-latest
     steps:
-      - name: Show inputs
+      - name: Log workflow inputs
         run: |
-          echo "::group::Create formula inputs"
+          echo "::group::Build formula inputs"
           echo "version=${{ github.event.inputs.version }}"
           echo "dbt-package=${{ github.event.inputs.dbt-package }}"
           echo "is-default-version=${{ github.event.inputs.is-default-version }}"
@@ -153,7 +153,7 @@ jobs:
         run: |
           mkdir -p Aliases
           cd Aliases
-          ln -s ..${{ steps.gen-filename.outputs.filename }} ${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.major }}.${{ steps.semver.outputs.minor }}
+          ln -s ../${{ steps.gen-filename.outputs.filename }} ${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.major }}.${{ steps.semver.outputs.minor }}
 
       - name: Format default formula file
         if: ${{ !env.ACT && fromJson(github.event.inputs.is-default-version) }}

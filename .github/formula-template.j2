@@ -6,7 +6,7 @@ class {{ classname }} < Formula
   url "{{ source_url }}"
   sha256 "{{ source_checksum }}"
   # license ""
-{%- if revision %}
+{%- if revision is defined %}
   revision {{ revision }}
 {%- endif %}
 
