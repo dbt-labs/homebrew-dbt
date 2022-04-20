@@ -2,6 +2,7 @@
 #   - test the formula (this might take a while to run w/o bottles)
 #     - test that it installs correctly
 #     - test that it works properly
+
 name: Build formula for dbt package
 
 on:
@@ -9,7 +10,7 @@ on:
     inputs:
       version:
         type: string
-        description: "The version number to release"
+        description: "The package version to release"
         required: true
       dbt-package:
         type: string
@@ -23,7 +24,7 @@ on:
     inputs:
       version:
         type: string
-        description: "The version number to release"
+        description: "The package version to release"
         required: true
       dbt-package:
         type: string
@@ -41,11 +42,26 @@ jobs:
   create-formula:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - if: ${{ !env.ACT }}
+      - name: Show inputs
+        run: |
+          echo "::group::Create formula inputs"
+          echo "version=${{ github.event.inputs.version }}"
+          echo "dbt-package=${{ github.event.inputs.dbt-package }}"
+          echo "is-default-version=${{ github.event.inputs.is-default-version }}"
+          echo "::endgroup::"
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup homebrew
+        if: ${{ !env.ACT }}
         uses: Homebrew/actions/setup-homebrew@master
-      - uses: actions/setup-python@v2
-      - run: mkdir -p $BUILD_DIR
+
+      - name: Setup python
+        uses: actions/setup-python@v2
+
+      - name: Create build dir
+        run: mkdir -p $BUILD_DIR
 
       - name: Install dependencies
         run: |
@@ -108,11 +124,15 @@ jobs:
           j2 .github/formula-template.j2 > "${{ steps.gen-filename.outputs.filename-with-version }}"
           cat "${{ steps.gen-filename.outputs.filename-with-version }}"
 
-      - name: Test versioned formula file
+      - name: Format versioned formula file
         if: ${{ !env.ACT }}
         run: |
-          brew style --fix "${{ steps.gen-filename.outputs.filename-with-version }}"
-          brew audit --new "${{ steps.gen-filename.outputs.filename-with-version }}"
+          brew style --formula --fix "${{ steps.gen-filename.outputs.filename-with-version }}"
+
+      - name: Audit versioned formula file
+        if: ${{ !env.ACT }}
+        run: |
+          brew audit --formula --new "${{ steps.gen-filename.outputs.filename-with-version }}"
 
       - name: Generate default formula file
         if: ${{ fromJson(github.event.inputs.is-default-version) }}
@@ -128,11 +148,22 @@ jobs:
           j2 .github/formula-template.j2 > "${{ steps.gen-filename.outputs.filename }}"
           cat "${{ steps.gen-filename.outputs.filename }}"
 
-      - name: Test default formula file
+      - name: Create alias for default formula file
+        if: ${{ fromJson(github.event.inputs.is-default-version) }}
+        run: |
+          mkdir -p Aliases
+          cd Aliases
+          ln -s ..${{ steps.gen-filename.outputs.filename }} ${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.major }}.${{ steps.semver.outputs.minor }}
+
+      - name: Format default formula file
         if: ${{ !env.ACT && fromJson(github.event.inputs.is-default-version) }}
         run: |
-          brew style --fix "${{ steps.gen-filename.outputs.filename }}"
-          brew audit --new "${{ steps.gen-filename.outputs.filename }}"
+          brew style --formula --fix "${{ steps.gen-filename.outputs.filename }}"
+
+      - name: Audit default formula file
+        if: ${{ !env.ACT && fromJson(github.event.inputs.is-default-version) }}
+        run: |
+          brew audit --formula --new "${{ steps.gen-filename.outputs.filename }}" --except
 
       - name: Create pull request
         if: ${{ !env.ACT }}
