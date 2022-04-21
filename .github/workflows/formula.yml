@@ -163,7 +163,7 @@ jobs:
       - name: Audit default formula file
         if: ${{ !env.ACT && fromJson(github.event.inputs.is-default-version) }}
         run: |
-          brew audit --formula --new "${{ steps.gen-filename.outputs.filename }}" --except
+          brew audit --formula --new "${{ steps.gen-filename.outputs.filename }}"
 
       - name: Create pull request
         if: ${{ !env.ACT }}
