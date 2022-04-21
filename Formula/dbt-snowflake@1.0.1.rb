@@ -1,4 +1,4 @@
-class DbtSnowflake < Formula
+class DbtSnowflakeAT101 < Formula
   include Language::Python::Virtualenv
 
   desc "Snowflake adapter plugin for dbt"
