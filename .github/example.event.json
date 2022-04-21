@@ -1,8 +1,8 @@
 {
   "action": "workflow_dispatch",
   "inputs": {
-    "version": "1.1.0rc1",
-    "dbt-package": "dbt-redshift",
-    "is-default-version": "false"
+    "version": "1.0.1",
+    "dbt-package": "dbt-snowflake",
+    "is-default-version": "true"
   }
 }
