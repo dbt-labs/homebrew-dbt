@@ -1,4 +1,4 @@
-class DbtPostgres < Formula
+class DbtPostgresAT105 < Formula
   include Language::Python::Virtualenv
 
   desc "Postgres adpter plugin for dbt (data build tool)"
