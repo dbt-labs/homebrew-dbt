@@ -153,7 +153,7 @@ jobs:
         run: |
           mkdir -p Aliases
           cd Aliases
-          ln -s ../${{ steps.gen-filename.outputs.filename }} ${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.major }}.${{ steps.semver.outputs.minor }}
+          ln -sf ../${{ steps.gen-filename.outputs.filename }} ${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.major }}.${{ steps.semver.outputs.minor }}
 
       - name: Format default formula file
         if: ${{ !env.ACT && fromJson(github.event.inputs.is-default-version) }}
