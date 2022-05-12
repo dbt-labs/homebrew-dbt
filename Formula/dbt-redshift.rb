@@ -27,13 +27,13 @@ class DbtRedshift < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f3/03/78e29e6c841ee27e3c4ed5628606b5e564279912c9a32318785e8eb37453/boto3-1.22.3.tar.gz"
-    sha256 "ef66e2e4f05f0d20aab20b1b655dc670db5c9324d33db6754b576c6867c2ffe9"
+    url "https://files.pythonhosted.org/packages/28/f5/8394cba779b6324465296dbd7872733a3d45ec8b8e7d433d2964b5e22372/boto3-1.22.12.tar.gz"
+    sha256 "4b3a49abf7a5f7cdd82714a3ae356a9a8ce12a668e014c5fc68454aa1e2fc0cb"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/d6/8f/b5b284826a64f2685cedfa153eba9be0c971087ebc8fd27f2cd077586613/botocore-1.25.3.tar.gz"
-    sha256 "c807e14b956b4b11d6872e84d1d947d1da5ffeedf8aac569a6401063e1752abd"
+    url "https://files.pythonhosted.org/packages/e6/d6/2a03437f09eecddf889bbda21d3eb2af0828c57b19e0979e1145be057ed7/botocore-1.25.12.tar.gz"
+    sha256 "e2fc586fdc0b54c08fc509e906e87fb358b9f5607b12f526f995ee74a4a4bcd3"
   end
 
   resource "certifi" do
@@ -172,8 +172,8 @@ class DbtRedshift < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/31/df/789bd0556e65cf931a5b87b603fcf02f79ff04d5379f3063588faaf9c1e4/pyparsing-3.0.8.tar.gz"
-    sha256 "7bf433498c016c4314268d95df76c81b842a4cb2b276fa3312cfb1e1d85f6954"
+    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
+    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
   end
 
   resource "pyrsistent" do
