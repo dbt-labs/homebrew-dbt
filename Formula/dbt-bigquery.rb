@@ -71,8 +71,8 @@ class DbtBigquery < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/08/ee/912307cf911fbc6faeefe80d1743f6b2bcf8e1e886dc707edc4d88e4461a/google-api-core-2.7.2.tar.gz"
-    sha256 "65480309a7437f739e4476da037af02a3ec8263f1d1f89f72bbdc8f54fe402d2"
+    url "https://files.pythonhosted.org/packages/7b/16/919e6c52a6dd601ac45871b1b674edcfab4138cbbed753af242ea4c25c7a/google-api-core-2.7.3.tar.gz"
+    sha256 "17957f0704cbe95bd2ce25019efd2046423978594d181d4263e5dcffd2dbbc79"
   end
 
   resource "google-auth" do
@@ -106,13 +106,13 @@ class DbtBigquery < Formula
   end
 
   resource "grpcio" do
-    url "https://files.pythonhosted.org/packages/65/75/8b706e1170e2c7b6242b1675259e47986bb4fc490f29387989a965972e6e/grpcio-1.44.0.tar.gz"
-    sha256 "4bae1c99896045d3062ab95478411c8d5a52cb84b91a1517312629fa6cfeb50e"
+    url "https://files.pythonhosted.org/packages/fc/65/8443610398cefb045acdbc6d4f6f33fc8fb2203b21dcf0858724f5a83f3d/grpcio-1.46.1.tar.gz"
+    sha256 "4835b0f5fedbee3a3d6eea48f4e65dffd30b52c078690fa97ddc9fcea1e3b35d"
   end
 
   resource "grpcio-status" do
-    url "https://files.pythonhosted.org/packages/02/80/b18263cbf65c805dbf2d13a7cabedb4786e36fd347b599a46f88d249ec9e/grpcio-status-1.44.0.tar.gz"
-    sha256 "ac613ab7a45380cbfa3e529022d0b37317d858f172ba6e65c188aa7355539398"
+    url "https://files.pythonhosted.org/packages/ab/c5/c8eb5b8518247241496af02cd5f51f8406c3b439f5eb86a4f391f35585fa/grpcio-status-1.46.1.tar.gz"
+    sha256 "700ad7bdc2da6b1d873ae9abffd957b3df6b74c8ca4b34c50bf1b062ae10a620"
   end
 
   resource "hologram" do
@@ -216,8 +216,8 @@ class DbtBigquery < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/31/df/789bd0556e65cf931a5b87b603fcf02f79ff04d5379f3063588faaf9c1e4/pyparsing-3.0.8.tar.gz"
-    sha256 "7bf433498c016c4314268d95df76c81b842a4cb2b276fa3312cfb1e1d85f6954"
+    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
+    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
   end
 
   resource "pyrsistent" do
