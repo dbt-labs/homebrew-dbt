@@ -3,8 +3,8 @@ class DbtSnowflake < Formula
 
   desc "Snowflake adapter plugin for dbt"
   homepage "https://github.com/dbt-labs/dbt-snowflake"
-  url "https://files.pythonhosted.org/packages/35/58/6dca358dd6e2bdba79b815be1997819186e48542230c1a917de71491338b/dbt-snowflake-1.1.0.tar.gz"
-  sha256 "4d192795232c2d575602d8c7996f98e3f6a3500e4b8ad84a4dfab110294adede"
+  url "https://files.pythonhosted.org/packages/1a/c1/7e1a70f478efccdb960f9a4178f80fefb9da5521bac267f9abbb58e1412c/dbt-snowflake-1.0.1.tar.gz"
+  sha256 "8d286527f9bf3ced6196d509f249e6076adb79102712428699f3344a8b756558"
   # license ""
 
   depends_on "rust" => :build
@@ -31,8 +31,8 @@ class DbtSnowflake < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/6c/ae/d26450834f0acc9e3d1f74508da6df1551ceab6c2ce0766a593362d6d57f/certifi-2021.10.8.tar.gz"
-    sha256 "78884e7c1d4b00ce3cea67b44566851c4343c120abd683433ce934a68ea58872"
+    url "https://files.pythonhosted.org/packages/07/10/75277f313d13a2b74fc56e29239d5c840c2bf09f17bf25c02b35558812c6/certifi-2022.5.18.1.tar.gz"
+    sha256 "9c5705e395cd70084351dd8ad5c41e65655e08ce46f2ec9cf6c2c08390f71eb7"
   end
 
   resource "cffi" do
@@ -55,14 +55,14 @@ class DbtSnowflake < Formula
     sha256 "5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"
   end
 
-  resource "cryptography" do # cryptography==3.3.2
-    url "https://files.pythonhosted.org/packages/d4/85/38715448253404186029c575d559879912eb8a1c5d16ad9f25d35f7c4f4c/cryptography-3.3.2.tar.gz"
-    sha256 "5a60d3780149e13b7a6ff7ad6526b38846354d11a15e21068e57073e29e19bed"
+  resource "cryptography" do
+    url "https://files.pythonhosted.org/packages/cc/98/8a258ab4787e6f835d350639792527d2eb7946ff9fc0caca9c3f4cf5dcfe/cryptography-3.4.8.tar.gz"
+    sha256 "94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c"
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/04/ce/6e600b3349d89ef903d1bf1a04723f2be52c5aca3e384c83495ad0239840/dbt-core-1.1.0.tar.gz"
-    sha256 "3e33ce5be74e0d4f9f28ad76b4b1de55cb343d4c53c3a8f98c24551881aedf3e"
+    url "https://files.pythonhosted.org/packages/62/b0/4471b505a0a0e70ddc92ffe96957498fb0a4bf2878ba4e2343894b5da8d7/dbt-core-1.0.7.tar.gz"
+    sha256 "72780b0ba2d72ab1a5d0af259270e13017d38b1839f62439e8508af471b2f28d"
   end
 
   resource "dbt-extractor" do
@@ -85,9 +85,9 @@ class DbtSnowflake < Formula
     sha256 "9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"
   end
 
-  resource "importlib-metadata" do # importlib_metadata=4.8.2
-    url "https://files.pythonhosted.org/packages/2e/6d/4508b1922b1610f6646fd95681fa1b0c092df35ec14018218f4638b7342a/importlib_metadata-4.8.2.tar.gz"
-    sha256 "75bdec14c397f528724c1bfd9709d660b33a4d2e77387a3358f20b848bb5e5fb"
+  resource "importlib-metadata" do
+    url "https://files.pythonhosted.org/packages/3e/1d/964b27278cfa369fbe9041f604ab09c6e99556f8b7910781b4584b428c2f/importlib_metadata-4.11.3.tar.gz"
+    sha256 "ea4c597ebf37142f827b8f39299579e31685c31d3a438b59f469406afd0f2539"
   end
 
   resource "isodate" do
@@ -176,8 +176,8 @@ class DbtSnowflake < Formula
   end
 
   resource "PyJWT" do
-    url "https://files.pythonhosted.org/packages/1d/8e/01bdcfdbb352daaba8ea406d9df149c5bba7dbf70f908d4fa4c269fe6a08/PyJWT-2.3.0.tar.gz"
-    sha256 "b888b4d56f06f6dcd777210c334e69c737be74755d3e5e9ee3fe67dc18a0ee41"
+    url "https://files.pythonhosted.org/packages/d8/6b/6287745054dbcccf75903630346be77d4715c594402cec7c2518032416c2/PyJWT-2.4.0.tar.gz"
+    sha256 "d42908208c699b3b973cbeb01a969ba6a96c821eefb1c5bfe4c390c01d67abba"
   end
 
   resource "pyOpenSSL" do
@@ -186,8 +186,8 @@ class DbtSnowflake < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/31/df/789bd0556e65cf931a5b87b603fcf02f79ff04d5379f3063588faaf9c1e4/pyparsing-3.0.8.tar.gz"
-    sha256 "7bf433498c016c4314268d95df76c81b842a4cb2b276fa3312cfb1e1d85f6954"
+    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
+    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
   end
 
   resource "pyrsistent" do
@@ -251,8 +251,8 @@ class DbtSnowflake < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/fe/71/1df93bd59163c8084d812d166c907639646e8aac72886d563851b966bf18/typing_extensions-4.2.0.tar.gz"
-    sha256 "f1c24655a0da0d1b67f07e17a5e6b2a105894e6824b92096378bb3668ef02376"
+    url "https://files.pythonhosted.org/packages/ed/12/c5079a15cf5c01d7f4252b473b00f7e68ee711be605b9f001528f0298b98/typing_extensions-3.10.0.2.tar.gz"
+    sha256 "49f75d16ff11f1cd258e1b988ccff82a3ca5570217d7ad8c5f48205dd99a677e"
   end
 
   resource "urllib3" do
@@ -273,8 +273,8 @@ class DbtSnowflake < Formula
   def install
     ENV["CARGO_NET_GIT_FETCH_WITH_CLI"] = "true"
     venv = virtualenv_create(libexec, "python3")
-    venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/python", "-m", "pip", "install",
-      "pip==22.0.4"
+    venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
+      "--upgrade", "pip"
     resources.each do |r|
       if r.name == "snowflake-connector-python"
         # workaround for installing `snowflake-connector-python`
