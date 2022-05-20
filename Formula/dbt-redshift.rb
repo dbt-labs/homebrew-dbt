@@ -3,8 +3,8 @@ class DbtRedshift < Formula
 
   desc "Redshift adapter plugin for dbt"
   homepage "https://github.com/dbt-labs/dbt-redshift"
-  url "https://files.pythonhosted.org/packages/a4/98/dfafe19a7872c2a6c524d6b27b4d5a24b40427484b4575d9653f0e98485a/dbt-redshift-1.1.0.tar.gz"
-  sha256 "08d902391095740b44d780b1286a6179790eab84324eafe1b91d08590cc75a62"
+  url "https://files.pythonhosted.org/packages/41/0c/02dda1057d4eeea2174e6290ce9f833e9e2574c49ac6152a4b9d7941595c/dbt-redshift-1.0.1.tar.gz"
+  sha256 "1e45d2948313a588d54d7b59354e7850a969cf2aafb4d3581f3a733cb0170e68"
   # license ""
 
   depends_on "rust" => :build
@@ -27,18 +27,18 @@ class DbtRedshift < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f3/03/78e29e6c841ee27e3c4ed5628606b5e564279912c9a32318785e8eb37453/boto3-1.22.3.tar.gz"
-    sha256 "ef66e2e4f05f0d20aab20b1b655dc670db5c9324d33db6754b576c6867c2ffe9"
+    url "https://files.pythonhosted.org/packages/70/9e/cc73c901090f2e88f1c88996b7cdacacfb9e34f7e3088e275052802e6dd6/boto3-1.23.5.tar.gz"
+    sha256 "73a0d092aaea1649150f43fb3f41451d5a0883940549a64d72781a23ce6b2d44"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/d6/8f/b5b284826a64f2685cedfa153eba9be0c971087ebc8fd27f2cd077586613/botocore-1.25.3.tar.gz"
-    sha256 "c807e14b956b4b11d6872e84d1d947d1da5ffeedf8aac569a6401063e1752abd"
+    url "https://files.pythonhosted.org/packages/5b/df/9d31c7888915795895ba6028b4ccaea04571cbbb6dc02efcacce952fab33/botocore-1.26.5.tar.gz"
+    sha256 "32541873924e3ff0ad95f02dc331e9f278721a3b864a4e2a8d514346b2598ce5"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/6c/ae/d26450834f0acc9e3d1f74508da6df1551ceab6c2ce0766a593362d6d57f/certifi-2021.10.8.tar.gz"
-    sha256 "78884e7c1d4b00ce3cea67b44566851c4343c120abd683433ce934a68ea58872"
+    url "https://files.pythonhosted.org/packages/07/10/75277f313d13a2b74fc56e29239d5c840c2bf09f17bf25c02b35558812c6/certifi-2022.5.18.1.tar.gz"
+    sha256 "9c5705e395cd70084351dd8ad5c41e65655e08ce46f2ec9cf6c2c08390f71eb7"
   end
 
   resource "cffi" do
@@ -62,8 +62,8 @@ class DbtRedshift < Formula
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/04/ce/6e600b3349d89ef903d1bf1a04723f2be52c5aca3e384c83495ad0239840/dbt-core-1.1.0.tar.gz"
-    sha256 "3e33ce5be74e0d4f9f28ad76b4b1de55cb343d4c53c3a8f98c24551881aedf3e"
+    url "https://files.pythonhosted.org/packages/62/b0/4471b505a0a0e70ddc92ffe96957498fb0a4bf2878ba4e2343894b5da8d7/dbt-core-1.0.7.tar.gz"
+    sha256 "72780b0ba2d72ab1a5d0af259270e13017d38b1839f62439e8508af471b2f28d"
   end
 
   resource "dbt-extractor" do
@@ -72,8 +72,8 @@ class DbtRedshift < Formula
   end
 
   resource "dbt-postgres" do
-    url "https://files.pythonhosted.org/packages/71/10/8036f45314777e42e44fc763df7029545db0d5bcf60dccb7d08ce5cf2152/dbt-postgres-1.1.0.tar.gz"
-    sha256 "7f3d6e49d163bb91e95022ae4d2050ccfc626eb25531f0fe7abeb399fa7d0761"
+    url "https://files.pythonhosted.org/packages/8b/15/493e15b3a8ea0b011d14f3aa34c91038ccd49aa23333bc2eb443bd10d249/dbt-postgres-1.0.7.tar.gz"
+    sha256 "ed6d663784389f99c952afb5e8a5a05691c2c5974600eef98ed67136770e4aac"
   end
 
   resource "future" do
@@ -172,8 +172,8 @@ class DbtRedshift < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/31/df/789bd0556e65cf931a5b87b603fcf02f79ff04d5379f3063588faaf9c1e4/pyparsing-3.0.8.tar.gz"
-    sha256 "7bf433498c016c4314268d95df76c81b842a4cb2b276fa3312cfb1e1d85f6954"
+    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
+    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
   end
 
   resource "pyrsistent" do
@@ -232,8 +232,8 @@ class DbtRedshift < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/fe/71/1df93bd59163c8084d812d166c907639646e8aac72886d563851b966bf18/typing_extensions-4.2.0.tar.gz"
-    sha256 "f1c24655a0da0d1b67f07e17a5e6b2a105894e6824b92096378bb3668ef02376"
+    url "https://files.pythonhosted.org/packages/ed/12/c5079a15cf5c01d7f4252b473b00f7e68ee711be605b9f001528f0298b98/typing_extensions-3.10.0.2.tar.gz"
+    sha256 "49f75d16ff11f1cd258e1b988ccff82a3ca5570217d7ad8c5f48205dd99a677e"
   end
 
   resource "urllib3" do
@@ -254,8 +254,8 @@ class DbtRedshift < Formula
   def install
     ENV["CARGO_NET_GIT_FETCH_WITH_CLI"] = "true"
     venv = virtualenv_create(libexec, "python3")
-    venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/python", "-m", "pip", "install",
-      "pip==22.0.4"
+    venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
+      "--upgrade", "pip"
     resources.each do |r|
       venv.pip_install r
     end
