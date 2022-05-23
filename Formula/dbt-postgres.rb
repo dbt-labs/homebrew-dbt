@@ -3,8 +3,8 @@ class DbtPostgres < Formula
 
   desc "Postgres adpter plugin for dbt (data build tool)"
   homepage "https://github.com/dbt-labs/dbt-core"
-  url "https://files.pythonhosted.org/packages/8b/15/493e15b3a8ea0b011d14f3aa34c91038ccd49aa23333bc2eb443bd10d249/dbt-postgres-1.0.7.tar.gz"
-  sha256 "ed6d663784389f99c952afb5e8a5a05691c2c5974600eef98ed67136770e4aac"
+  url "https://files.pythonhosted.org/packages/71/10/8036f45314777e42e44fc763df7029545db0d5bcf60dccb7d08ce5cf2152/dbt-postgres-1.1.0.tar.gz"
+  sha256 "7f3d6e49d163bb91e95022ae4d2050ccfc626eb25531f0fe7abeb399fa7d0761"
   # license ""
 
   depends_on "rust" => :build
@@ -27,8 +27,8 @@ class DbtPostgres < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/07/10/75277f313d13a2b74fc56e29239d5c840c2bf09f17bf25c02b35558812c6/certifi-2022.5.18.1.tar.gz"
-    sha256 "9c5705e395cd70084351dd8ad5c41e65655e08ce46f2ec9cf6c2c08390f71eb7"
+    url "https://files.pythonhosted.org/packages/6c/ae/d26450834f0acc9e3d1f74508da6df1551ceab6c2ce0766a593362d6d57f/certifi-2021.10.8.tar.gz"
+    sha256 "78884e7c1d4b00ce3cea67b44566851c4343c120abd683433ce934a68ea58872"
   end
 
   resource "cffi" do
@@ -52,8 +52,8 @@ class DbtPostgres < Formula
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/62/b0/4471b505a0a0e70ddc92ffe96957498fb0a4bf2878ba4e2343894b5da8d7/dbt-core-1.0.7.tar.gz"
-    sha256 "72780b0ba2d72ab1a5d0af259270e13017d38b1839f62439e8508af471b2f28d"
+    url "https://files.pythonhosted.org/packages/04/ce/6e600b3349d89ef903d1bf1a04723f2be52c5aca3e384c83495ad0239840/dbt-core-1.1.0.tar.gz"
+    sha256 "3e33ce5be74e0d4f9f28ad76b4b1de55cb343d4c53c3a8f98c24551881aedf3e"
   end
 
   resource "dbt-extractor" do
@@ -207,8 +207,8 @@ class DbtPostgres < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/ed/12/c5079a15cf5c01d7f4252b473b00f7e68ee711be605b9f001528f0298b98/typing_extensions-3.10.0.2.tar.gz"
-    sha256 "49f75d16ff11f1cd258e1b988ccff82a3ca5570217d7ad8c5f48205dd99a677e"
+    url "https://files.pythonhosted.org/packages/fe/71/1df93bd59163c8084d812d166c907639646e8aac72886d563851b966bf18/typing_extensions-4.2.0.tar.gz"
+    sha256 "f1c24655a0da0d1b67f07e17a5e6b2a105894e6824b92096378bb3668ef02376"
   end
 
   resource "urllib3" do
