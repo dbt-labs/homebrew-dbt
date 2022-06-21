@@ -26,13 +26,13 @@ class DbtSnowflakeAT110 < Formula
   end
 
   resource "Babel" do
-    url "https://files.pythonhosted.org/packages/23/a6/a616817c8e4fb1a69f7e8aae9fc7fce1a147e1a492f45b6fa0b7d6823178/Babel-2.10.1.tar.gz"
-    sha256 "98aeaca086133efb3e1e2aad0396987490c8425929ddbcfe0550184fdc54cd13"
+    url "https://files.pythonhosted.org/packages/51/27/81e9cf804a34a550a47cc2f0f57fe4935281d479ae3a0ac093d69476f221/Babel-2.10.3.tar.gz"
+    sha256 "7614553711ee97490f732126dc077f8d0ae084ebc6a96e23db1482afabdb2c51"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/6c/ae/d26450834f0acc9e3d1f74508da6df1551ceab6c2ce0766a593362d6d57f/certifi-2021.10.8.tar.gz"
-    sha256 "78884e7c1d4b00ce3cea67b44566851c4343c120abd683433ce934a68ea58872"
+    url "https://files.pythonhosted.org/packages/cc/85/319a8a684e8ac6d87a1193090e06b6bbb302717496380e225ee10487c888/certifi-2022.6.15.tar.gz"
+    sha256 "84c85a9078b11105f04f3036a9482ae10e4621616db313fe045dd24743a0820d"
   end
 
   resource "cffi" do
@@ -55,14 +55,14 @@ class DbtSnowflakeAT110 < Formula
     sha256 "5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"
   end
 
-  resource "cryptography" do # cryptography==3.3.2
-    url "https://files.pythonhosted.org/packages/d4/85/38715448253404186029c575d559879912eb8a1c5d16ad9f25d35f7c4f4c/cryptography-3.3.2.tar.gz"
-    sha256 "5a60d3780149e13b7a6ff7ad6526b38846354d11a15e21068e57073e29e19bed"
+  resource "cryptography" do
+    url "https://files.pythonhosted.org/packages/cc/98/8a258ab4787e6f835d350639792527d2eb7946ff9fc0caca9c3f4cf5dcfe/cryptography-3.4.8.tar.gz"
+    sha256 "94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c"
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/04/ce/6e600b3349d89ef903d1bf1a04723f2be52c5aca3e384c83495ad0239840/dbt-core-1.1.0.tar.gz"
-    sha256 "3e33ce5be74e0d4f9f28ad76b4b1de55cb343d4c53c3a8f98c24551881aedf3e"
+    url "https://files.pythonhosted.org/packages/69/66/9744d3b9aa053331b3be6487c2878d74dcddeb05c38003ac69402462e07b/dbt-core-1.1.1.tar.gz"
+    sha256 "16a0b538eec8f45465756a9264e8cf1655f4ffc8b03fea4aa8005b2351d6dae4"
   end
 
   resource "dbt-extractor" do
@@ -76,18 +76,13 @@ class DbtSnowflakeAT110 < Formula
   end
 
   resource "hologram" do
-    url "https://files.pythonhosted.org/packages/6e/20/af203575d0ece9948e1ac9b7d244168467b61ebce3ef2837bb3eb240b45f/hologram-0.0.14.tar.gz"
-    sha256 "fd67bd069e4681e1d2a447df976c65060d7a90fee7f6b84d133fd9958db074ec"
+    url "https://files.pythonhosted.org/packages/f7/c7/532cba3069f5b5495d1bb1a8c9021d02226cd6e69810911a2b559acdca94/hologram-0.0.15.tar.gz"
+    sha256 "79b3d04df84d5a9d09c2e669ec5bcc50b1713ec79f4683cfdea85583b41e46f0"
   end
 
   resource "idna" do
     url "https://files.pythonhosted.org/packages/62/08/e3fc7c8161090f742f504f40b1bccbfc544d4a4e09eb774bf40aafce5436/idna-3.3.tar.gz"
     sha256 "9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"
-  end
-
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/3e/1d/964b27278cfa369fbe9041f604ab09c6e99556f8b7910781b4584b428c2f/importlib_metadata-4.11.3.tar.gz"
-    sha256 "ea4c597ebf37142f827b8f39299579e31685c31d3a438b59f469406afd0f2539"
   end
 
   resource "isodate" do
@@ -106,13 +101,13 @@ class DbtSnowflakeAT110 < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/43/52/0a4dabd8d42efe6bb039d61731cb20a73d5425e29be16a7a2003b923e542/jsonschema-3.1.1.tar.gz"
-    sha256 "2fa0684276b6333ff3c0b1b27081f4b2305f0a36cf702a23db50edb141893c3f"
+    url "https://files.pythonhosted.org/packages/69/11/a69e2a3c01b324a77d3a7c0570faa372e8448b666300c4117a516f8b1212/jsonschema-3.2.0.tar.gz"
+    sha256 "c8a85b28d377cc7737e46e2d9f2b4f44ee3c0e1deac6bf46ddefc7187d30797a"
   end
 
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/22/2b/e840597838cc63f96926bd7daca67936031635cfe6c81ee12dc652bd2dce/keyring-23.5.0.tar.gz"
-    sha256 "9012508e141a80bd1c0b6778d5c610dd9f8c464d75ac6774248500503f972fb9"
+    url "https://files.pythonhosted.org/packages/a4/9e/9d9eb6a6dc4f347bae8200a2e1dd65a7b96ae99e29ef8f7452ccc4ef9eea/keyring-23.6.0.tar.gz"
+    sha256 "3ac00c26e4c93739e19103091a9986a9f79665a78cf15a4df1dba7ea9ac8da2f"
   end
 
   resource "leather" do
@@ -141,13 +136,13 @@ class DbtSnowflakeAT110 < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/61/3c/2206f39880d38ca7ad8ac1b28d2d5ca81632d163b2d68ef90e46409ca057/msgpack-1.0.3.tar.gz"
-    sha256 "51fdc7fb93615286428ee7758cecc2f374d5ff363bdd884c7ea622a7a327a81e"
+    url "https://files.pythonhosted.org/packages/22/44/0829b19ac243211d1d2bd759999aa92196c546518b0be91de9cacc98122a/msgpack-1.0.4.tar.gz"
+    sha256 "f5d869c18f030202eb412f08b28d2afeea553d6613aee89e200d7aca7ef01f5f"
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/3f/5e/5e9ae193c6384bd47aae5bc9bd2c48db7115f483b0ff9fef7d263e3dbb09/networkx-2.8.tar.gz"
-    sha256 "4a52cf66aed221955420e11b3e2e05ca44196b4829aab9576d4d439212b0a14f"
+    url "https://files.pythonhosted.org/packages/78/6c/85c0664365d32a32806bd12d46ea5dc466aa3aa7e8086e5daf3505b8cf33/networkx-2.8.3.tar.gz"
+    sha256 "67fab04a955a73eb660fe7bf281b6fa71a003bc6e23a92d2f6227654c5223dbe"
   end
 
   resource "oscrypto" do
@@ -176,8 +171,8 @@ class DbtSnowflakeAT110 < Formula
   end
 
   resource "PyJWT" do
-    url "https://files.pythonhosted.org/packages/1d/8e/01bdcfdbb352daaba8ea406d9df149c5bba7dbf70f908d4fa4c269fe6a08/PyJWT-2.3.0.tar.gz"
-    sha256 "b888b4d56f06f6dcd777210c334e69c737be74755d3e5e9ee3fe67dc18a0ee41"
+    url "https://files.pythonhosted.org/packages/d8/6b/6287745054dbcccf75903630346be77d4715c594402cec7c2518032416c2/PyJWT-2.4.0.tar.gz"
+    sha256 "d42908208c699b3b973cbeb01a969ba6a96c821eefb1c5bfe4c390c01d67abba"
   end
 
   resource "pyOpenSSL" do
@@ -186,8 +181,8 @@ class DbtSnowflakeAT110 < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/31/df/789bd0556e65cf931a5b87b603fcf02f79ff04d5379f3063588faaf9c1e4/pyparsing-3.0.8.tar.gz"
-    sha256 "7bf433498c016c4314268d95df76c81b842a4cb2b276fa3312cfb1e1d85f6954"
+    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
+    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
   end
 
   resource "pyrsistent" do
@@ -221,8 +216,8 @@ class DbtSnowflakeAT110 < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/60/f3/26ff3767f099b73e0efa138a9998da67890793bfa475d8278f84a30fec77/requests-2.27.1.tar.gz"
-    sha256 "68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61"
+    url "https://files.pythonhosted.org/packages/e9/23/384d9953bb968731212dc37af87cb75a885dc48e0615bd6a303577c4dc4b/requests-2.28.0.tar.gz"
+    sha256 "d568723a7ebd25875d8d1eaf5dfa068cd2fc8194b2e483d7b1f7c81918dbec6b"
   end
 
   resource "SecretStorage" do
@@ -236,8 +231,8 @@ class DbtSnowflakeAT110 < Formula
   end
 
   resource "snowflake-connector-python" do
-    url "https://files.pythonhosted.org/packages/2a/db/b61805b055d40ae79f31b801ba27d8f794665a13c4b42fda12ee09ad2c15/snowflake-connector-python-2.7.7.tar.gz"
-    sha256 "3992ff0a51d8f326ad474009572a2606aec08c1c10c26e5ff549e67652fc205c"
+    url "https://files.pythonhosted.org/packages/3c/af/bae9222e72131ff5a461fec99f2b0fbd61e40e25db2d091bdd7e204c5202/snowflake-connector-python-2.7.8.tar.gz"
+    sha256 "9cfb07b048bcb1fe646d03f7480ccb6a877e9c45067302e90bcff7fd72f6bc2f"
   end
 
   resource "sqlparse" do
@@ -265,16 +260,11 @@ class DbtSnowflakeAT110 < Formula
     sha256 "1ce08e8093ed67d638d63879fd1ba3735817f7a80de3674d293f5984f25fb6e6"
   end
 
-  resource "zipp" do
-    url "https://files.pythonhosted.org/packages/cc/3c/3e8c69cd493297003da83f26ccf1faea5dd7da7892a0a7c965ac3bcba7bf/zipp-3.8.0.tar.gz"
-    sha256 "56bf8aadb83c24db6c4b577e13de374ccfb67da2078beba1d037c17980bf43ad"
-  end
-
   def install
     ENV["CARGO_NET_GIT_FETCH_WITH_CLI"] = "true"
     venv = virtualenv_create(libexec, "python3")
-    venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/python", "-m", "pip", "install",
-      "pip==22.0.4"
+    venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/pip", "install",
+      "--upgrade", "pip"
     resources.each do |r|
       if r.name == "snowflake-connector-python"
         # workaround for installing `snowflake-connector-python`
