@@ -17,8 +17,8 @@ class DbtRedshiftAT110 < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/d7/77/ebb15fc26d0f815839ecd897b919ed6d85c050feeb83e100e020df9153d2/attrs-21.4.0.tar.gz"
-    sha256 "626ba8234211db98e869df76230a137c4c40a12d72445c45d5f5b716f076e2fd"
+    url "https://files.pythonhosted.org/packages/1a/cb/c4ffeb41e7137b23755a45e1bfec9cbb76ecf51874c6f1d113984ecaa32c/attrs-22.1.0.tar.gz"
+    sha256 "29adc2665447e5191d0e7c568fde78b21f9672d344281d0c6e1ab085429b22b6"
   end
 
   resource "Babel" do
@@ -27,13 +27,13 @@ class DbtRedshiftAT110 < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/04/5f/376f47bcf22a4b76dc10af1a8869fb676c147fb669e72859bf593cd1f871/boto3-1.24.19.tar.gz"
-    sha256 "cc01e513a54914b2a8b5515cade3bc359f9001b108416664053f02882f85050f"
+    url "https://files.pythonhosted.org/packages/58/b6/59285070c083a8c66159b99b9376296cae2f21ab713f302742226f331fbe/boto3-1.24.40.tar.gz"
+    sha256 "e05495e4da96d1811cc9cd960de2d044468f50cd192315747d61be9c1b879fdb"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/db/a7/3bb2a9eac97e1053053a3995c47777bb451eb1a7551fea887bbc054a511b/botocore-1.27.19.tar.gz"
-    sha256 "850bec9363e10c56b2678c3742a48150f6201d7184695326a380fe7341075484"
+    url "https://files.pythonhosted.org/packages/00/b3/549fedb80ff520fa89f10f4c1ba49d2f4e6fc258d5caf1455285df2e91aa/botocore-1.27.40.tar.gz"
+    sha256 "cb44d4af0119f34ca3354c2ed26a77abc76549d070c72288b9d76fc772f38518"
   end
 
   resource "certifi" do
@@ -42,8 +42,8 @@ class DbtRedshiftAT110 < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/00/9e/92de7e1217ccc3d5f352ba21e52398372525765b2e0c4530e6eb2ba9282a/cffi-1.15.0.tar.gz"
-    sha256 "920f0d66a896c2d99f0adbb391f990a84091179542c205fa53ce5787aff87954"
+    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
+    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
   end
 
   resource "charset-normalizer" do
@@ -62,8 +62,8 @@ class DbtRedshiftAT110 < Formula
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/69/66/9744d3b9aa053331b3be6487c2878d74dcddeb05c38003ac69402462e07b/dbt-core-1.1.1.tar.gz"
-    sha256 "16a0b538eec8f45465756a9264e8cf1655f4ffc8b03fea4aa8005b2351d6dae4"
+    url "https://files.pythonhosted.org/packages/a2/e4/e23969b9e117bdbba0bdf2e43d1b8cbc17e3b65419f3b435e607be324a3c/dbt-core-1.1.2.tar.gz"
+    sha256 "e944eae2e2de07e418b5b6b6fe423772c89be6fa582d82ca5c5aa5cc7c53461e"
   end
 
   resource "dbt-extractor" do
@@ -72,8 +72,8 @@ class DbtRedshiftAT110 < Formula
   end
 
   resource "dbt-postgres" do
-    url "https://files.pythonhosted.org/packages/e8/cb/7d8567202750b90085645fbc0e0859b8abccaf7a49a8b11583c762da76f2/dbt-postgres-1.1.1.tar.gz"
-    sha256 "1648e3411aa83bd6b61af4eac45b09d718d5b243cd0dd046c527ef473572c5ca"
+    url "https://files.pythonhosted.org/packages/c4/9c/b2ce37acacd8b86d503026a25ac3a31c5360c92db86e6118ab06c65a2b1e/dbt-postgres-1.1.2.tar.gz"
+    sha256 "7f56bc912afb0d846e83a9a7593839b6de4363c36dd03e911ee81c03c01ba007"
   end
 
   resource "future" do
@@ -227,13 +227,13 @@ class DbtRedshiftAT110 < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/fe/71/1df93bd59163c8084d812d166c907639646e8aac72886d563851b966bf18/typing_extensions-4.2.0.tar.gz"
-    sha256 "f1c24655a0da0d1b67f07e17a5e6b2a105894e6824b92096378bb3668ef02376"
+    url "https://files.pythonhosted.org/packages/9e/1d/d128169ff58c501059330f1ad96ed62b79114a2eb30b8238af63a2e27f70/typing_extensions-4.3.0.tar.gz"
+    sha256 "e6d2677a32f47fc7eb2795db1dd15c1f34eff616bcaf2cfb5e997f854fa1c4a6"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1b/a5/4eab74853625505725cefdf168f48661b2cd04e7843ab836f3f63abf81da/urllib3-1.26.9.tar.gz"
-    sha256 "aabaf16477806a5e1dd19aa41f8c2b7950dd3c746362d7e3223dbe6de6ac448e"
+    url "https://files.pythonhosted.org/packages/6d/d5/e8258b334c9eb8eb78e31be92ea0d5da83ddd9385dc967dd92737604d239/urllib3-1.26.11.tar.gz"
+    sha256 "ea6e8fb210b19d950fab93b60c9009226c63a28808bc8386e05301e25883ac0a"
   end
 
   resource "Werkzeug" do
