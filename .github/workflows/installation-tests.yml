@@ -39,7 +39,7 @@ jobs:
           brew update
           brew install git
           brew tap dbt-labs/dbt
-          brew install -vd ${{ matrix.adapter }}
+          brew install --verbose ${{ matrix.adapter }}
           
       - name: Verify ${{ matrix.adapter }} version
         run: |
