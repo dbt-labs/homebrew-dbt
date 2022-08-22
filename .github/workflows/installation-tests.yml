@@ -26,12 +26,14 @@ permissions: {}
 
 jobs:
   homebrew:
-    runs-on: ubuntu-latest
     
     strategy:
       fail-fast: false
       matrix:
         adapter: ['dbt-postgres', 'dbt-redshift', 'dbt-snowflake', 'dbt-bigquery']
+        os: [ubuntu-latest, macos-latest]
+        
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Brew install ${{ matrix.adapter }}
