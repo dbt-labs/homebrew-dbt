@@ -16,8 +16,8 @@ class DbtBigqueryAT120 < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/d7/77/ebb15fc26d0f815839ecd897b919ed6d85c050feeb83e100e020df9153d2/attrs-21.4.0.tar.gz"
-    sha256 "626ba8234211db98e869df76230a137c4c40a12d72445c45d5f5b716f076e2fd"
+    url "https://files.pythonhosted.org/packages/1a/cb/c4ffeb41e7137b23755a45e1bfec9cbb76ecf51874c6f1d113984ecaa32c/attrs-22.1.0.tar.gz"
+    sha256 "29adc2665447e5191d0e7c568fde78b21f9672d344281d0c6e1ab085429b22b6"
   end
 
   resource "Babel" do
@@ -41,8 +41,8 @@ class DbtBigqueryAT120 < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/93/1d/d9392056df6670ae2a29fcb04cfa5cee9f6fbde7311a1bb511d4115e9b7a/charset-normalizer-2.1.0.tar.gz"
-    sha256 "575e708016ff3a5e3681541cb9d79312c416835686d054a23accb873b254f413"
+    url "https://files.pythonhosted.org/packages/a1/34/44964211e5410b051e4b8d2869c470ae8a68ae274953b1c7de6d98bbcf94/charset-normalizer-2.1.1.tar.gz"
+    sha256 "5a3d016c7c547f69d6f81fb0db9449ce888b418b5b9952cc5e6e66843e9dd845"
   end
 
   resource "click" do
@@ -56,8 +56,8 @@ class DbtBigqueryAT120 < Formula
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/4c/b9/b12a99d0c73bb5575e71783b189665dc466d9640a0686cf60e9329801cbc/dbt-core-1.2.0.tar.gz"
-    sha256 "20c579792c485d0c5f753dece99a429da1065f13d27e8dd0a410087837ce6f8f"
+    url "https://files.pythonhosted.org/packages/5a/95/13ce2be54fdaced01abd1aec037ec3365a9f25b660de368b6750899cc996/dbt-core-1.2.1.tar.gz"
+    sha256 "40dce8636bf05ba498bb53d9e40627d1b834fb2031755505edccd8aa11497e2b"
   end
 
   resource "dbt-extractor" do
@@ -76,8 +76,8 @@ class DbtBigqueryAT120 < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/1a/90/0a278aeed278363ab26ccb23529092b48ee3eff8867472236a1b5141f626/google-auth-2.9.1.tar.gz"
-    sha256 "14292fa3429f2bb1e99862554cde1ee730d6840ebae067814d3d15d8549c0888"
+    url "https://files.pythonhosted.org/packages/43/44/a7be6998afbc3c1254f8c4206c11b5ba8c351c574636e7bfcb5209f92e67/google-auth-2.11.0.tar.gz"
+    sha256 "ed65ecf9f681832298e29328e1ef0a3676e3732b2e56f41532d45f70a22de0fb"
   end
 
   resource "google-cloud-bigquery" do
@@ -170,9 +170,9 @@ class DbtBigqueryAT120 < Formula
     sha256 "f5d869c18f030202eb412f08b28d2afeea553d6613aee89e200d7aca7ef01f5f"
   end
 
-  resource "networkx" do # pinned to 2.8.0
-    url "https://files.pythonhosted.org/packages/3f/5e/5e9ae193c6384bd47aae5bc9bd2c48db7115f483b0ff9fef7d263e3dbb09/networkx-2.8.tar.gz"
-    sha256 "4a52cf66aed221955420e11b3e2e05ca44196b4829aab9576d4d439212b0a14f"
+  resource "networkx" do
+    url "https://files.pythonhosted.org/packages/d9/c6/ad9dc9195c0e5d8879d2a28667aa45e087631576b40f9c954a086693a36d/networkx-2.8.6.tar.gz"
+    sha256 "bd2b7730300860cbd2dafe8e5af89ff5c9a65c3975b352799d87a6238b4301a6"
   end
 
   resource "packaging" do
@@ -186,8 +186,8 @@ class DbtBigqueryAT120 < Formula
   end
 
   resource "proto-plus" do
-    url "https://files.pythonhosted.org/packages/da/06/2d3fc1184b73698944cd9f80b61e1524367fc93ef9cd6e03236525b12556/proto-plus-1.20.6.tar.gz"
-    sha256 "449b4537e83f4776bd69051c4d776db8ffe3f9d0641f1e87b06c116eb94c90e9"
+    url "https://files.pythonhosted.org/packages/1d/dc/2d01683045cc6fa7a8e3f09ac293396ef39db6fb925b5dffa1e91d489ba7/proto-plus-1.22.0.tar.gz"
+    sha256 "c2e6693fdf68c405a6428226915a8625d21d0513793598ae3287a1210478d8ec"
   end
 
   resource "protobuf" do
@@ -236,8 +236,8 @@ class DbtBigqueryAT120 < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/2f/5f/a0f653311adff905bbcaa6d3dfaf97edcf4d26138393c6ccd37a484851fb/pytz-2022.1.tar.gz"
-    sha256 "1e760e2fe6a8163bc0b3d9a19c4f84342afa0a2affebfaa84b01b978a02ecaa7"
+    url "https://files.pythonhosted.org/packages/24/0c/401283bb1499768e33ddd2e1a35817c775405c1f047a9dc088a29ce2ea5d/pytz-2022.2.1.tar.gz"
+    sha256 "cea221417204f2d1a2aa03ddae3e867921971d0d76f14d87abb4414415bbdcf5"
   end
 
   resource "PyYAML" do
@@ -276,8 +276,8 @@ class DbtBigqueryAT120 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/6d/d5/e8258b334c9eb8eb78e31be92ea0d5da83ddd9385dc967dd92737604d239/urllib3-1.26.11.tar.gz"
-    sha256 "ea6e8fb210b19d950fab93b60c9009226c63a28808bc8386e05301e25883ac0a"
+    url "https://files.pythonhosted.org/packages/b2/56/d87d6d3c4121c0bcec116919350ca05dc3afd2eeb7dc88d07e8083f8ea94/urllib3-1.26.12.tar.gz"
+    sha256 "3fa96cf423e6987997fc326ae8df396db2a8b7c667747d47ddd8ecba91f4a74e"
   end
 
   resource "Werkzeug" do
