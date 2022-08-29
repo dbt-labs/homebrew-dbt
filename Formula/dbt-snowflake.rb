@@ -21,8 +21,8 @@ class DbtSnowflake < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/d7/77/ebb15fc26d0f815839ecd897b919ed6d85c050feeb83e100e020df9153d2/attrs-21.4.0.tar.gz"
-    sha256 "626ba8234211db98e869df76230a137c4c40a12d72445c45d5f5b716f076e2fd"
+    url "https://files.pythonhosted.org/packages/1a/cb/c4ffeb41e7137b23755a45e1bfec9cbb76ecf51874c6f1d113984ecaa32c/attrs-22.1.0.tar.gz"
+    sha256 "29adc2665447e5191d0e7c568fde78b21f9672d344281d0c6e1ab085429b22b6"
   end
 
   resource "Babel" do
@@ -41,8 +41,8 @@ class DbtSnowflake < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/93/1d/d9392056df6670ae2a29fcb04cfa5cee9f6fbde7311a1bb511d4115e9b7a/charset-normalizer-2.1.0.tar.gz"
-    sha256 "575e708016ff3a5e3681541cb9d79312c416835686d054a23accb873b254f413"
+    url "https://files.pythonhosted.org/packages/a1/34/44964211e5410b051e4b8d2869c470ae8a68ae274953b1c7de6d98bbcf94/charset-normalizer-2.1.1.tar.gz"
+    sha256 "5a3d016c7c547f69d6f81fb0db9449ce888b418b5b9952cc5e6e66843e9dd845"
   end
 
   resource "click" do
@@ -61,13 +61,18 @@ class DbtSnowflake < Formula
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/4c/b9/b12a99d0c73bb5575e71783b189665dc466d9640a0686cf60e9329801cbc/dbt-core-1.2.0.tar.gz"
-    sha256 "20c579792c485d0c5f753dece99a429da1065f13d27e8dd0a410087837ce6f8f"
+    url "https://files.pythonhosted.org/packages/5a/95/13ce2be54fdaced01abd1aec037ec3365a9f25b660de368b6750899cc996/dbt-core-1.2.1.tar.gz"
+    sha256 "40dce8636bf05ba498bb53d9e40627d1b834fb2031755505edccd8aa11497e2b"
   end
 
   resource "dbt-extractor" do
     url "https://files.pythonhosted.org/packages/af/2e/a110b40212480fd02bff567ff84effea8b9937ccd6ebfad0f10a382183d2/dbt_extractor-0.4.1.tar.gz"
     sha256 "75b1c665699ec0f1ffce1ba3d776f7dfce802156f22e70a7b9c8f0b4d7e80f42"
+  end
+
+  resource "filelock" do
+    url "https://files.pythonhosted.org/packages/95/55/b897882bffb8213456363e646bf9e9fa704ffda5a7d140edf935a9e02c7b/filelock-3.8.0.tar.gz"
+    sha256 "55447caa666f2198c5b6b13a26d2084d26fa5b115c00d065664b2124680c4edc"
   end
 
   resource "future" do
@@ -106,8 +111,8 @@ class DbtSnowflake < Formula
   end
 
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/01/92/9a1973e6132089e1263b0dc545a021d0733bf5d5b6fa19cc7e641e1925ae/keyring-23.7.0.tar.gz"
-    sha256 "782e1cd1132e91bf459fcd243bcf25b326015c1ac0b198e4408f91fa6791062b"
+    url "https://files.pythonhosted.org/packages/a7/d8/ca70a209ea09e97e4d9feba2f6b38b4eaf918de15a7ada3f3a2246c26cf9/keyring-23.8.2.tar.gz"
+    sha256 "0d9973f8891850f1ade5f26aafd06bb16865fbbae3fc56b0defb6a14a2624003"
   end
 
   resource "leather" do
@@ -206,8 +211,8 @@ class DbtSnowflake < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/2f/5f/a0f653311adff905bbcaa6d3dfaf97edcf4d26138393c6ccd37a484851fb/pytz-2022.1.tar.gz"
-    sha256 "1e760e2fe6a8163bc0b3d9a19c4f84342afa0a2affebfaa84b01b978a02ecaa7"
+    url "https://files.pythonhosted.org/packages/24/0c/401283bb1499768e33ddd2e1a35817c775405c1f047a9dc088a29ce2ea5d/pytz-2022.2.1.tar.gz"
+    sha256 "cea221417204f2d1a2aa03ddae3e867921971d0d76f14d87abb4414415bbdcf5"
   end
 
   resource "PyYAML" do
@@ -221,8 +226,8 @@ class DbtSnowflake < Formula
   end
 
   resource "SecretStorage" do
-    url "https://files.pythonhosted.org/packages/bc/3b/6e294fcaa5aed4059f2aa01a1ee7d343953521f8e0f6965ebcf63c950269/SecretStorage-3.3.2.tar.gz"
-    sha256 "0a8eb9645b320881c222e827c26f4cfcf55363e8b374a021981ef886657a912f"
+    url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
+    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
   end
 
   resource "six" do
@@ -231,8 +236,8 @@ class DbtSnowflake < Formula
   end
 
   resource "snowflake-connector-python" do
-    url "https://files.pythonhosted.org/packages/39/e7/392883fcb1d61433806e32802da25602cff1e10009a629c82bac603d3672/snowflake-connector-python-2.7.10.tar.gz"
-    sha256 "3cf78410f987e0b5a56dce6e1d7aa53054ac403896c370daca5cd7edb10ab884"
+    url "https://files.pythonhosted.org/packages/1c/ac/5691a75128a0960eb407dc3cd203c13d1c8d7b83e4c522d7db035e8c07ec/snowflake-connector-python-2.7.12.tar.gz"
+    sha256 "339d1823a681edf49544b780ab12cab6cc49202d6858b71bf4cbda87dfc2ff35"
   end
 
   resource "sqlparse" do
@@ -251,8 +256,8 @@ class DbtSnowflake < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/6d/d5/e8258b334c9eb8eb78e31be92ea0d5da83ddd9385dc967dd92737604d239/urllib3-1.26.11.tar.gz"
-    sha256 "ea6e8fb210b19d950fab93b60c9009226c63a28808bc8386e05301e25883ac0a"
+    url "https://files.pythonhosted.org/packages/b2/56/d87d6d3c4121c0bcec116919350ca05dc3afd2eeb7dc88d07e8083f8ea94/urllib3-1.26.12.tar.gz"
+    sha256 "3fa96cf423e6987997fc326ae8df396db2a8b7c667747d47ddd8ecba91f4a74e"
   end
 
   resource "Werkzeug" do
