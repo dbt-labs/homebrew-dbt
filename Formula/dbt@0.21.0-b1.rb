@@ -6,6 +6,8 @@ class DbtAT0210B1 < Formula
   url "https://files.pythonhosted.org/packages/53/2d/551309c9146f033eec7c48fdfaccb65b71c70f14abf7807d26adf58fba0f/dbt-0.21.0b1.tar.gz"
   sha256 "5882e48c29da0e177df02390f191188e749cfe3010e4da9dabe8c6451f362890"
   revision 1
+  
+  deprecate! date: "2022-09-13", because: :versioned_formula
 
   bottle do
     root_url "http://bottles.getdbt.com"

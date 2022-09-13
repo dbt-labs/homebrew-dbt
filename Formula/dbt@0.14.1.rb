@@ -7,6 +7,8 @@ class DbtAT0141 < Formula
   version "0.14.1"
   sha256 "80adc1f9daf4d88626fdb3f7000c0c4ea7d5c54abe0090c4d9d4dc23813de4ae"
   revision 0
+  
+  deprecate! date: "2022-09-13", because: :versioned_formula
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"

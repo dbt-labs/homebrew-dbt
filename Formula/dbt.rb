@@ -6,6 +6,8 @@ class Dbt < Formula
   url "https://files.pythonhosted.org/packages/9b/bc/7059de77bed28092e4c360c1797cbb3035d6b84248fffeac383f84fa737b/dbt-0.21.1.tar.gz"
   sha256 "e8854fff3e1197a41016e9ec9b34d246f94dcfa13dd60649e8f6d274897215cd"
   revision 1
+  
+  deprecate! date: "2022-09-13", because: "it is now recommended to install specific adapters instead (i.e. dbt-bigquery, dbt-snowflake, dbt-redshift, etc.)"
 
   bottle do
     root_url "http://bottles.getdbt.com"

@@ -6,6 +6,8 @@ class DbtAT0130A2 < Formula
   url "https://files.pythonhosted.org/packages/af/84/1cb2c2596523d9afc74d51fa1d1061e1bbf51de9ac9fa948f382ddccc9fa/dbt-0.13.0a2.tar.gz"
   version "0.13.0a2"
   sha256 "fd6ae22ffe18e56de0e177cfffc38d933e50e94ed0b6d4eb0675a3f144b911cb"
+  
+  deprecate! date: "2022-09-13", because: :versioned_formula
 
   depends_on "openssl"
   depends_on "postgresql"
