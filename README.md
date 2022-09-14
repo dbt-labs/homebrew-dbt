@@ -13,7 +13,7 @@ This repository contains formulae for multiple versions of dbt and supported ada
 These files define the most recent patch for a version when only given <major>.<minor>
 
 Example:  
-    Walking dbt-core 1.2 -> dbt-core 1.2.1
+    Installing dbt-postgres 1.0 actually installs dbt-postgres 1.0.7
 
 ---
 
