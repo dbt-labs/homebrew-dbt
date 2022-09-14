@@ -18,7 +18,7 @@ Example:
 ---
 
 ### Formula
-    Contains every formula for every version of dbt released to homebrew.
+    Contains every formula for every version of dbt adapters released to homebrew.
 
 Each adapter has a default version that points to the highest final version that has been released.  This allows the crosswalk of `brew install dbt-postgres` to know what version to install.  The default formula version gets updated when a new version is released.
 
