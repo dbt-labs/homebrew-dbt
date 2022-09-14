@@ -37,7 +37,7 @@ Each adapter has a default version that points to the highest final version that
 
 2.  **formula-template.j2**
 
-    Modifications to formula procduced by poet.
+    Modifications to formula produced by poet.
     
     - Uses [j2cli](https://pypi.org/project/j2cli/) to modify the file after the fact.
 
