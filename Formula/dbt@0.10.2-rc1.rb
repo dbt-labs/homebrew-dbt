@@ -5,6 +5,8 @@ class DbtAT0102Rc1 < Formula
   homepage "https://github.com/fishtown-analytics/dbt"
   url "https://files.pythonhosted.org/packages/23/99/166353d283316f177f99b9581d5787360fa08b71a527cf90ffed58d793e2/dbt-0.10.2rc1.tar.gz"
   sha256 "481b15efa1ddf5591f24c814fdac5de01f02168b41ffd9a02680606fe6d36272"
+  
+  deprecate! date: "2022-09-13", because: :versioned_formula
 
   bottle do
     root_url "http://bottles.getdbt.com.s3-website-us-east-1.amazonaws.com"

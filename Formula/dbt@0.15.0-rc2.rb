@@ -7,6 +7,8 @@ class DbtAT0150Rc2 < Formula
   version "0.15.0rc2"
   sha256 "857a31953b1afe9c50bbde5351e47a6e6b4458cc040539b18fd878c65e7de54a"
   revision 1
+  
+  deprecate! date: "2022-09-13", because: :versioned_formula
 
   bottle do
     root_url "http://bottles.getdbt.com"

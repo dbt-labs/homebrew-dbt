@@ -7,6 +7,8 @@ class DbtAT0141Rc2 < Formula
   version "0.14.1rc2"
   sha256 "bdb6fd1c0578a83556ece68f4636db1d2e5ad1c1d0be59535dfd7decac742f87"
   revision 0
+  
+  deprecate! date: "2022-09-13", because: :versioned_formula
 
   bottle do
     sha256 cellar: :any, high_sierra: "8e5993a67a5820effdd33e80a68565a435ab4661e5d40c69726a1dc8f6297a83"
