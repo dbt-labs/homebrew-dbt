@@ -27,18 +27,18 @@ class DbtRedshift < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/e8/7a/55499127a9292102afe13643c91193ae883bdd34373faba3919f49dc2839/boto3-1.24.61.tar.gz"
-    sha256 "b72496c7eaa45afbdfa48a7c648c3211342582d91c8c1b7330d09c18242132d1"
+    url "https://files.pythonhosted.org/packages/e7/98/e057477f2252048a1288303c7cd90b1d7748f9605e75a6e37c833957ef40/boto3-1.24.85.tar.gz"
+    sha256 "2c9004c1f0a47807c73247abe8cb2b8a7054c34b9cf6e90f448d51560de20ca1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/3f/58/aad977bc3e0714d734a2dda89b5dfbceda1ba4e114b5cd80c27f5b5ca9ef/botocore-1.27.61.tar.gz"
-    sha256 "99012965e2409665c7d86706862c5a141e01e1c4d2c81cb9409a44200ee59631"
+    url "https://files.pythonhosted.org/packages/e5/ce/522b34ab02eea095467862f929d5a99aa43adec4261988652c0f7a7ff6fc/botocore-1.27.85.tar.gz"
+    sha256 "2b4c86178b5a5a2baa0a065aaf9ef9d33a7ac67bf3f30e39005de151b0408cac"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/cc/85/319a8a684e8ac6d87a1193090e06b6bbb302717496380e225ee10487c888/certifi-2022.6.15.tar.gz"
-    sha256 "84c85a9078b11105f04f3036a9482ae10e4621616db313fe045dd24743a0820d"
+    url "https://files.pythonhosted.org/packages/cb/a4/7de7cd59e429bd0ee6521ba58a75adaec136d32f91a761b28a11d8088d44/certifi-2022.9.24.tar.gz"
+    sha256 "0d9c601124e5a6ba9712dbc60d9c53c21e34f5f641fe83002317394311bdce14"
   end
 
   resource "cffi" do
@@ -62,8 +62,8 @@ class DbtRedshift < Formula
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/5a/95/13ce2be54fdaced01abd1aec037ec3365a9f25b660de368b6750899cc996/dbt-core-1.2.1.tar.gz"
-    sha256 "40dce8636bf05ba498bb53d9e40627d1b834fb2031755505edccd8aa11497e2b"
+    url "https://files.pythonhosted.org/packages/90/12/e7debd236b3934b2b59a4580b7169c2d36831bc950d49eb81d8a761eca19/dbt-core-1.2.2.tar.gz"
+    sha256 "7dcd6e22c4022b2cc500c072790484f2cde635bfc768482703676690ff82b23d"
   end
 
   resource "dbt-extractor" do
@@ -72,8 +72,8 @@ class DbtRedshift < Formula
   end
 
   resource "dbt-postgres" do
-    url "https://files.pythonhosted.org/packages/67/79/b96c8aecf0cdd5a0da90e3ee2ce30a937b05b937a953ee07734e37bdf0b6/dbt-postgres-1.2.1.tar.gz"
-    sha256 "d674006971a01190bf2238d24d8417ccdeb96d873308b2104f393b8280d566ce"
+    url "https://files.pythonhosted.org/packages/90/5d/92c4bcdea44ea14276f23c977b26055a378949a23064af63024c359751ab/dbt-postgres-1.2.2.tar.gz"
+    sha256 "d86f9b817ff790a5c85038ef6ab98fdc8e42b604e94749c0aa58d0d9e7f64aa7"
   end
 
   resource "future" do
@@ -87,8 +87,8 @@ class DbtRedshift < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/62/08/e3fc7c8161090f742f504f40b1bccbfc544d4a4e09eb774bf40aafce5436/idna-3.3.tar.gz"
-    sha256 "9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"
+    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
+    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
   resource "isodate" do
@@ -192,8 +192,8 @@ class DbtRedshift < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/24/0c/401283bb1499768e33ddd2e1a35817c775405c1f047a9dc088a29ce2ea5d/pytz-2022.2.1.tar.gz"
-    sha256 "cea221417204f2d1a2aa03ddae3e867921971d0d76f14d87abb4414415bbdcf5"
+    url "https://files.pythonhosted.org/packages/31/da/2d48d3499b59c7f3c5d5e1c79fcee5537c320c8ab7b7a0cd2db578bc34b3/pytz-2022.4.tar.gz"
+    sha256 "48ce799d83b6f8aab2020e369b627446696619e79645419610b9facd909b3174"
   end
 
   resource "PyYAML" do
@@ -217,8 +217,8 @@ class DbtRedshift < Formula
   end
 
   resource "sqlparse" do
-    url "https://files.pythonhosted.org/packages/32/fe/8a8575debfd924c8160295686a7ea661107fc34d831429cce212b6442edb/sqlparse-0.4.2.tar.gz"
-    sha256 "0c00730c74263a94e5a9919ade150dfc3b19c574389985446148402998287dae"
+    url "https://files.pythonhosted.org/packages/ba/fa/5b7662b04b69f3a34b8867877e4dbf2a37b7f2a5c0bbb5a9eed64efd1ad1/sqlparse-0.4.3.tar.gz"
+    sha256 "69ca804846bb114d2ec380e4360a8a340db83f0ccf3afceeb1404df028f57268"
   end
 
   resource "text-unidecode" do
