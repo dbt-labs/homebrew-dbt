@@ -88,7 +88,7 @@ jobs:
           RESOURCES_FILE_PATH=$BUILD_DIR/resources.txt
           poet -r ${{ github.event.inputs.dbt-package }} | .github/process-python-resources.py ${{ github.event.inputs.dbt-package }} > "$RESOURCES_FILE_PATH"
           cat "$RESOURCES_FILE_PATH"
-          echo ::set-output name=formula-resources-file::"$RESOURCES_FILE_PATH"
+          echo "formula-resources-file=${RESOURCES_FILE_PATH}" >> $GITHUB_OUTPUT
 
       - name: Generate formula file name
         id: gen-filename
@@ -96,20 +96,20 @@ jobs:
           if [ ${{ steps.semver.outputs.is-pre-release }} == 1 ]
           then
             echo "This is a prelease"
-            echo ::set-output name=filename-with-version::"Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.base-version }}-${{ steps.semver.outputs.pre-release }}.rb"
+            echo filename-with-version="Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.base-version }}-${{ steps.semver.outputs.pre-release }}.rb" >> $GITHUB_OUTPUT
           else
             echo "This is a final release"
-            echo ::set-output name=filename-with-version::"Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.version }}.rb"
+            echo filename-with-version="Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.version }}.rb" >> $GITHUB_OUTPUT
           fi
-          echo ::set-output name=filename::"Formula/${{ github.event.inputs.dbt-package }}.rb"
+          echo filename="Formula/${{ github.event.inputs.dbt-package }}.rb" >> $GITHUB_OUTPUT
 
       - name: Generate formula class name
         id: gen-classname
         run: |
           PACKAGE_NAME=$(python -c "print(''.join(word.title() for word in '${{ github.event.inputs.dbt-package }}'.split('-')))")
           PACKAGE_VERSION=$(python -c "print(''.join(word.title() for word in '${{ steps.semver.outputs.version }}'.split('.')))")
-          echo ::set-output name=classname-with-version::${PACKAGE_NAME}AT${PACKAGE_VERSION}
-          echo ::set-output name=classname::${PACKAGE_NAME}
+          echo "classname-with-version=${PACKAGE_NAME}AT${PACKAGE_VERSION}" >> $GITHUB_OUTPUT
+          echo "classname=${PACKAGE_NAME}" >> $GITHUB_OUTPUT
 
       - name: Generate versioned formula file
         env:
