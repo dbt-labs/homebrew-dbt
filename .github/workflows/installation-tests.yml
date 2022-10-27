@@ -1,11 +1,11 @@
 # **what?**
 # This workflow installs the latest version of each dbt adapter from homebrew.
-# It then run 'dbt --version' to verify the installation was successful. 
+# It then run 'dbt --version' to verify the installation was successful.
 # If it fails for the scheduled runs, it will post to our team alerts channel.
 
 # **why?**
 # This is a simple way to test all adapter installations at a single
-# time. It allows us to test them on a schedule as well to check for 
+# time. It allows us to test them on a schedule as well to check for
 # any breaking dependency changes that might happen and alert us on it.
 
 # **when?**
@@ -16,23 +16,23 @@ name: Homebrew installation testing
 
 on:
   workflow_dispatch:
-  
+
   # run this once per night to ensure no regressions
   schedule:
-    - cron: '0 9,13,18 * * *' # 9:00, 13:00, 18:00 UTC
+    - cron: "0 9,13,18 * * *" # 9:00, 13:00, 18:00 UTC
 
 # no permissions are needed for this workflow
 permissions: {}
 
 jobs:
   homebrew:
-    
     strategy:
       fail-fast: false
       matrix:
-        adapter: ['dbt-postgres', 'dbt-redshift', 'dbt-snowflake', 'dbt-bigquery']
+        adapter:
+          ["dbt-postgres", "dbt-redshift", "dbt-snowflake", "dbt-bigquery"]
         os: [macos-latest]
-        
+
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -42,11 +42,11 @@ jobs:
           brew install git
           brew tap dbt-labs/dbt
           brew install --verbose ${{ matrix.adapter }}
-          
+
       - name: Verify ${{ matrix.adapter }} version
         run: |
           dbt --version
-          
+
   post-failure:
     runs-on: ubuntu-latest
     needs: homebrew
@@ -57,7 +57,7 @@ jobs:
         uses: ravsamhq/notify-slack-action@v1
         if: ${{ github.event_name == 'schedule' }}
         with:
-          notification_title: 'Homebrew nightly integration test failed'
+          notification_title: "Homebrew nightly integration test failed"
           status: ${{ job.status }}
     env:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_DEV_CORE_ALERTS }}
