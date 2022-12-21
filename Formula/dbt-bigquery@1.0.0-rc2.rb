@@ -71,8 +71,8 @@ class DbtBigqueryAT100Rc2 < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/47/4f/0a79e4ae0da191bc77807a8cca13933d10e2b3a0b50e85f05faa26a0d57e/google-api-core-1.34.0.tar.gz"
-    sha256 "6fb380f49d19ee1d09a9722d0379042b7edb06c0112e4796c7a395078a043e71"
+    url "https://files.pythonhosted.org/packages/2b/15/7bafa5379a228ed72baf769eea5e6019a944469fe637ea0742c0351109bf/google-api-core-2.11.0.tar.gz"
+    sha256 "4b9bb5d5a380a0befa0573b302651b8a9a89262c1730e37bf423cec511804c22"
   end
 
   resource "google-auth" do
@@ -81,13 +81,13 @@ class DbtBigqueryAT100Rc2 < Formula
   end
 
   resource "google-cloud-bigquery" do
-    url "https://files.pythonhosted.org/packages/8f/44/71a0d315ab192d78ac525ec8c751eb3a4aec3d21eb53c2571c1c87f35576/google-cloud-bigquery-2.6.1.tar.gz"
-    sha256 "1f99fd0c0c5bde999e056a1be666e5d5bbf392f62c9e730dfcbaf6e8408d44ef"
+    url "https://files.pythonhosted.org/packages/f1/f0/12abc588f3c68dcd4aa9e6e996b1ccbd9c0c6da1952eb0f14969626a7bf5/google-cloud-bigquery-2.34.4.tar.gz"
+    sha256 "14a4f996411556757b5d32f11a0ebf34257d6fc5c60d53fb66e674a63a7bf9ca"
   end
 
   resource "google-cloud-core" do
-    url "https://files.pythonhosted.org/packages/ae/9e/91c5af8ce7a55bf359d3bd3e31507a091c769c8b59d2951fe4fc14bd9409/google-cloud-core-1.5.0.tar.gz"
-    sha256 "1277a015f8eeb014c48f2ec094ed5368358318f1146cf49e8de389962dc19106"
+    url "https://files.pythonhosted.org/packages/40/4b/f4cebb92fe965f02f4a9c06f16355cf83a61a2d5db110df9af71191c830a/google-cloud-core-2.3.2.tar.gz"
+    sha256 "b9529ee7047fd8d4bf4a2182de619154240df17fbe60ead399078c1ae152af9a"
   end
 
   resource "google-crc32c" do
@@ -96,8 +96,8 @@ class DbtBigqueryAT100Rc2 < Formula
   end
 
   resource "google-resumable-media" do
-    url "https://files.pythonhosted.org/packages/39/35/1ae55aea3d52434b3ea6118af88b29748f018e3c4c8d19700974abacab07/google-resumable-media-1.3.3.tar.gz"
-    sha256 "ce38555d250bd70b0c2598bf61e99003cb8c569b0176ec0e3f38b86f9ffff581"
+    url "https://files.pythonhosted.org/packages/71/d2/d681d0c192d2948b692f155bc20ee03727ab3a70d541b0c39a327c9689a9/google-resumable-media-2.4.0.tar.gz"
+    sha256 "8d5518502f92b9ecc84ac46779bd4f09694ecb3ba38a3e7ca737a86d15cbca1f"
   end
 
   resource "googleapis-common-protos" do
