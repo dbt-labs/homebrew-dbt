@@ -17,8 +17,8 @@ class DbtRedshift < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/1a/cb/c4ffeb41e7137b23755a45e1bfec9cbb76ecf51874c6f1d113984ecaa32c/attrs-22.1.0.tar.gz"
-    sha256 "29adc2665447e5191d0e7c568fde78b21f9672d344281d0c6e1ab085429b22b6"
+    url "https://files.pythonhosted.org/packages/21/31/3f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07/attrs-22.2.0.tar.gz"
+    sha256 "c9227bfc2f01993c03f68db37d1d15c9690188323c067c641f1a35ca58185f99"
   end
 
   resource "Babel" do
@@ -27,18 +27,18 @@ class DbtRedshift < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/18/e3/df034a858235098d227c07b5c72f3d1a0754bb64385516a0a69345f1d48c/boto3-1.26.11.tar.gz"
-    sha256 "f8f7268afe62e3b34b7d0e1b4d8a804148e713f35b0e6dbc736346b28b3c6549"
+    url "https://files.pythonhosted.org/packages/9d/92/7d2b4d3a9b2cd15cb0d6408bd4cfbd64fdd50a4d09e3d30ff6563ea1e274/boto3-1.26.34.tar.gz"
+    sha256 "0d6fcb87cd998bcebb0705967508539012a671ef0b1e2a888809fb6781e65b9f"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/fc/c3/f08f9620e67845a02d14340bc6eb46e1931a6b7f753da4dc864acc1e95b8/botocore-1.29.11.tar.gz"
-    sha256 "97532c8a571017891ad4afee7951bea95c9f0bfe96a6f38fdca9062cd6067ec1"
+    url "https://files.pythonhosted.org/packages/d3/54/aaad889040c045420fe0dde03b093f065234b031daa784bc1b2def0010b7/botocore-1.29.34.tar.gz"
+    sha256 "a9dbd06b6cad50208cdc5b8db542505c8792b5acdf7d31ed8a7e99db5746ea79"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/cb/a4/7de7cd59e429bd0ee6521ba58a75adaec136d32f91a761b28a11d8088d44/certifi-2022.9.24.tar.gz"
-    sha256 "0d9c601124e5a6ba9712dbc60d9c53c21e34f5f641fe83002317394311bdce14"
+    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
+    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
   end
 
   resource "cffi" do
@@ -187,8 +187,8 @@ class DbtRedshift < Formula
   end
 
   resource "python-slugify" do
-    url "https://files.pythonhosted.org/packages/5d/45/915967d7bcc28fd12f36f554e1a64aeca36214f2be9caf87158168b5a575/python-slugify-6.1.2.tar.gz"
-    sha256 "272d106cb31ab99b3496ba085e3fea0e9e76dcde967b5e9992500d1f785ce4e1"
+    url "https://files.pythonhosted.org/packages/7c/d3/8e523f41fc3f8d3cc58d2284bb49c1961caefc1a434599ff410ddde38f82/python-slugify-7.0.0.tar.gz"
+    sha256 "7a0f21a39fa6c1c4bf2e5984c9b9ae944483fd10b54804cb0e23a3ccd4954f0b"
   end
 
   resource "pytimeparse" do
@@ -197,8 +197,8 @@ class DbtRedshift < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/76/63/1be349ff0a44e4795d9712cc0b2d806f5e063d4d34631b71b832fac715a8/pytz-2022.6.tar.gz"
-    sha256 "e89512406b793ca39f5971bc999cc538ce125c0e51c27941bef4568b460095e2"
+    url "https://files.pythonhosted.org/packages/6d/37/54f2d7c147e42dc85ffbc6910862bb4f141fb3fc14d9a88efaa1a76c7df2/pytz-2022.7.tar.gz"
+    sha256 "7ccfae7b4b2c067464a6733c6261673fdb8fd1be905460396b97a073e9fa683a"
   end
 
   resource "PyYAML" do
@@ -237,8 +237,8 @@ class DbtRedshift < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/b2/56/d87d6d3c4121c0bcec116919350ca05dc3afd2eeb7dc88d07e8083f8ea94/urllib3-1.26.12.tar.gz"
-    sha256 "3fa96cf423e6987997fc326ae8df396db2a8b7c667747d47ddd8ecba91f4a74e"
+    url "https://files.pythonhosted.org/packages/c2/51/32da03cf19d17d46cce5c731967bf58de9bd71db3a379932f53b094deda4/urllib3-1.26.13.tar.gz"
+    sha256 "c083dd0dce68dbfbe1129d5271cb90f9447dea7d52097c6e0126120c521ddea8"
   end
 
   resource "Werkzeug" do
@@ -250,7 +250,7 @@ class DbtRedshift < Formula
     ENV["CARGO_NET_GIT_FETCH_WITH_CLI"] = "true"
     venv = virtualenv_create(libexec, "python3", system_site_packages: false)
     venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/python",
-       "-m", "pip", "install", "pip==22.0.4"
+       "-m", "pip", "install", "pip==22.3.1"
     resources.each do |r|
       venv.pip_install r
     end
