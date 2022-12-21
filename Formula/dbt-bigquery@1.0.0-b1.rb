@@ -81,8 +81,8 @@ class DbtBigqueryAT100B1 < Formula
   end
 
   resource "google-cloud-bigquery" do
-    url "https://files.pythonhosted.org/packages/8f/44/71a0d315ab192d78ac525ec8c751eb3a4aec3d21eb53c2571c1c87f35576/google-cloud-bigquery-2.6.1.tar.gz"
-    sha256 "1f99fd0c0c5bde999e056a1be666e5d5bbf392f62c9e730dfcbaf6e8408d44ef"
+    url "https://files.pythonhosted.org/packages/f1/f0/12abc588f3c68dcd4aa9e6e996b1ccbd9c0c6da1952eb0f14969626a7bf5/google-cloud-bigquery-2.34.4.tar.gz"
+    sha256 "14a4f996411556757b5d32f11a0ebf34257d6fc5c60d53fb66e674a63a7bf9ca"
   end
 
   resource "google-cloud-core" do
@@ -96,8 +96,8 @@ class DbtBigqueryAT100B1 < Formula
   end
 
   resource "google-resumable-media" do
-    url "https://files.pythonhosted.org/packages/39/35/1ae55aea3d52434b3ea6118af88b29748f018e3c4c8d19700974abacab07/google-resumable-media-1.3.3.tar.gz"
-    sha256 "ce38555d250bd70b0c2598bf61e99003cb8c569b0176ec0e3f38b86f9ffff581"
+    url "https://files.pythonhosted.org/packages/71/d2/d681d0c192d2948b692f155bc20ee03727ab3a70d541b0c39a327c9689a9/google-resumable-media-2.4.0.tar.gz"
+    sha256 "8d5518502f92b9ecc84ac46779bd4f09694ecb3ba38a3e7ca737a86d15cbca1f"
   end
 
   resource "googleapis-common-protos" do
