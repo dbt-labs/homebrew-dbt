@@ -101,7 +101,9 @@ jobs:
             echo "This is a final release"
             FILENAME_WITH_VERSION="Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.version }}.rb"
           fi
-          echo filename="Formula/${{ github.event.inputs.dbt-package }}.rb" >> $GITHUB_OUTPUT
+          echo "filename-with-version=${FILENAME_WITH_VERSION}" >> $GITHUB_OUTPUT
+          FILENAME="Formula/${{ github.event.inputs.dbt-package }}.rb"
+          echo "filename=${FILENAME}" >> $GITHUB_OUTPUT
 
       - name: Generate formula class name
         id: gen-classname
