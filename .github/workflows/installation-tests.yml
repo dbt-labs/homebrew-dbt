@@ -33,7 +33,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        adapter: ['dbt-postgres', 'dbt-redshift', 'dbt-snowflake', 'dbt-bigquery']
+        # adapter: ['dbt-postgres', 'dbt-redshift', 'dbt-snowflake', 'dbt-bigquery']
+        adapter: ['dbt-postgres']
         os: [macos-latest]
         
     runs-on: ${{ matrix.os }}
@@ -41,10 +42,6 @@ jobs:
     steps:
       - name: "Setup homebrew"
         uses: Homebrew/actions/setup-homebrew@master
-
-      - name: "Add curl to PATH"
-        run: |
-          echo 'export PATH="/usr/local/opt/curl/bin:$PATH"' >> /Users/runner/.bash_profile
 
       - name: "Setup Python"
         uses: actions/setup-python@v4
@@ -61,7 +58,7 @@ jobs:
 
       - name: "Brew install ${{ matrix.adapter }}"
         run: |
-          brew install --verbose ${{ matrix.adapter }}
+          brew install ${{ matrix.adapter }}
           
       - name: Verify ${{ matrix.adapter }} version
         run: |
