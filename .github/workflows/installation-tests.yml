@@ -25,7 +25,7 @@ on:
 permissions: {}
 
 env:
-  PYTHON_TARGET_VERSION: 3.10
+  PYTHON_TARGET_VERSION: "3.10"
 
 jobs:
   homebrew:
