@@ -99,7 +99,7 @@ jobs:
             echo filename-with-version="Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.base-version }}-${{ steps.semver.outputs.pre-release }}.rb" >> $GITHUB_OUTPUT
           else
             echo "This is a final release"
-            echo filename-with-version="Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.version }}.rb" >> $GITHUB_OUTPUT
+            FILENAME_WITH_VERSION="Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.version }}.rb"
           fi
           echo filename="Formula/${{ github.event.inputs.dbt-package }}.rb" >> $GITHUB_OUTPUT
 
