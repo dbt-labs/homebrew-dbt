@@ -51,6 +51,10 @@ jobs:
         run: |
           ln -s /usr/local/bin/python${{ env.PYTHON_TARGET_VERSION }} python3
 
+      - name: "[DEBUG] Check python3 version"
+        run: |
+          python3 -V
+
       - name: Brew install ${{ matrix.adapter }}
         run: |
           brew tap dbt-labs/dbt
