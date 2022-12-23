@@ -36,11 +36,14 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Brew install ${{ matrix.adapter }}
+      - name: Prepare Brew
         run: |
           brew update
-          brew install git
+          brew upgrade
           brew tap dbt-labs/dbt
+
+      - name: Brew install ${{ matrix.adapter }}
+        run: |
           brew install --verbose ${{ matrix.adapter }}
           
       - name: Verify ${{ matrix.adapter }} version
