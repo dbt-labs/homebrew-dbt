@@ -55,14 +55,6 @@ jobs:
         run: |
           python3 -V
 
-      - name: "Link Python ${{ env.PYTHON_TARGET_VERSION }}"
-        run: |
-          ln -s /usr/local/bin/python${{ env.PYTHON_TARGET_VERSION }} python3
-
-      - name: "[DEBUG] Check python3 version"
-        run: |
-          python3 -V
-
       - name: "Brew Tap"
         run: |
           brew tap dbt-labs/dbt

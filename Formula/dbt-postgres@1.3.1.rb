@@ -9,7 +9,7 @@ class DbtPostgresAT131 < Formula
 
   depends_on "rust" => :build
   depends_on "postgresql@14"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   resource "agate" do
     url "https://files.pythonhosted.org/packages/ae/0e/34231b11f1b80463f64c5be7d7279de5a5609a47c59c0e34ba7016e4e333/agate-1.6.3.tar.gz"
