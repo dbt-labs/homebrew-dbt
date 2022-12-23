@@ -1,6 +1,6 @@
 # **what?**
 # This workflow installs the latest version of each dbt adapter from homebrew.
-# It then run 'dbt --version' to verify the installation was successful.
+# It then runs 'dbt --version' to verify the installation was successful.
 # If it fails for the scheduled runs, it will post to our team alerts channel.
 
 # **why?**
