@@ -42,9 +42,9 @@ jobs:
       - name: "Setup homebrew"
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: "[DEBUG] Check python3 version"
+      - name: "Add curl to PATH"
         run: |
-          python3 -V
+          echo 'export PATH="/usr/local/opt/curl/bin:$PATH"' >> /Users/runner/.bash_profile
 
       - name: "Setup Python"
         uses: actions/setup-python@v4
