@@ -96,7 +96,7 @@ jobs:
           if [ ${{ steps.semver.outputs.is-pre-release }} == 1 ]
           then
             echo "This is a prelease"
-            echo filename-with-version="Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.base-version }}-${{ steps.semver.outputs.pre-release }}.rb" >> $GITHUB_OUTPUT
+            FILENAME_WITH_VERSION="Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.base-version }}-${{ steps.semver.outputs.pre-release }}.rb"
           else
             echo "This is a final release"
             FILENAME_WITH_VERSION="Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.version }}.rb"
