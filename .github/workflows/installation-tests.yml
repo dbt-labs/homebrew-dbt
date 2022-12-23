@@ -24,6 +24,9 @@ on:
 # no permissions are needed for this workflow
 permissions: {}
 
+env:
+  PYTHON_TARGET_VERSION: 3.10
+
 jobs:
   homebrew:
     
@@ -36,20 +39,21 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Setup homebrew
+      - name: "Setup homebrew"
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Setup python
+      - name: "Setup Python"
         uses: actions/setup-python@v4
         with: 
-          python-version: "3.10"
+          python-version: ${{ env.PYTHON_TARGET_VERSION }}
 
-      - name: Brew Tap
+      - name: "Link Python ${{ env.PYTHON_TARGET_VERSION }}"
         run: |
-          brew tap dbt-labs/dbt
+          ln -s /usr/local/bin/python${{ env.PYTHON_TARGET_VERSION }} python3
 
       - name: Brew install ${{ matrix.adapter }}
         run: |
+          brew tap dbt-labs/dbt
           brew install --verbose ${{ matrix.adapter }}
           
       - name: Verify ${{ matrix.adapter }} version
