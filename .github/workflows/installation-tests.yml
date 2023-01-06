@@ -27,11 +27,11 @@ permissions: {}
 jobs:
   homebrew:
     strategy:
-      fail-fast: false
+      # fail-fast: false
       matrix:
         # adapter: ['dbt-postgres', 'dbt-redshift', 'dbt-snowflake', 'dbt-bigquery']
         adapter: ['dbt-postgres']
-        os: [macos-12]
+        os: [macos-11]
 
     runs-on: ${{ matrix.os }}
 
@@ -40,22 +40,25 @@ jobs:
       - name: "Check installed"
         run: brew list
 
-      - name: "Remove symlinks"
-        # workaround for https://github.com/actions/setup-python/issues/577
-        run: |
-          rm '/usr/local/bin/2to3'
-          rm '/usr/local/bin/2to3-3.11'
-          rm '/usr/local/bin/idle3'
-          rm '/usr/local/bin/pydoc3'
-          rm '/usr/local/bin/python3'
-          rm '/usr/local/bin/python3-config'
+      # - name: "Remove symlinks"
+      #   # workaround for https://github.com/actions/setup-python/issues/577
+      #   run: |
+      #     rm '/usr/local/bin/2to3'
+      #     rm '/usr/local/bin/2to3-3.11'
+      #     rm '/usr/local/bin/idle3'
+      #     rm '/usr/local/bin/pydoc3'
+      #     rm '/usr/local/bin/python3'
+      #     rm '/usr/local/bin/python3-config'
       
       - name: "Prepare Brew"
         run: |
           brew update
+          brew upgrade || true
+      
+      - name: "Brew Install"
+        run: |
           brew install python-tk@3.10
           brew install git
-          brew upgrade
 
       - name: "Check installed"
         run: brew list
