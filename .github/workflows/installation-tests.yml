@@ -29,21 +29,34 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        adapter:
-          ["dbt-postgres", "dbt-redshift", "dbt-snowflake", "dbt-bigquery"]
-        os: [macos-latest]
+        adapter: ['dbt-postgres', 'dbt-redshift', 'dbt-snowflake', 'dbt-bigquery']
+        os: [macos-11]
 
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Brew install ${{ matrix.adapter }}
+      
+      - name: "Prepare Brew"
+        # brew upgrade generates some symlink update warnings that cause failures without the || true.
+        # They're just that the symlink wasn't updated which is okay to ignore.
+        # This does cause other errors to be ignored but for this case that's safe since the brew install
+        # step would likely fail at that point.
         run: |
           brew update
-          brew install git
+          brew upgrade || true
+      
+      - name: "Check installed"
+        run: brew list
+      
+      - name: "Brew Tap"
+        run: |
           brew tap dbt-labs/dbt
+
+      - name: "Brew install ${{ matrix.adapter }}"
+        run: |
           brew install --verbose ${{ matrix.adapter }}
 
-      - name: Verify ${{ matrix.adapter }} version
+      - name: "Verify ${{ matrix.adapter }} version"
         run: |
           dbt --version
 
