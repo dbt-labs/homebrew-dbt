@@ -31,7 +31,7 @@ jobs:
       matrix:
         # adapter: ['dbt-postgres', 'dbt-redshift', 'dbt-snowflake', 'dbt-bigquery']
         adapter: ['dbt-postgres']
-        os: [macos-latest]
+        os: [macos-12]
 
     runs-on: ${{ matrix.os }}
 
