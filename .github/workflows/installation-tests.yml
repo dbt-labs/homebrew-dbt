@@ -24,9 +24,6 @@ on:
 # no permissions are needed for this workflow
 permissions: {}
 
-env:
-  PYTHON_TARGET_VERSION: "3.9"
-
 jobs:
   homebrew:
     strategy:
@@ -39,11 +36,6 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-
-      - name: "Setup Python"
-        uses: actions/setup-python@v4
-        with: 
-          python-version: ${{ env.PYTHON_TARGET_VERSION }}
 
       - name: "Check installed"
         run: brew list
