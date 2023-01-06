@@ -25,7 +25,7 @@ on:
 permissions: {}
 
 env:
-  PYTHON_TARGET_VERSION: "3.10"
+  PYTHON_TARGET_VERSION: "3.9"
 
 jobs:
   homebrew:
@@ -45,14 +45,15 @@ jobs:
         with: 
           python-version: ${{ env.PYTHON_TARGET_VERSION }}
 
+      - name: "Check installed"
+        run: brew list
+
       - name: "Prepare Brew"
         run: |
           brew update
-          brew upgrade
-
-      - name: "Brew install git"
-        run: |
+          brew install python-tk@3.10
           brew install git
+          brew upgrade
 
       - name: "Check installed"
         run: brew list
