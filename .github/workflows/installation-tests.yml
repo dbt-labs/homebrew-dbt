@@ -40,11 +40,21 @@ jobs:
       - name: "Check installed"
         run: brew list
 
+      - name: "Remove symlinks"
+        # workaround for https://github.com/actions/setup-python/issues/577
+        run: |
+          rm /usr/local/bin/2to3
+          rm /usr/local/bin/idle3
+          rm /usr/local/bin/pydoc3
+          rm /usr/local/bin/python3
+          rm /usr/local/bin/python3-config
+      
       - name: "Prepare Brew"
         run: |
           brew update
           brew install python-tk@3.10
           brew install git
+          brew upgrade
 
       - name: "Check installed"
         run: brew list
