@@ -40,25 +40,30 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: "Setup homebrew"
-        uses: Homebrew/actions/setup-homebrew@master
 
       - name: "Setup Python"
         uses: actions/setup-python@v4
         with: 
           python-version: ${{ env.PYTHON_TARGET_VERSION }}
 
-      - name: "[DEBUG] Check python3 version"
+      - name: Brew update
         run: |
-          python3 -V
+          brew update
 
+      - name: Brew install git
+        run: |
+          brew install git
+
+      - name: "Check installed"
+        run: brew list
+      
       - name: "Brew Tap"
         run: |
           brew tap dbt-labs/dbt
 
       - name: "Brew install ${{ matrix.adapter }}"
         run: |
-          brew install ${{ matrix.adapter }}
+          brew install --verbose ${{ matrix.adapter }}
           
       - name: Verify ${{ matrix.adapter }} version
         run: |
