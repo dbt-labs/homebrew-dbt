@@ -37,21 +37,21 @@ jobs:
 
     steps:
 
-      - name: "Check installed"
-        run: brew list
+      # - name: "Check installed"
+      #   run: brew list
       
       - name: "Prepare Brew"
         run: |
           brew update
-          brew upgrade
+          brew upgrade || true
       
       # - name: "Brew Install"
       #   run: |
       #     brew install python-tk@3.10
       #     brew install git
 
-      # - name: "Check installed"
-      #   run: brew list
+      - name: "Check installed"
+        run: brew list
       
       - name: "Brew Tap"
         run: |
