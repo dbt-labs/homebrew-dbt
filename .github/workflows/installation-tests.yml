@@ -45,7 +45,6 @@ jobs:
           brew update
           brew install python-tk@3.10
           brew install git
-          brew upgrade || true
 
       - name: "Check installed"
         run: brew list
