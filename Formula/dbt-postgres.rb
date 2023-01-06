@@ -9,7 +9,7 @@ class DbtPostgres < Formula
 
   depends_on "rust" => :build
   depends_on "postgresql@14"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   resource "agate" do
     url "https://files.pythonhosted.org/packages/ae/0e/34231b11f1b80463f64c5be7d7279de5a5609a47c59c0e34ba7016e4e333/agate-1.6.3.tar.gz"
@@ -223,7 +223,7 @@ class DbtPostgres < Formula
 
   def install
     ENV["CARGO_NET_GIT_FETCH_WITH_CLI"] = "true"
-    venv = virtualenv_create(libexec, "python", system_site_packages: false)
+    venv = virtualenv_create(libexec, "python3", system_site_packages: false)
     venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/python",
        "-m", "pip", "install", "pip==22.3.1"
     resources.each do |r|
