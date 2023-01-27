@@ -1,4 +1,4 @@
-class DbtBigquery < Formula
+class DbtBigqueryAT140 < Formula
   include Language::Python::Virtualenv
 
   desc "Bigquery adapter plugin for dbt"
