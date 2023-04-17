@@ -17,8 +17,8 @@ class DbtRedshiftAT140 < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/21/31/3f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07/attrs-22.2.0.tar.gz"
-    sha256 "c9227bfc2f01993c03f68db37d1d15c9690188323c067c641f1a35ca58185f99"
+    url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
+    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
   end
 
   resource "Babel" do
@@ -32,13 +32,13 @@ class DbtRedshiftAT140 < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/5a/f0/5e9144029ac56e7dc966a92b2d2181a81b57ab7965500d213cd3f9220780/boto3-1.26.88.tar.gz"
-    sha256 "f4839565feeaaca4ef775b74a8df996b79b61d988db62c90571bcc948a9f24c5"
+    url "https://files.pythonhosted.org/packages/18/5b/c8b6ae6be553d1ed09e5a4f4b750a866e3b3ef53325ee851b0525ca9c9cd/boto3-1.26.114.tar.gz"
+    sha256 "b10324d452fe677d6e1005b650ae11158cf21310e0c0062b00d184b352f4196b"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/26/b7/ba1676a574200bfc0a8f99e41daaf4b454917eaf7eeb09c8512bf36193d4/botocore-1.29.88.tar.gz"
-    sha256 "48ed2af0a10e7c15a3445eda62f665b106a2aba4ffa1ce730d7083022fd9596f"
+    url "https://files.pythonhosted.org/packages/0c/3b/37aa84d8a9cd56fdc229257e68c2400bc4fa34d87d46ff16646add03e4f4/botocore-1.29.114.tar.gz"
+    sha256 "aeacb03303d6babb0490247158647346d27900fcf89bfb9713db41f1ce1cc93f"
   end
 
   resource "certifi" do
@@ -67,8 +67,8 @@ class DbtRedshiftAT140 < Formula
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/9a/65/fd7c8cc629c9ebb4af1a95340d390088adc8e1e71544ae122bebbf5209a5/dbt-core-1.4.4.tar.gz"
-    sha256 "7bc228013772322d3aaf8e06506a53c21b20e85f6db272b1bd6b055e85608842"
+    url "https://files.pythonhosted.org/packages/e6/1a/c286b5e966843c10a7733149c59728c30f51c0f9378f1d3e2253c000488b/dbt-core-1.4.5.tar.gz"
+    sha256 "d32a322c192a84f41c27e8e94758c3062d2796a2e0ef32056ae5fc5d4d5c2298"
   end
 
   resource "dbt-extractor" do
@@ -77,8 +77,8 @@ class DbtRedshiftAT140 < Formula
   end
 
   resource "dbt-postgres" do
-    url "https://files.pythonhosted.org/packages/73/8e/74e2d57d3cdbabd097576f1ae6929e9c6e69d6a48fd43af6b87521c1498b/dbt-postgres-1.4.4.tar.gz"
-    sha256 "d243cfe33a8e8cc17a806db66f1f325496b8ded427c8cfb243a2ad29b7b0c5bb"
+    url "https://files.pythonhosted.org/packages/38/23/821219f56527748606cbe71b23e88f0454c2ef7ed7daa7b10b188b9a36d3/dbt-postgres-1.4.5.tar.gz"
+    sha256 "ef78296710af13484add0f25df9af3f31d45c2ab0daa72e7064b6a481e6fde16"
   end
 
   resource "future" do
@@ -177,8 +177,8 @@ class DbtRedshiftAT140 < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/47/d5/aca8ff6f49aa5565df1c826e7bf5e85a6df852ee063600c1efa5b932968c/packaging-23.0.tar.gz"
-    sha256 "b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"
+    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
+    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "parsedatetime" do
@@ -192,8 +192,8 @@ class DbtRedshiftAT140 < Formula
   end
 
   resource "psycopg2-binary" do
-    url "https://files.pythonhosted.org/packages/8c/45/77147700f5088efaf9235a3a62b611b594d477a5c5613b5316d0ebd18be0/psycopg2-binary-2.9.5.tar.gz"
-    sha256 "33e632d0885b95a8b97165899006c40e9ecdc634a529dca7b991eb7de4ece41c"
+    url "https://files.pythonhosted.org/packages/98/3e/05ab0922422c91ca0ecb5939a100f8dc2b5d15f5978433beadc87c5329bf/psycopg2-binary-2.9.6.tar.gz"
+    sha256 "1f64dcfb8f6e0c014c7f55e51c9759f024f70ea572fbdef123f85318c297947c"
   end
 
   resource "pycparser" do
@@ -222,8 +222,8 @@ class DbtRedshiftAT140 < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/03/3e/dc5c793b62c60d0ca0b7e58f1fdd84d5aaa9f8df23e7589b39cc9ce20a03/pytz-2022.7.1.tar.gz"
-    sha256 "01a0681c4b9684a28304615eba55d1ab31ae00bf68ec157ec3708a8182dbbcd0"
+    url "https://files.pythonhosted.org/packages/5e/32/12032aa8c673ee16707a9b6cdda2b09c0089131f35af55d443b6a9c69c1d/pytz-2023.3.tar.gz"
+    sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
   end
 
   resource "PyYAML" do
@@ -267,8 +267,8 @@ class DbtRedshiftAT140 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
-    sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
+    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
+    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
   end
 
   resource "Werkzeug" do
