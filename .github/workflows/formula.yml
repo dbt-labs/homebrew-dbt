@@ -51,7 +51,7 @@ jobs:
           echo "::endgroup::"
 
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup homebrew
         if: ${{ !env.ACT }}
@@ -59,7 +59,7 @@ jobs:
 
       - name: Setup python
         uses: actions/setup-python@v4
-        with: 
+        with:
           python-version: "3.10"
 
       - name: Create build dir
@@ -177,7 +177,7 @@ jobs:
 
       - name: Create pull request
         if: ${{ !env.ACT }}
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v5
         with:
           title: "${{ github.event.inputs.dbt-package }} formula for version ${{ github.event.inputs.version }}"
           branch: "${{ github.event.inputs.dbt-package }}-formula/${{ github.event.inputs.version }}"

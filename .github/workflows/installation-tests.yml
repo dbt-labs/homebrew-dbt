@@ -35,7 +35,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      
+
       - name: "Prepare Brew"
         # brew upgrade generates some symlink update warnings that cause failures without the || true.
         # They're just that the symlink wasn't updated which is okay to ignore.
@@ -44,10 +44,10 @@ jobs:
         run: |
           brew update
           brew upgrade || true
-      
+
       - name: "Check installed"
         run: brew list
-      
+
       - name: "Brew Tap"
         run: |
           brew tap dbt-labs/dbt
@@ -67,7 +67,7 @@ jobs:
 
     steps:
       - name: Posting scheduled run failures
-        uses: ravsamhq/notify-slack-action@v1
+        uses: ravsamhq/notify-slack-action@v2
         if: ${{ github.event_name == 'schedule' }}
         with:
           notification_title: "Homebrew nightly integration test failed"
