@@ -67,7 +67,7 @@ jobs:
 
     steps:
       - name: Posting scheduled run failures
-        uses: ravsamhq/notify-slack-action@v1
+        uses: ravsamhq/notify-slack-action@v2
         if: ${{ github.event_name == 'schedule' }}
         with:
           notification_title: "Homebrew nightly integration test failed"
