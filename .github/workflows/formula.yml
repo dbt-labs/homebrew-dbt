@@ -98,13 +98,13 @@ jobs:
           if [ ${{ steps.semver.outputs.is-pre-release }} == 1 ]
           then
             echo "This is a prelease"
-            FILENAME_WITH_VERSION="Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.base-version }}-${{ steps.semver.outputs.pre-release }}.rb"
+            FILENAME_WITH_VERSION="./Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.base-version }}-${{ steps.semver.outputs.pre-release }}.rb"
           else
             echo "This is a final release"
-            FILENAME_WITH_VERSION="Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.version }}.rb"
+            FILENAME_WITH_VERSION="./Formula/${{ github.event.inputs.dbt-package }}@${{ steps.semver.outputs.version }}.rb"
           fi
           echo "filename-with-version=${FILENAME_WITH_VERSION}" >> $GITHUB_OUTPUT
-          FILENAME="Formula/${{ github.event.inputs.dbt-package }}.rb"
+          FILENAME="./Formula/${{ github.event.inputs.dbt-package }}.rb"
           echo "filename=${FILENAME}" >> $GITHUB_OUTPUT
 
       - name: Generate formula class name
