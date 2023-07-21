@@ -30,11 +30,13 @@ jobs:
       fail-fast: false
       matrix:
         adapter: ['dbt-postgres', 'dbt-redshift', 'dbt-snowflake', 'dbt-bigquery']
-        os: [macos-11]
 
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-latest
 
     steps:
+
+      - name: "Setup homebrew"
+        uses: Homebrew/actions/setup-homebrew@master
 
       - name: "Prepare Brew"
         # brew upgrade generates some symlink update warnings that cause failures without the || true.
@@ -66,7 +68,7 @@ jobs:
     if: ${{ failure() }}
 
     steps:
-      - name: Posting scheduled run failures
+      - name: "Posting scheduled run failures"
         uses: ravsamhq/notify-slack-action@v2
         if: ${{ github.event_name == 'schedule' }}
         with:
