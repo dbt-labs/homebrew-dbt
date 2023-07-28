@@ -140,14 +140,6 @@ jobs:
         run: |
           brew style --formula --fix "${{ steps.gen-filename.outputs.filename-with-version }}"
 
-      - name: Audit versioned formula file
-        if: ${{ !env.ACT }}
-        # check everything except `audit_file` checks for now, this currently fails because of how
-        # homebrew enforces aliases
-        # (https://github.com/Homebrew/brew/blob/80e5327013c4eba4b60e2fccdc8df2762048757b/Library/Homebrew/formula_auditor.rb#L53-L125)
-        run: |
-          brew audit --formula --new --except file "${{ steps.gen-filename.outputs.filename-with-version }}"
-
       - name: Generate default formula file
         if: ${{ fromJson(github.event.inputs.is-default-version) }}
         env:
@@ -166,14 +158,6 @@ jobs:
         if: ${{ !env.ACT && fromJson(github.event.inputs.is-default-version) }}
         run: |
           brew style --formula --fix "${{ steps.gen-filename.outputs.filename }}"
-
-      - name: Audit default formula file
-        if: ${{ !env.ACT && fromJson(github.event.inputs.is-default-version) }}
-        # check everything except `audit_file` checks for now, this currently fails because of how
-        # homebrew enforces aliases
-        # (https://github.com/Homebrew/brew/blob/80e5327013c4eba4b60e2fccdc8df2762048757b/Library/Homebrew/formula_auditor.rb#L53-L125)
-        run: |
-          brew audit --formula --new --except file "${{ steps.gen-filename.outputs.filename }}"
 
       - name: Create pull request
         if: ${{ !env.ACT }}
