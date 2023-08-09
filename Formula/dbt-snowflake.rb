@@ -116,8 +116,8 @@ class DbtSnowflake < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/e5/a2/3e03efdd25f93e1296d0454a7680456fda2925f2ff624bf43855d785b3bd/jsonschema-4.18.4.tar.gz"
-    sha256 "fb3642735399fa958c0d2aad7057901554596c63349f4f6b283c493cf692a25d"
+    url "https://files.pythonhosted.org/packages/99/ba/e51d376c6160d27669c7a9ad0b61d9cbd58fa58be6e6ddc0e7e0b6e6aa40/jsonschema-4.19.0.tar.gz"
+    sha256 "6e1e7569ac13be8139b2dd2c21a55d350066ee3f80df06c608b398cdc6f30e8f"
   end
 
   resource "jsonschema-specifications" do
@@ -126,8 +126,8 @@ class DbtSnowflake < Formula
   end
 
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/55/fe/282f4c205add8e8bb3a1635cbbac59d6def2e0891b145aa553a0e40dd2d0/keyring-23.13.1.tar.gz"
-    sha256 "ba2e15a9b35e21908d0aaf4e0a47acc52d6ae33444df0da2b49d41a46ef6d678"
+    url "https://files.pythonhosted.org/packages/14/c5/7a2a66489c66ee29562300ddc5be63636f70b4025a74df71466e62d929b1/keyring-24.2.0.tar.gz"
+    sha256 "ca0746a19ec421219f4d713f848fa297a661a8a8c1504867e55bfb5e09091509"
   end
 
   resource "leather" do
@@ -156,8 +156,8 @@ class DbtSnowflake < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/b7/56/7daf104a9cb6af39c00127aee6904b01040dbb12cf1ceedd6a087c097055/more-itertools-10.0.0.tar.gz"
-    sha256 "cd65437d7c4b615ab81c0640c0480bc29a550ea032891977681efd28344d51e1"
+    url "https://files.pythonhosted.org/packages/2d/73/3557e45746fcaded71125c0a1c0f87616e8258c78391f0c365bf97bbfc99/more-itertools-10.1.0.tar.gz"
+    sha256 "626c369fa0eb37bac0291bce8259b332fd59ac792fa5497b59837309cd5b114a"
   end
 
   resource "msgpack" do
@@ -186,13 +186,18 @@ class DbtSnowflake < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/95/60/d93628975242cc515ab2b8f5b2fc831d8be2eff32f5a1be4776d49305d13/pathspec-0.11.1.tar.gz"
-    sha256 "2798de800fa92780e33acca925945e9a19a133b715067cf165b8866c15a31687"
+    url "https://files.pythonhosted.org/packages/a0/2a/bd167cdf116d4f3539caaa4c332752aac0b3a0cc0174cdb302ee68933e81/pathspec-0.11.2.tar.gz"
+    sha256 "e0d8d0ac2f12da61956eb2306b69f9469b42f4deb0f3cb6ed47b9cce9996ced3"
+  end
+
+  resource "platformdirs" do
+    url "https://files.pythonhosted.org/packages/92/38/3dd18a282991c004851ea1f0953105a186cfc691eee2792778ac2ca060f8/platformdirs-3.8.1.tar.gz"
+    sha256 "f87ca4fcff7d2b0f81c6a748a77973d7af0f4d526f98f308477c3c436c74d528"
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/d3/1c/de86d82a5fc780feca36ef52c1231823bb3140266af8a04ed6286957aa6e/protobuf-4.23.4.tar.gz"
-    sha256 "ccd9430c0719dce806b93f89c91de7977304729e55377f872a92465d548329a9"
+    url "https://files.pythonhosted.org/packages/ff/a1/86152de5ba58796bb99dbff0b7fe7bf4f906ce0544bb42d9f835999351eb/protobuf-4.24.0.tar.gz"
+    sha256 "5d0ceb9de6e08311832169e601d1fc71bd8e8c779f3ee38a97a78554945ecb85"
   end
 
   resource "pycparser" do
@@ -241,8 +246,8 @@ class DbtSnowflake < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/ae/0e/5a4c22e046dc8c94fec2046255ddd7068b7aaff66b3d0d0dd2cfbf8a7b20/referencing-0.30.0.tar.gz"
-    sha256 "47237742e990457f7512c7d27486394a9aadaf876cbfaa4be65b27b4f4d47c6b"
+    url "https://files.pythonhosted.org/packages/e1/43/d3f6cf3e1ec9003520c5fb31dc363ee488c517f09402abd2a1c90df63bbb/referencing-0.30.2.tar.gz"
+    sha256 "794ad8003c65938edcdbc027f1933215e0d0ccc0291e3ce20a4d87432b59efc0"
   end
 
   resource "requests" do
@@ -266,8 +271,8 @@ class DbtSnowflake < Formula
   end
 
   resource "snowflake-connector-python" do
-    url "https://files.pythonhosted.org/packages/7f/0c/1b7576eefa0944a00df67b8fadd19cdb3f649e5dce7cbbb397ee85c7eb63/snowflake-connector-python-3.0.4.tar.gz"
-    sha256 "f0253a58909dcf57bcde4ce1ef613fe346fc18bc01ba20101d1499ac22f6d9b2"
+    url "https://files.pythonhosted.org/packages/b9/5b/abf42e3eaf326b049f7d9b878cbce081185a164d41d377214b8a93095497/snowflake-connector-python-3.1.0.tar.gz"
+    sha256 "fac51fc5cef6f9d5798aa460f4e6de3e53e1a0fc7b913d2bd98b5ae806bcc83b"
   end
 
   resource "sortedcontainers" do
@@ -283,6 +288,11 @@ class DbtSnowflake < Formula
   resource "text-unidecode" do
     url "https://files.pythonhosted.org/packages/ab/e2/e9a00f0ccb71718418230718b3d900e71a5d16e701a3dae079a21e9cd8f8/text-unidecode-1.3.tar.gz"
     sha256 "bad6603bb14d279193107714b288be206cac565dfa49aa5b105294dd5c4aab93"
+  end
+
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/0d/07/d34a911a98e64b07f862da4b10028de0c1ac2222ab848eaf5dd1877c4b1b/tomlkit-0.12.1.tar.gz"
+    sha256 "38e1ff8edb991273ec9f6181244a6a391ac30e9f5098e7535640ea6be97a7c86"
   end
 
   resource "typing-extensions" do
@@ -307,7 +317,7 @@ class DbtSnowflake < Formula
 
   def install
     ENV["CARGO_NET_GIT_FETCH_WITH_CLI"] = "true"
-    venv = virtualenv_create(libexec, "python3", system_site_packages: false)
+    venv = virtualenv_create(libexec, "python3", system_site_packages: false, without_pip: false)
     venv.instance_variable_get(:@formula).system venv.instance_variable_get(:@venv_root)/"bin/python",
        "-m", "pip", "install", "pip==22.3.1"
     resources.each do |r|
