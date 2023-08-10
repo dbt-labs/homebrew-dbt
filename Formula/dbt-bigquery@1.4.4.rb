@@ -1,10 +1,10 @@
-class DbtBigquery < Formula
+class DbtBigqueryAT144 < Formula
   include Language::Python::Virtualenv
 
   desc "Bigquery adapter plugin for dbt"
   homepage "https://github.com/dbt-labs/dbt-bigquery"
-  url "https://files.pythonhosted.org/packages/60/6b/c1c5173f90bf98a3a3d1c7a78f144ec753e76fc967f97efed102fc51d5ee/dbt-bigquery-1.5.5.tar.gz"
-  sha256 "e134acac601cd6a0af1449c060226acdc89ec3c0c13d59534501a260f3c9c49c"
+  url "https://files.pythonhosted.org/packages/cd/57/261f453fbbc8e3faef27669a6429746c4a1e2225289362ffc7b4e869cdf1/dbt-bigquery-1.4.4.tar.gz"
+  sha256 "177a94def5838e231b6e5be1b8b316433c5fdcbac824f46743feba37d8fd3173"
   # license ""
 
   depends_on "rust" => :build
@@ -23,6 +23,11 @@ class DbtBigquery < Formula
   resource "Babel" do
     url "https://files.pythonhosted.org/packages/ba/42/54426ba5d7aeebde9f4aaba9884596eb2fe02b413ad77d62ef0b0422e205/Babel-2.12.1.tar.gz"
     sha256 "cc2d99999cd01d44420ae725a21c9e3711b3aadc7976d6147f622d8581963455"
+  end
+
+  resource "betterproto" do
+    url "https://files.pythonhosted.org/packages/ff/2e/abfed7a721928e14aeb900182ff695be474c4ee5f07ef0874cc5ecd5b0b1/betterproto-1.2.5.tar.gz"
+    sha256 "74a3ab34646054f674d236d1229ba8182dc2eae86feb249b8590ef496ce9803d"
   end
 
   resource "cachetools" do
@@ -56,8 +61,8 @@ class DbtBigquery < Formula
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/23/bb/054fe7d4b06067a074928a6696a140087db26c9f3faa005ab3ee217a22d5/dbt-core-1.5.4.tar.gz"
-    sha256 "384355c21a882cd03c4a0ee54f9e2439e7273af5b8ad597e236a426fbd624fe4"
+    url "https://files.pythonhosted.org/packages/a3/51/751415cdf154b6f80c800d7a00ac918ba46e9b1749414870d9c31b507422/dbt-core-1.4.7.tar.gz"
+    sha256 "a183bf4fdb672591beb1ff7348ccf3596bece68700e211d0fae37545b0b3d079"
   end
 
   resource "dbt-extractor" do
@@ -130,9 +135,29 @@ class DbtBigquery < Formula
     sha256 "b098da99df1eebe58337f8f78e50df990273ccacc1226fddeb47c590e3df9e02"
   end
 
+  resource "grpclib" do
+    url "https://files.pythonhosted.org/packages/54/b1/bd9941a33d51766d0bae35fb29285f32cfa65ca636601a43c5883e2acc8b/grpclib-0.4.5.tar.gz"
+    sha256 "bf83ed55aca59497e168761d9555056efc54a8f865316c3b39becd007e9f9a73"
+  end
+
+  resource "h2" do
+    url "https://files.pythonhosted.org/packages/2a/32/fec683ddd10629ea4ea46d206752a95a2d8a48c22521edd70b142488efe1/h2-4.1.0.tar.gz"
+    sha256 "a83aca08fbe7aacb79fec788c9c0bac936343560ed9ec18b82a13a12c28d2abb"
+  end
+
   resource "hologram" do
     url "https://files.pythonhosted.org/packages/9f/0c/273e0dfadb033789faac3393cb52fb8dbf367b7f687443d0266f82923e60/hologram-0.0.16.tar.gz"
     sha256 "1c2c921b4e575361623ea0e0d0aa5aee377b1a333cc6c6a879e213ed34583e55"
+  end
+
+  resource "hpack" do
+    url "https://files.pythonhosted.org/packages/3e/9b/fda93fb4d957db19b0f6b370e79d586b3e8528b20252c729c476a2c02954/hpack-4.0.0.tar.gz"
+    sha256 "fc41de0c63e687ebffde81187a948221294896f6bdc0ae2312708df339430095"
+  end
+
+  resource "hyperframe" do
+    url "https://files.pythonhosted.org/packages/5a/2a/4747bff0a17f7281abe73e955d60d80aae537a5d203f417fa1c2e7578ebb/hyperframe-6.0.1.tar.gz"
+    sha256 "ae510046231dc8e9ecb1a6586f63d2347bf4c8905914aa84ba585ae85f28a914"
   end
 
   resource "idna" do
@@ -176,8 +201,8 @@ class DbtBigquery < Formula
   end
 
   resource "mashumaro" do
-    url "https://files.pythonhosted.org/packages/7e/c6/e88452c75e9ee52c622bbb05002efc6caf1809cc0fac76505f57a909d244/mashumaro-3.6.tar.gz"
-    sha256 "ceb3de53029219bbbb0385ca600b59348dcd14e0c68523986c6d51889ad338f5"
+    url "https://files.pythonhosted.org/packages/12/7b/1e7f807b1a7114b6196eee819efe7c0cd527940e0eabff2c4b1acab53427/mashumaro-3.3.1.tar.gz"
+    sha256 "997ed0a4ce64967b96ff65f5ca76b8e5e459a4ec7a6a0f73625a067004a801c9"
   end
 
   resource "minimal-snowplow-tracker" do
@@ -188,6 +213,11 @@ class DbtBigquery < Formula
   resource "msgpack" do
     url "https://files.pythonhosted.org/packages/dc/a1/eba11a0d4b764bc62966a565b470f8c6f38242723ba3057e9b5098678c30/msgpack-1.0.5.tar.gz"
     sha256 "c075544284eadc5cddc70f4757331d99dcbc16b2bbd4849d15f8aae4cf36d31c"
+  end
+
+  resource "multidict" do
+    url "https://files.pythonhosted.org/packages/4a/15/bd620f7a6eb9aa5112c4ef93e7031bcd071e0611763d8e17706ef8ba65e0/multidict-6.0.4.tar.gz"
+    sha256 "3666906492efb76453c0e7b97f2cf459b0682e7402c0489a95484965dbc1da49"
   end
 
   resource "networkx" do # pinned to 2.8.0
@@ -206,8 +236,8 @@ class DbtBigquery < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/a0/2a/bd167cdf116d4f3539caaa4c332752aac0b3a0cc0174cdb302ee68933e81/pathspec-0.11.2.tar.gz"
-    sha256 "e0d8d0ac2f12da61956eb2306b69f9469b42f4deb0f3cb6ed47b9cce9996ced3"
+    url "https://files.pythonhosted.org/packages/32/1a/6baf904503c3e943cae9605c9c88a43b964dea5b59785cf956091b341b08/pathspec-0.10.3.tar.gz"
+    sha256 "56200de4077d9d0791465aa9095a01d421861e405b5096955051deefd697d6f6"
   end
 
   resource "proto-plus" do
@@ -286,8 +316,13 @@ class DbtBigquery < Formula
   end
 
   resource "sqlparse" do
-    url "https://files.pythonhosted.org/packages/65/16/10f170ec641ed852611b6c9441b23d10b5702ab5288371feab3d36de2574/sqlparse-0.4.4.tar.gz"
-    sha256 "d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c"
+    url "https://files.pythonhosted.org/packages/ba/fa/5b7662b04b69f3a34b8867877e4dbf2a37b7f2a5c0bbb5a9eed64efd1ad1/sqlparse-0.4.3.tar.gz"
+    sha256 "69ca804846bb114d2ec380e4360a8a340db83f0ccf3afceeb1404df028f57268"
+  end
+
+  resource "stringcase" do
+    url "https://files.pythonhosted.org/packages/f3/1f/1241aa3d66e8dc1612427b17885f5fcd9c9ee3079fc0d28e9a3aeeb36fa3/stringcase-1.2.0.tar.gz"
+    sha256 "48a06980661908efe8d9d34eab2b6c13aefa2163b3ced26972902e3bdfd87008"
   end
 
   resource "text-unidecode" do

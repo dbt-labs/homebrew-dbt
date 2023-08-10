@@ -1,10 +1,10 @@
-class DbtBigquery < Formula
+class DbtBigqueryAT152 < Formula
   include Language::Python::Virtualenv
 
   desc "Bigquery adapter plugin for dbt"
   homepage "https://github.com/dbt-labs/dbt-bigquery"
-  url "https://files.pythonhosted.org/packages/60/6b/c1c5173f90bf98a3a3d1c7a78f144ec753e76fc967f97efed102fc51d5ee/dbt-bigquery-1.5.5.tar.gz"
-  sha256 "e134acac601cd6a0af1449c060226acdc89ec3c0c13d59534501a260f3c9c49c"
+  url "https://files.pythonhosted.org/packages/32/10/e805fa6fa0dcf3c0a5920d9bdbff0ec8d1f975af60e4170953e13c7e2177/dbt-bigquery-1.5.2.tar.gz"
+  sha256 "93ccdd7a4da1f1d0ff60a13e7413cc698041e796285cd5d29f50b298154d1ba5"
   # license ""
 
   depends_on "rust" => :build
