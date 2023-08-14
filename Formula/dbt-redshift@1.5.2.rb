@@ -1,10 +1,10 @@
-class DbtRedshift < Formula
+class DbtRedshiftAT152 < Formula
   include Language::Python::Virtualenv
 
   desc "Redshift adapter plugin for dbt"
   homepage "https://github.com/dbt-labs/dbt-redshift"
-  url "https://files.pythonhosted.org/packages/4e/68/cb3686455aa9d4aefd1e89c1dd3a027a8a9f231304a87eee99560834a455/dbt-redshift-1.5.9.tar.gz"
-  sha256 "94fe9e2bf3567e066a236a9c9edd467991644fe5bc141959dfaa41816d586007"
+  url "https://files.pythonhosted.org/packages/9e/f9/c09062c9c41009069521e3a662ea43f8a120e3d2a0b6fa2109e0c571ac75/dbt-redshift-1.5.2.tar.gz"
+  sha256 "435d98f35183f1069d1a70cb8b82ba34dc6cd722c46320af532db3c8316e084c"
   # license ""
 
   depends_on "rust" => :build

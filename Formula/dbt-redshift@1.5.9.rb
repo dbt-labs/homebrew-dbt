@@ -1,4 +1,4 @@
-class DbtRedshift < Formula
+class DbtRedshiftAT159 < Formula
   include Language::Python::Virtualenv
 
   desc "Redshift adapter plugin for dbt"
