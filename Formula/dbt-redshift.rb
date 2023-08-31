@@ -3,8 +3,8 @@ class DbtRedshift < Formula
 
   desc "Redshift adapter plugin for dbt"
   homepage "https://github.com/dbt-labs/dbt-redshift"
-  url "https://files.pythonhosted.org/packages/4e/68/cb3686455aa9d4aefd1e89c1dd3a027a8a9f231304a87eee99560834a455/dbt-redshift-1.5.9.tar.gz"
-  sha256 "94fe9e2bf3567e066a236a9c9edd467991644fe5bc141959dfaa41816d586007"
+  url "https://files.pythonhosted.org/packages/fd/05/aa0dbc9cf35c0d80464feba576907203f75e99f2bf448cd9a0be56d98afc/dbt-redshift-1.5.10.tar.gz"
+  sha256 "2b9ae1a7d05349e208b0937cd7cc920ea427341ef96096021b18e4070e927f5c"
   # license ""
 
   depends_on "rust" => :build
@@ -62,8 +62,8 @@ class DbtRedshift < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "colorama" do
@@ -72,8 +72,8 @@ class DbtRedshift < Formula
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/23/bb/054fe7d4b06067a074928a6696a140087db26c9f3faa005ab3ee217a22d5/dbt-core-1.5.4.tar.gz"
-    sha256 "384355c21a882cd03c4a0ee54f9e2439e7273af5b8ad597e236a426fbd624fe4"
+    url "https://files.pythonhosted.org/packages/f0/81/20afb696157bfb8dda98243516bb3e2fa5f439475591e7678f0d5d86f5a5/dbt-core-1.5.6.tar.gz"
+    sha256 "af3c03cd4a1fc92481362888014ca1ffed2ffef0b0e0d98463ad0f26c49ef458"
   end
 
   resource "dbt-extractor" do
@@ -82,8 +82,8 @@ class DbtRedshift < Formula
   end
 
   resource "dbt-postgres" do
-    url "https://files.pythonhosted.org/packages/96/6b/a026545a409a8a587be69e8fcdd6d649f8dfc62da4daeea7f064717244e0/dbt-postgres-1.5.4.tar.gz"
-    sha256 "dcbe7721887208258c96e5b899590cbfa65f724e00f9c939f7ed77e17a021c77"
+    url "https://files.pythonhosted.org/packages/3d/8b/5ca45af29d490e1bb1eae5458767ba17f99e18b50d12980515936f639eb8/dbt-postgres-1.5.6.tar.gz"
+    sha256 "b74e471dc661819a3d4bda2d11497935661ac2e25786c8a5b7314d8241b18582"
   end
 
   resource "future" do
@@ -182,8 +182,8 @@ class DbtRedshift < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/ff/a1/86152de5ba58796bb99dbff0b7fe7bf4f906ce0544bb42d9f835999351eb/protobuf-4.24.0.tar.gz"
-    sha256 "5d0ceb9de6e08311832169e601d1fc71bd8e8c779f3ee38a97a78554945ecb85"
+    url "https://files.pythonhosted.org/packages/68/0d/92a4aab9456fa6b9e1ad1248deaa8975231a7236900098e876bdec5b7964/protobuf-4.24.2.tar.gz"
+    sha256 "7fda70797ddec31ddfa3576cbdcc3ddbb6b3078b737a1a87ab9136af0570cd6e"
   end
 
   resource "psycopg2-binary" do
@@ -237,13 +237,13 @@ class DbtRedshift < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/da/3c/fa2701bfc5d67f4a23f1f0f4347284c51801e9dbc24f916231c2446647df/rpds_py-0.9.2.tar.gz"
-    sha256 "8d70e8f14900f2657c249ea4def963bed86a29b81f81f5b76b5a9215680de945"
+    url "https://files.pythonhosted.org/packages/77/5a/0c82d0ef1322227e8e997dbbd3d4e235383d51c299dbdfd2fed2625971b0/rpds_py-0.10.0.tar.gz"
+    sha256 "e36d7369363d2707d5f68950a64c4e025991eb0177db01ccb6aa6facae48b69f"
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/49/bd/def2ab4c04063a5e114963aae90bcd3e3aca821a595124358b3b00244407/s3transfer-0.6.1.tar.gz"
-    sha256 "640bb492711f4c0c0905e1f62b6aaeb771881935ad27884852411f8e9cacbca9"
+    url "https://files.pythonhosted.org/packages/5a/47/d676353674e651910085e3537866f093d2b9e9699e95e89d960e78df9ecf/s3transfer-0.6.2.tar.gz"
+    sha256 "cab66d3380cca3e70939ef2255d01cd8aece6a4907a9528740f668c4b0611861"
   end
 
   resource "scramp" do
@@ -282,8 +282,8 @@ class DbtRedshift < Formula
   end
 
   resource "Werkzeug" do
-    url "https://files.pythonhosted.org/packages/d1/7e/c35cea5749237d40effc50ed1a1c7518d9f2e768fcf30b4e9ea119e74975/Werkzeug-2.3.6.tar.gz"
-    sha256 "98c774df2f91b05550078891dee5f0eb0cb797a522c757a2452b9cee5b202330"
+    url "https://files.pythonhosted.org/packages/ef/56/0acc9f560053478a4987fa35c95d904f04b6915f6b5c4d1c14dc8862ba0a/werkzeug-2.3.7.tar.gz"
+    sha256 "2b8c0e447b4b9dbcc85dd97b6eeb4dcbaf6c8b6c3be0bd654e25553e0a2157d8"
   end
 
   def install
