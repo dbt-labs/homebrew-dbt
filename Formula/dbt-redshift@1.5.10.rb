@@ -182,8 +182,8 @@ class DbtRedshiftAT1510 < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/c8/2d/075627c7c897e6f535261bd8fd3f633c77a2af1afe4013bfd503189c4c46/protobuf-4.24.1.tar.gz"
-    sha256 "44837a5ed9c9418ad5d502f89f28ba102e9cd172b6668bc813f21716f9273348"
+    url "https://files.pythonhosted.org/packages/68/0d/92a4aab9456fa6b9e1ad1248deaa8975231a7236900098e876bdec5b7964/protobuf-4.24.2.tar.gz"
+    sha256 "7fda70797ddec31ddfa3576cbdcc3ddbb6b3078b737a1a87ab9136af0570cd6e"
   end
 
   resource "psycopg2-binary" do
@@ -237,8 +237,8 @@ class DbtRedshiftAT1510 < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/da/3c/fa2701bfc5d67f4a23f1f0f4347284c51801e9dbc24f916231c2446647df/rpds_py-0.9.2.tar.gz"
-    sha256 "8d70e8f14900f2657c249ea4def963bed86a29b81f81f5b76b5a9215680de945"
+    url "https://files.pythonhosted.org/packages/77/5a/0c82d0ef1322227e8e997dbbd3d4e235383d51c299dbdfd2fed2625971b0/rpds_py-0.10.0.tar.gz"
+    sha256 "e36d7369363d2707d5f68950a64c4e025991eb0177db01ccb6aa6facae48b69f"
   end
 
   resource "s3transfer" do
