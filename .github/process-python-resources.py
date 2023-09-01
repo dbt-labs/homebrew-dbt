@@ -26,8 +26,8 @@ PYPI_METADATA = {
     },
     "redshift-connector": {
         "2.0.913": {
-            "url": "https://files.pythonhosted.org/packages/63/86/fb94423bc8c385fdce1bfe2afe720bf415d9df56e137e4f321e13844c498/redshift_connector-2.0.913-py3-none-any.whl",
-            "sha256": "bd70395c5b7ec9fcae9565daff6bcb88c7d3ea6182dafba2bac6138f68d00582",
+            "url": "https://github.com/aws/amazon-redshift-python-driver/archive/refs/tags/v2.0.913.tar.gz",
+            "sha256": "ec829df92817657ce6ff94f48a1f00a5624031d6f9da0a43e4bf4d5ff7f1f236",
         },
     },
 }
