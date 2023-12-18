@@ -3,3 +3,6 @@ build/
 images/
 !images/.gitkeep
 env*/
+
+# pycharm
+.idea
