@@ -161,7 +161,7 @@ jobs:
 
       - name: Create pull request
         if: ${{ !env.ACT }}
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         with:
           title: "${{ github.event.inputs.dbt-package }} formula for version ${{ github.event.inputs.version }}"
           branch: "${{ github.event.inputs.dbt-package }}-formula/${{ github.event.inputs.version }}"
