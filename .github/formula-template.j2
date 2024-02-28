@@ -16,6 +16,10 @@ class {{ classname }} < Formula
 {%- endif %}
   depends_on "python@3.9"
 
+{%- if package in ('dbt-redshift') %}
+  uses_from_macos "libxml2" "libxslt"
+{%- endif %}
+
 {{ resources }}
 
   def install
