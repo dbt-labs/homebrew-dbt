@@ -1,10 +1,10 @@
-class DbtPostgres < Formula
+class DbtPostgresAT158 < Formula
   include Language::Python::Virtualenv
 
   desc "Postgres adapter plugin for dbt (data build tool)"
   homepage "https://github.com/dbt-labs/dbt-core"
-  url "https://files.pythonhosted.org/packages/bc/0b/163ce7a7206a7f5822cb00c14df56314a193cfc0471f4548fe5388aca0f5/dbt-postgres-1.5.10.tar.gz"
-  sha256 "75a9db955eecb6d0b770d78ce71ebdd2312ac7d49573597d2469a76b5db9025f"
+  url "https://files.pythonhosted.org/packages/4b/1a/944771145f2b48420257823d7bcc7a065064cff694eefba8d05c27d46e45/dbt-postgres-1.5.8.tar.gz"
+  sha256 "ba64c19e614768b6be64e69bb97ce7d8893b9c9fce36a66091530e962da27bd3"
   # license ""
 
   depends_on "rust" => :build
@@ -52,8 +52,8 @@ class DbtPostgres < Formula
   end
 
   resource "dbt-core" do
-    url "https://files.pythonhosted.org/packages/89/fe/dfb22f1740206461ab810132cba96b892f70b527c7500fd4c5cdeb530c16/dbt-core-1.5.10.tar.gz"
-    sha256 "e8f5ec2e0732be23103cee14fc7a0779bf058da68ed3106cfdf180d497d4af73"
+    url "https://files.pythonhosted.org/packages/06/4c/f6aa401cd7d3ee71b9be16758d487e6b60b20bbe48cfc17c372202a76800/dbt-core-1.5.8.tar.gz"
+    sha256 "3965ca86fe55f791a96aedbdc64462b52c2a9a43012af5edcf509cb4c89fa2fe"
   end
 
   resource "dbt-extractor" do
@@ -82,8 +82,8 @@ class DbtPostgres < Formula
   end
 
   resource "Jinja2" do
-    url "https://files.pythonhosted.org/packages/b2/5e/3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1/Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
+    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
   resource "jsonschema" do
