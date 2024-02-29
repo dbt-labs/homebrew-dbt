@@ -78,7 +78,7 @@ jobs:
 
       - name: Get python package info
         id: package-info
-        uses: dbt-labs/actions/py-package-info@v1
+        uses: dbt-labs/actions/py-package-info@main
         with:
           package: ${{ github.event.inputs.dbt-package }}
           version: ${{ steps.semver.outputs.version }}
