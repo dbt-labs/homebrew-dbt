@@ -16,6 +16,17 @@ class {{ classname }} < Formula
 {%- endif %}
   depends_on "python@3.9"
 
+{#
+    Addresses failed runs like this one:
+        https://github.com/dbt-labs/homebrew-dbt/actions/runs/8088432639/job/22102463432#step:17:88
+    We need to indicate that `lxml` depends on the os dependencies `libxml2` and `libxslt`.
+    This needs to occur before we try to import the resource (e.g. at the top of the file).
+#}
+{%- if package in ('dbt-redshift') %}
+  uses_from_macos "libxml2"
+  uses_from_macos "libxslt"
+{%- endif %}
+
 {{ resources }}
 
   def install
