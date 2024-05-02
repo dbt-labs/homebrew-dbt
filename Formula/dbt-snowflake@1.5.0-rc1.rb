@@ -1,4 +1,5 @@
 class DbtSnowflakeAT150Rc1 < Formula
+  disable! date: "2024-04-27", because: :repo_archived
   include Language::Python::Virtualenv
 
   desc "Snowflake adapter plugin for dbt"

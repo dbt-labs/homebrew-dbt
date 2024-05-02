@@ -1,4 +1,5 @@
 class DbtPostgres < Formula
+  disable! date: "2024-04-27", because: :repo_archived
   include Language::Python::Virtualenv
 
   desc "Postgres adapter plugin for dbt (data build tool)"

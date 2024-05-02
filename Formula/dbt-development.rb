@@ -1,4 +1,5 @@
 class DbtDevelopment < Formula
+  disable! date: "2024-04-27", because: :repo_archived
   include Language::Python::Virtualenv
 
   desc "Data build tool"

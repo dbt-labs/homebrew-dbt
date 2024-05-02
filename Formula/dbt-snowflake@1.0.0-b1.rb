@@ -1,4 +1,5 @@
 class DbtSnowflakeAT100B1 < Formula
+  disable! date: "2024-04-27", because: :repo_archived
   include Language::Python::Virtualenv
 
   desc "dbt-snowflake contains all of the code enabling dbt to work with Snowflake"

@@ -1,4 +1,5 @@
 class DbtRedshiftAT131 < Formula
+  disable! date: "2024-04-27", because: :repo_archived
   include Language::Python::Virtualenv
 
   desc "Redshift adapter plugin for dbt"
