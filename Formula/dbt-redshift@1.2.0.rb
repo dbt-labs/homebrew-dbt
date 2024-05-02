@@ -1,5 +1,5 @@
 class DbtRedshiftAT120 < Formula
-  disable! date: "2024-04-27", because: :repo_archived
+  disable! date: "2024-04-27", because: "is no longer a supported installation method.  See https://docs.getdbt.com/docs/core/installation-overview#install-dbt-core for other options"
   include Language::Python::Virtualenv
 
   desc "Redshift adapter plugin for dbt"
