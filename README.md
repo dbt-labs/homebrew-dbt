@@ -1,3 +1,9 @@
+__This repository is now archived__
+
+See our [docs on core installation](https://docs.getdbt.com/docs/core/installation-overview) for alternative supported installation methods.
+
+---
+
 # homebrew-dbt
 
 This repository contains formulae for multiple versions of dbt and supported adapters.

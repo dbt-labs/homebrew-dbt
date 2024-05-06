@@ -1,4 +1,5 @@
 class DbtSnowflakeAT100B1 < Formula
+  disable! date: "2024-04-27", because: "is no longer a supported installation method.  See https://docs.getdbt.com/docs/core/installation-overview#install-dbt-core for other options"
   include Language::Python::Virtualenv
 
   desc "dbt-snowflake contains all of the code enabling dbt to work with Snowflake"
