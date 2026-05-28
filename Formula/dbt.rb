@@ -26,7 +26,7 @@ class Dbt < Formula
     end
   end
 
-  conflicts_with "dbt-core", because: "both formulas install the `dbt` binary"
+  # conflicts_with "dbt-core", because: "both formulas install the `dbt` binary"
 
   def install
     bin.install "dbt"
