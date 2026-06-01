@@ -1,5 +1,5 @@
 class Dbt < Formula
-  desc "Fast and enriched dbt compiler and runner"
+  desc "Build analytics the way engineers build applications"
   homepage "https://getdbt.com"
   version "2.0.0-preview.181"
   license :cannot_represent
@@ -26,7 +26,7 @@ class Dbt < Formula
     end
   end
 
-  # conflicts_with "dbt-core", because: "both formulas install the `dbt` binary"
+  conflicts_with "dbt-core", because: "both formulas install the `dbt` binary"
 
   def install
     bin.install "dbt"
