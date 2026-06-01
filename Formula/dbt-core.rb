@@ -1,6 +1,7 @@
 class DbtCore < Formula
   desc "Build analytics the way engineers build applications"
   homepage "https://getdbt.com"
+  version "2.0.0-alpha.1"
   license "Apache-2.0"
 
   on_macos do
