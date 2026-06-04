@@ -1,28 +1,28 @@
 class Dbt < Formula
   desc "Build analytics the way engineers build applications"
   homepage "https://getdbt.com"
-  version "2.0.0-preview.181"
+  version "2.0.0-preview.182"
   license :cannot_represent
 
   on_macos do
     on_arm do
-      url "https://public.cdn.getdbt.com/fs/cli/fs-v2.0.0-preview.181-aarch64-apple-darwin.tar.gz"
-      sha256 "f1b127712a52baf8bb5573e396b471acdd2e0db144fa74e19a25f15235eb473e"
+      url "https://public.cdn.getdbt.com/fs/cli/fs-v2.0.0-preview.182-aarch64-apple-darwin.tar.gz"
+      sha256 "ae6b98df4a31518569ad10a8de82625f3f5fbc08e98b38e09e52eaecf5e8449e"
     end
     on_intel do
-      url "https://public.cdn.getdbt.com/fs/cli/fs-v2.0.0-preview.181-x86_64-apple-darwin.tar.gz"
-      sha256 "e07904f6f407cd535a63900ed6a93e05c8d457180dde24529c3f30ed381a54dc"
+      url "https://public.cdn.getdbt.com/fs/cli/fs-v2.0.0-preview.182-x86_64-apple-darwin.tar.gz"
+      sha256 "b017c0dd105c140c8790230b1edeba78d4f0cc60ff2440df3242b8ae08c9bd9c"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://public.cdn.getdbt.com/fs/cli/fs-v2.0.0-preview.181-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "38ce2ff535f4368a7af081a180adb086132d7231ed770057923a9998efb4929b"
+      url "https://public.cdn.getdbt.com/fs/cli/fs-v2.0.0-preview.182-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "2a85329c11f07f04574302c35f15dcbe3ec411e29b35ffdf42b26b2febcbb1e9"
     end
     on_intel do
-      url "https://public.cdn.getdbt.com/fs/cli/fs-v2.0.0-preview.181-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "64a6ccf416e5fb06441ff361029bd643fdf98b0fb7119755c72c92af1f13a703"
+      url "https://public.cdn.getdbt.com/fs/cli/fs-v2.0.0-preview.182-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "bfb1840aab1311298b957c47e99789ee6684bf074460d639bec8e94c443c71cf"
     end
   end
 
