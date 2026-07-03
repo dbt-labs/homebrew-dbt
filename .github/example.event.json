@@ -1,8 +1,0 @@
-{
-  "action": "workflow_dispatch",
-  "inputs": {
-    "version": "1.0.6",
-    "dbt-package": "dbt-postgres",
-    "is-default-version": "true"
-  }
-}

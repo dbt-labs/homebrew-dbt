@@ -1,61 +1,88 @@
-__This repository is now archived__
-
-See our [docs on core installation](https://docs.getdbt.com/docs/core/installation-overview) for alternative supported installation methods.
-
----
-
 # homebrew-dbt
 
-This repository contains formulae for multiple versions of dbt and supported adapters.
+Homebrew tap for installing dbt on macOS and Linux.
 
-## Repo Structure
+As of dbt v2, dbt is distributed as a single precompiled binary — one per
+platform (macOS and Linux, on both `arm64` and `x86_64`), with no Python
+runtime required. This tap publishes two formulae for it, each installing a
+`dbt` binary from a different build:
 
----
+| Formula | Build | Source | License |
+|---|---|---|---|
+| `dbt-core` | Open source | Release assets from the [dbt-core](https://github.com/dbt-labs/dbt-core) repository | Apache-2.0 |
+| `dbt` | Proprietary | Prebuilt binaries hosted on the dbt Labs CDN | Proprietary |
 
-### Aliases
+> **Note**
+> Both formulae install the `dbt` binary, so they conflict with each other.
+> Only one can be installed at a time.
 
-    Contains a single file for every minor release starting with 1.0.
+## Installation
 
-These files define the most recent patch for a version when only given <major>.<minor>
+```shell
+brew tap dbt-labs/dbt
+```
 
-Example:  
-    Installing dbt-postgres 1.0 actually installs dbt-postgres 1.0.7
+Install the open source build:
 
----
+```shell
+brew install dbt-labs/dbt/dbt-core
+```
+
+Or install the proprietary build:
+
+```shell
+brew install dbt-labs/dbt/dbt
+```
+
+Verify the installation:
+
+```shell
+dbt --version
+```
+
+For other supported installation methods, see the
+[dbt Core installation docs](https://docs.getdbt.com/docs/core/installation-overview).
+
+## How the formulae are released
+
+The two formulae are updated independently, from two different sources.
+
+### `dbt-core` (open source)
+
+The open source build is distributed as a compiled binary attached to
+[dbt-core GitHub releases](https://github.com/dbt-labs/dbt-core/releases)
+(the release ships a `dbt-sa-cli` binary, which the formula installs as `dbt`).
+When a new version is released, `Formula/dbt-core.rb` is updated to reference
+the new release assets and checksums.
+
+### `dbt` (proprietary)
+
+The proprietary build is distributed as a prebuilt binary published to the
+dbt Labs CDN (`public.cdn.getdbt.com`), one tarball per OS/arch combination.
+When a new version ships, `Formula/dbt.rb` is updated automatically to point
+at the new download URLs and their `sha256` checksums.
+
+## Repo structure
 
 ### Formula
-    Contains every formula for every version of dbt adapters released to homebrew.
 
-Each adapter has a default version that points to the highest final version that has been released.  This allows the crosswalk of `brew install dbt-postgres` to know what version to install.  The default formula version gets updated when a new version is released.
-
----
+Contains the two formulae published by this tap: `dbt-core.rb` and `dbt.rb`.
 
 ### .github
-    Contains workflows (automated and manually triggered) and scripts used to generate new formulae and test installation on published formulae.
 
-1. **formula.yml**
-    
-    Workflow to generate a new formula for the input version.  Can check the `is-default-version` box on submission and it was generate the formular for the input version as well as replace the default verion.
+Contains workflows:
 
-    Uses [homebrew-pypi-poet](https://github.com/tdsmith/homebrew-pypi-poet) to generate the formula.
-    - Modifies generated formula with  `.github/process-python-resources.py`
-    - Modifies generated formula with  `formula-template.j2`
+- **installation-tests.yml** — scheduled tests that install each formula from
+  the tap across macOS and Linux (`arm64` and `x86_64`) and run
+  `dbt --version` to catch regressions.
 
-2.  **formula-template.j2**
+## Legacy v1 formulae
 
-    Modifications to formula produced by poet.
-    
-    - Uses [j2cli](https://pypi.org/project/j2cli/) to modify the file after the fact.
+Before dbt was distributed as a compiled binary, this tap published Python
+formulae for individual v1 adapters — `dbt-postgres`, `dbt-redshift`,
+`dbt-snowflake`, `dbt-bigquery`, and the top-level `dbt` metapackage — up to
+the 1.x series. Those formulae are no longer maintained or published and have
+been removed; earlier tags of this repo still contain them for reference.
 
-    - Adds some dependencies that `poet` does not.
-
-3.  **installation-tests.yml**
-    
-    Automated tests of homebrew installations.  Runs nightly to catch failures.
-
----
-
-### Local Development
-
-- Install [act](https://github.com/nektos/act) to be able to test locally.
-- Update `.github/example.event.json` accordingly, run `act workflow_dispatch --eventpath .github/example.event.json -W .github/workflows/formula.yml`to test.
+To install a supported dbt adapter today, follow the
+[dbt Core installation docs](https://docs.getdbt.com/docs/core/installation-overview).
