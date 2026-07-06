@@ -1,28 +1,28 @@
 class DbtCore < Formula
   desc "Build analytics the way engineers build applications"
   homepage "https://getdbt.com"
-  version "2.0.0-alpha.3"
+  version "2.0.0-alpha.4"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-alpha.3/dbt-core-2.0.0-alpha.3-aarch64-apple-darwin.tar.gz"
-      sha256 "10d157299fc2bcce38c1c6b1ba208cc1d79edf0700ab467b56f0c59f2909676d"
+      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-alpha.4/dbt-core-2.0.0-alpha.4-aarch64-apple-darwin.tar.gz"
+      sha256 "b734bad95150c5275c1071318e843db025efdff8455ce656a4d0adf3a09d1971"
     end
     on_intel do
-      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-alpha.3/dbt-core-2.0.0-alpha.3-x86_64-apple-darwin.tar.gz"
-      sha256 "2ec1dcffbe9e7ea5577ad18610cca64d6407e1ad436cb450b5fa97adb6c8be1a"
+      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-alpha.4/dbt-core-2.0.0-alpha.4-x86_64-apple-darwin.tar.gz"
+      sha256 "fbd01db31c8078a499a4f79e2c7ec009fa8d39dd5368fd9fca0a53c4d6c114cc"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-alpha.3/dbt-core-2.0.0-alpha.3-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "864c387ca7d1f4350cef43e3092a61c8938b7f273709d3e4777dee595ed4204f"
+      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-alpha.4/dbt-core-2.0.0-alpha.4-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "ad3ea952deba06336c91914b4798f4b9f1c736190728a2fc9a609e5ef23c15a4"
     end
     on_intel do
-      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-alpha.3/dbt-core-2.0.0-alpha.3-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "b5145ae03eb8f686d8a0fbee4895206c5fb3c600b698d276642a14c691fa2ba6"
+      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-alpha.4/dbt-core-2.0.0-alpha.4-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "9437609e52295bb2d263fe3bbce31b2bb537df3fe3feefe688595d07742e2622"
     end
   end
 
