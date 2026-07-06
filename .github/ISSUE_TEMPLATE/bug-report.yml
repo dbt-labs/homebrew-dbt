@@ -51,26 +51,22 @@ body:
       label: Environment
       description: |
         examples:
-          - **OS**: Ubuntu 20.04
-          - **Python**: 3.7.2 (`python --version`)
-          - **dbt**: 0.21.0 (`dbt --version`)
+          - **OS**: macOS 14 (arm64)
+          - **dbt**: 2.0.0 (`dbt --version`)
       value: |
         - OS:
-        - Python:
         - dbt:
       render: markdown
     validations:
       required: false
   - type: dropdown
-    id: database
+    id: formula
     attributes:
       label: What Homebrew formula are you trying to install?
       multiple: true
       options:
-        - postgres
-        - redshift
-        - snowflake
-        - bigquery
+        - dbt-core
+        - dbt
         - other (mention it in "Additional Context")
     validations:
       required: false

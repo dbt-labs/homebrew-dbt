@@ -1,12 +1,12 @@
 # **what?**
-# This workflow installs the latest version of each dbt adapter from homebrew.
-# It then runs 'dbt --version' to verify the installation was successful.
+# This workflow installs each dbt formula published by this tap from Homebrew
+# and runs 'dbt --version' to verify the installation was successful.
 # If it fails for the scheduled runs, it will post to our team alerts channel.
 
 # **why?**
-# This is a simple way to test all adapter installations at a single
+# This is a simple way to test all formula installations at a single
 # time. It allows us to test them on a schedule as well to check for
-# any breaking dependency changes that might happen and alert us on it.
+# any breaking changes that might happen and alert us on it.
 
 # **when?**
 # This workflow will run on a schedule every night and also can be
@@ -17,7 +17,7 @@ name: Homebrew installation testing
 on:
   workflow_dispatch:
 
-  # run this once per night to ensure no regressions
+  # run this a few times per day to ensure no regressions
   schedule:
     - cron: "0 9,13,18 * * *" # 9:00, 13:00, 18:00 UTC
 
@@ -29,8 +29,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        adapter: ['dbt-postgres', 'dbt-redshift', 'dbt-snowflake', 'dbt-bigquery']
-        os: [macos-11]
+        # dbt-core (open source) and dbt (proprietary) both install the `dbt`
+        # binary and conflict, so each is installed in its own job.
+        formula: ['dbt-core', 'dbt']
+        # macos-latest = Apple Silicon (arm64), macos-13 = Intel (x86_64),
+        # ubuntu-latest = Linux x86_64, ubuntu-24.04-arm = Linux arm64.
+        os: ['macos-latest', 'macos-13', 'ubuntu-latest', 'ubuntu-24.04-arm']
 
     runs-on: ${{ matrix.os }}
 
@@ -45,18 +49,15 @@ jobs:
           brew update
           brew upgrade || true
 
-      - name: "Check installed"
-        run: brew list
-
       - name: "Brew Tap"
         run: |
           brew tap dbt-labs/dbt
 
-      - name: "Brew install ${{ matrix.adapter }}"
+      - name: "Brew install ${{ matrix.formula }}"
         run: |
-          brew install --verbose ${{ matrix.adapter }}
+          brew install --verbose dbt-labs/dbt/${{ matrix.formula }}
 
-      - name: "Verify ${{ matrix.adapter }} version"
+      - name: "Verify ${{ matrix.formula }} version"
         run: |
           dbt --version
 

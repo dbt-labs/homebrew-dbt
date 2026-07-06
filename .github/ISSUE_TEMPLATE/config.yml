@@ -1,15 +1,7 @@
 contact_links:
-  - name: Create an issue for dbt-core / dbt-postgres
+  - name: Create an issue for dbt-core
     url: https://github.com/dbt-labs/dbt-core/issues/new/choose
-  - name: Create an issue for dbt-redshift
-    url: https://github.com/dbt-labs/dbt-redshift/issues/new/choose
-    about: Report a bug or request a feature for dbt-redshift
-  - name: Create an issue for dbt-bigquery
-    url: https://github.com/dbt-labs/dbt-bigquery/issues/new/choose
-    about: Report a bug or request a feature for dbt-bigquery
-  - name: Create an issue for dbt-snowflake
-    url: https://github.com/dbt-labs/dbt-snowflake/issues/new/choose
-    about: Report a bug or request a feature for dbt-snowflake
+    about: Report a bug or request a feature for dbt itself (not the Homebrew formula)
   - name: Ask a question or get support
     url: https://docs.getdbt.com/docs/guides/getting-help
     about: Ask a question or request support
