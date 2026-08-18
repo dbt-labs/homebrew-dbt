@@ -1,28 +1,28 @@
 class DbtCore < Formula
   desc "Build analytics the way engineers build applications"
   homepage "https://getdbt.com"
-  version "2.0.0-beta.1"
+  version "2.0.0-beta.2"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-beta.1/dbt-core-2.0.0-beta.1-aarch64-apple-darwin.tar.gz"
-      sha256 "33b9ea00882c94b42e9c56874f33599105f9a8030a1b891930c93abe822f7562"
+      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-beta.2/dbt-core-2.0.0-beta.2-aarch64-apple-darwin.tar.gz"
+      sha256 "2742780c835621bfe7a753b4a42710fbad9363481ab829574f7db70d8a5ab639"
     end
     on_intel do
-      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-beta.1/dbt-core-2.0.0-beta.1-x86_64-apple-darwin.tar.gz"
-      sha256 "113b2a680ca8233fec041ea37e6c55011317702633279998d2c750a48c505c69"
+      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-beta.2/dbt-core-2.0.0-beta.2-x86_64-apple-darwin.tar.gz"
+      sha256 "98c9cbff5eb287c4c3cea0d114d605e88c1142a404148e5b05ec4fddc96b2fea"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-beta.1/dbt-core-2.0.0-beta.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "2d1bb42573302949c8232b0d4d10adf096a4dc56c021f5ae0ada4e4f7767b207"
+      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-beta.2/dbt-core-2.0.0-beta.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "8332aebe3f914d851d7bffb550ba3d0a14c9ea2b227e5f6966bc9c4d59f0a721"
     end
     on_intel do
-      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-beta.1/dbt-core-2.0.0-beta.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "0544041af081a19389bf678bc7035e12623c183dd09ccf7d884e65f4ec5f79fe"
+      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-beta.2/dbt-core-2.0.0-beta.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "60536934a7a29ec3aab8c572ce9a2e4e2148c6cf59e4c38b8cb114b4acb840ff"
     end
   end
 
