@@ -1,28 +1,28 @@
 class DbtCore < Formula
   desc "Build analytics the way engineers build applications"
   homepage "https://getdbt.com"
-  version "2.0.0-dev.30"
+  version "2.0.0-rc.1"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-dev.30/dbt-core-2.0.0-dev.30-aarch64-apple-darwin.tar.gz"
-      sha256 "e497bbc3358ac53e4887bdc416e050f2fc4598708846ccd4859aa4efbccced1d"
+      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-rc.1/dbt-core-2.0.0-rc.1-aarch64-apple-darwin.tar.gz"
+      sha256 "d5ee066c9b74e670b50c519b5787f25ffc6f729fb3dd179ca5bb4de90de3c017"
     end
     on_intel do
-      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-dev.30/dbt-core-2.0.0-dev.30-x86_64-apple-darwin.tar.gz"
-      sha256 "9a9c2fe19fba4e509488a11392c9fe037f22eb19ddc92c22b5abcb48274c53f6"
+      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-rc.1/dbt-core-2.0.0-rc.1-x86_64-apple-darwin.tar.gz"
+      sha256 "8f235c344374e37c0c8131611896070a26fb67ea9c417d9b76b4fc7ff5a273a6"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-dev.30/dbt-core-2.0.0-dev.30-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "89f93898ac15c2fc5ad870bb87df0608685f3c16a2fdc2a7e81268b4bf6d86eb"
+      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-rc.1/dbt-core-2.0.0-rc.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "d3e0d544eff0d8af6c153c329593cc7e85f26ddb94e52c656575c7fe453a977b"
     end
     on_intel do
-      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-dev.30/dbt-core-2.0.0-dev.30-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "e06f1033eed25d56b1096b4b7cb70ed2e36237df8c7da02d7b436e25d25228e5"
+      url "https://github.com/dbt-labs/dbt-core/releases/download/v2.0.0-rc.1/dbt-core-2.0.0-rc.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "8f327eb97a0f23b69f084718bdfcc1456aac3a903b54c366921484dcccc5af3b"
     end
   end
 
